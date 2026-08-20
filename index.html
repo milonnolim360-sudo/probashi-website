@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101828">
+  <meta name="description" content="Bangladesh Probashi Fund Club">
+
+  <title>Bangladesh Probashi Fund Club</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      background:
+        radial-gradient(circle at top left, #304ffe 0%, transparent 35%),
+        radial-gradient(circle at top right, #00c853 0%, transparent 30%),
+        linear-gradient(135deg, #08111f, #111827 55%, #172554);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      padding: 25px 0 15px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 92px;
+      height: 92px;
+      margin: auto;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      background: linear-gradient(145deg, #00e5ff, #7c4dff, #ff4081);
+      box-shadow:
+        0 15px 30px rgba(0,0,0,.45),
+        inset 5px 5px 12px rgba(255,255,255,.35),
+        inset -7px -7px 15px rgba(0,0,0,.25);
+      transform: perspective(500px) rotateX(5deg);
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(24px, 6vw, 42px);
+      text-shadow: 0 5px 15px rgba(0,0,0,.5);
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: #dbeafe;
+      font-size: 15px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 20px auto;
+    }
+
+    nav button {
+      border: 0;
+      padding: 11px 17px;
+      border-radius: 15px;
+      color: white;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 7px 18px rgba(0,0,0,.25);
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: linear-gradient(135deg, #00c6ff, #7c4dff);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      display: none;
+      padding: 20px 0 50px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 15px 0 25px;
+      font-size: 27px;
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      text-decoration: none;
+      color: white;
+      min-height: 150px;
+      padding: 20px 12px;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background:
+        linear-gradient(145deg,
+          rgba(255,255,255,.22),
+          rgba(255,255,255,.06));
+
+      border: 1px solid rgba(255,255,255,.18);
+
+      box-shadow:
+        0 18px 30px rgba(0,0,0,.32),
+        inset 4px 4px 9px rgba(255,255,255,.16),
+        inset -5px -5px 10px rgba(0,0,0,.25);
+
+      backdrop-filter: blur(15px);
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow:
+        0 25px 40px rgba(0,0,0,.45),
+        inset 4px 4px 12px rgba(255,255,255,.25);
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 37px;
+      margin-bottom: 13px;
+
+      background: linear-gradient(
+        145deg,
+        #00e5ff,
+        #7c4dff 50%,
+        #ff4081
+      );
+
+      box-shadow:
+        7px 8px 14px rgba(0,0,0,.35),
+        inset 4px 4px 8px rgba(255,255,255,.35),
+        inset -5px -5px 9px rgba(0,0,0,.22);
+    }
+
+    .card strong {
+      font-size: 16px;
+    }
+
+    .card small {
+      margin-top: 5px;
+      color: #dbeafe;
+      font-size: 12px;
+    }
+
+    /* YouTube */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .video {
+      overflow: hidden;
+      border-radius: 22px;
+      background: rgba(255,255,255,.09);
+      box-shadow: 0 15px 30px rgba(0,0,0,.35);
+    }
+
+    .video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .video-title {
+      padding: 13px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Notice */
+    .notice {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+      line-height: 1.8;
+      box-shadow: 0 15px 30px rgba(0,0,0,.25);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #cbd5e1;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .update-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.2);
+      color: #bfdbfe;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .card {
+        min-height: 135px;
+        padding: 14px 8px;
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 31px;
+      }
+
+      nav button {
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ভবিষ্যতে লিংক আপডেট করতে হলে শুধু এই অংশ পরিবর্তন করবেন
+       ===================================================== -->
+
+  <script>
+    const LINKS = {
+
+      facebook:
+        "https://www.facebook.com/share/1DPBjB3ePJ/",
+
+      youtube:
+        "https://www.youtube.com/@Bangladeshprobashifundclubf",
+
+      whatsappGroup:
+        "https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4",
+
+      messengerGroup:
+        "https://m.me/j/AbazuYGAWNXaKYj3/?send_source=gc%3Acopy_invite_link_c",
+
+      imoGroup:
+        "https://s.imoim.net/nLU12X",
+
+      whatsappPhone1:
+        "https://wa.me/qr/5SBSJ55KMO7CB1",
+
+      whatsappPhone2:
+        "https://wa.me/message/6ZU4EZJFBGAFM1",
+
+      eskl:
+        "https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment",
+
+      driverGroup:
+        "https://chat.whatsapp.com/HcEMStEP3un4uYDBBfH5b0?s=cl&p=a&ilr=4",
+
+      walkerGroup:
+        "https://chat.whatsapp.com/Jl7W0RXQjEI7Mhgj5riBhu?s=qt&p=a&ilr=0"
+
+    };
+
+    const VIDEOS = [
+      {
+        id: "DXB7gdJUlMw",
+        title: "আমাদের YouTube ভিডিও ১"
+      },
+      {
+        id: "I2mc2RXCEIA",
+        title: "আমাদের YouTube ভিডিও ২"
+      },
+      {
+        id: "KumLOhgtgsM",
+        title: "আমাদের YouTube ভিডিও ৩"
+      }
+    ];
+  </script>
+
+
+  <div class="container">
+
+    <header>
+      <div class="logo">🇧🇩</div>
+
+      <h1>বাংলাদেশ প্রবাসী ফান্ড ক্লাব</h1>
+
+      <p class="subtitle">
+        প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহায়তার প্ল্যাটফর্ম
+      </p>
+    </header>
+
+
+    <!-- Navigation -->
+
+    <nav>
+      <button class="active" onclick="showSection('home', this)">
+        🏠 Home
+      </button>
+
+      <button onclick="showSection('community', this)">
+        👥 Community
+      </button>
+
+      <button onclick="showSection('services', this)">
+        🌐 Services
+      </button>
+
+      <button onclick="showSection('youtube', this)">
+        ▶️ YouTube
+      </button>
+
+      <button onclick="showSection('contact', this)">
+        📱 Contact
+      </button>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="home" class="active">
+
+      <h2 class="section-title">🌟 আমাদের প্ল্যাটফর্ম</h2>
+
+      <div class="grid">
+
+        <a class="card" href="#" onclick="showSection('community'); return false;">
+          <div class="icon">👥</div>
+          <strong>Community</strong>
+          <small>আমাদের গ্রুপ</small>
+        </a>
+
+        <a class="card" href="#" onclick="showSection('services'); return false;">
+          <div class="icon">🌐</div>
+          <strong>Services</strong>
+          <small>প্রয়োজনীয় সেবা</small>
+        </a>
+
+        <a class="card" href="#" onclick="showSection('youtube'); return false;">
+          <div class="icon">▶️</div>
+          <strong>YouTube</strong>
+          <small>ভিডিও দেখুন</small>
+        </a>
+
+        <a class="card" href="#" onclick="showSection('contact'); return false;">
+          <div class="icon">📱</div>
+          <strong>Contact</strong>
+          <small>যোগাযোগ করুন</small>
+        </a>
+
+      </div>
+
+      <div class="update-box">
+        🚀 নতুন ফিচার ভবিষ্যতে এখানেই যোগ করা যাবে।
+      </div>
+
+    </section>
+
+
+    <!-- COMMUNITY -->
+
+    <section id="community">
+
+      <h2 class="section-title">👥 আমাদের Community</h2>
+
+      <div class="grid">
+
+        <a class="card" target="_blank" href="#" data-link="facebook">
+          <div class="icon">📘</div>
+          <strong>Facebook Page</strong>
+          <small>আমাদের পেজ</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="whatsappGroup">
+          <div class="icon">💬</div>
+          <strong>WhatsApp Group</strong>
+          <small>Join Group</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="messengerGroup">
+          <div class="icon">💙</div>
+          <strong>Messenger Group</strong>
+          <small>Join Group</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="imoGroup">
+          <div class="icon">💠</div>
+          <strong>IMO Group</strong>
+          <small>Join Group</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="driverGroup">
+          <div class="icon">🚗</div>
+          <strong>Driver Group</strong>
+          <small>Driver Community</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="walkerGroup">
+          <div class="icon">🚶</div>
+          <strong>Walker Group</strong>
+          <small>Walker Community</small>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <h2 class="section-title">🌐 গুরুত্বপূর্ণ Services</h2>
+
+      <div class="grid">
+
+        <a class="card" target="_blank" href="#" data-link="eskl">
+          <div class="icon">🛂</div>
+          <strong>ESKL</strong>
+          <small>Appointment Booking</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="driverGroup">
+          <div class="icon">🚗</div>
+          <strong>Driver</strong>
+          <small>Driver Group</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="walkerGroup">
+          <div class="icon">🚶</div>
+          <strong>Walker</strong>
+          <small>Walker Group</small>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- YOUTUBE -->
+
+    <section id="youtube">
+
+      <h2 class="section-title">▶️ আমাদের YouTube Channel</h2>
+
+      <div class="grid">
+
+        <a class="card" target="_blank" href="#" data-link="youtube">
+          <div class="icon">▶️</div>
+          <strong>YouTube Channel</strong>
+          <small>Subscribe করুন</small>
+        </a>
+
+      </div>
+
+      <br>
+
+      <div class="video-grid" id="videoGrid"></div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <h2 class="section-title">📱 যোগাযোগ</h2>
+
+      <div class="grid">
+
+        <a class="card" target="_blank" href="#" data-link="whatsappPhone1">
+          <div class="icon">📞</div>
+          <strong>WhatsApp Contact</strong>
+          <small>যোগাযোগ ১</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="whatsappPhone2">
+          <div class="icon">📲</div>
+          <strong>WhatsApp Contact</strong>
+          <small>যোগাযোগ ২</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="facebook">
+          <div class="icon">📘</div>
+          <strong>Facebook</strong>
+          <small>যোগাযোগ করুন</small>
+        </a>
+
+        <a class="card" target="_blank" href="#" data-link="youtube">
+          <div class="icon">▶️</div>
+          <strong>YouTube</strong>
+          <small>আমাদের Channel</small>
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <footer>
+    <p>© 2026 Bangladesh Probashi Fund Club</p>
+    <p>প্রবাসীদের পাশে, সবসময়</p>
+  </footer>
+
+
+  <script>
+
+    /* Navigation */
+
+    function showSection(id, button = null) {
+
+      document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+      });
+
+      const target = document.getElementById(id);
+
+      if (target) {
+        target.classList.add("active");
+      }
+
+      document.querySelectorAll("nav button").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      if (button) {
+        button.classList.add("active");
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    /* Automatically connect all links */
+
+    document.querySelectorAll("[data-link]").forEach(element => {
+
+      const key = element.getAttribute("data-link");
+
+      if (LINKS[key]) {
+        element.href = LINKS[key];
+      }
+
+    });
+
+
+    /* YouTube videos */
+
+    const videoGrid = document.getElementById("videoGrid");
+
+    VIDEOS.forEach(video => {
+
+      const box = document.createElement("div");
+
+      box.className = "video";
+
+      box.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${video.id}"
+          title="${video.title}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <div class="video-title">
+          ${video.title}
+        </div>
+      `;
+
+      videoGrid.appendChild(box);
+
+    });
+
+  </script>
+
+</body>
+</html>

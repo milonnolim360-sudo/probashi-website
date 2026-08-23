@@ -1,0 +1,49 @@
+/* সাইটের মূল ব্যাকগ্রাউন্ড সাদা */
+html,
+body {
+    background: #ffffff !important;
+    color: #222222;
+}
+
+/* মূল কনটেইনার */
+.container {
+    background: #ffffff;
+}
+
+/* Header */
+.header {
+    background: #ffffff !important;
+    border-color: #ddd !important;
+}
+
+/* Hero section */
+.hero {
+    background: #ffffff !important;
+}
+
+/* প্ল্যাটফর্ম কার্ড */
+.card {
+    background: #f5f5f5 !important;
+    color: #222 !important;
+    border-color: #ddd !important;
+}
+
+/* কমিউনিটি/সার্ভিস লিংক */
+.community,
+.services,
+.service-list {
+    background: #ffffff;
+}
+
+/* নিচের মেনু */
+.bottom-nav,
+nav {
+    background: #ffffff !important;
+    color: #222 !important;
+}
+
+/* Footer */
+footer {
+    background: #ffffff !important;
+    color: #555 !important;
+}

@@ -1246,6 +1246,90 @@ footer strong{
     </a>
 
 </nav>
+<!-- TNG QR BUTTON -->
+<div style="text-align:center; margin:25px 0;">
+    <button
+        onclick="openTngQR()"
+        style="
+            padding:12px 25px;
+            border:none;
+            border-radius:25px;
+            background:#07130d;
+            color:#ffd700;
+            font-size:15px;
+            font-weight:bold;
+            cursor:pointer;
+            box-shadow:0 5px 15px rgba(0,0,0,.3);
+        ">
+        📱 TNG QR
+    </button>
+</div>
 
+<!-- TNG QR POPUP -->
+<div id="tngQrPopup"
+     style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.7);
+        z-index:99999;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+     "
+     onclick="closeTngQR(event)">
+
+    <div style="
+        background:#fff;
+        width:min(420px,95%);
+        padding:20px;
+        border-radius:20px;
+        text-align:center;
+        position:relative;
+        box-shadow:0 10px 35px rgba(0,0,0,.5);
+     "
+     onclick="event.stopPropagation()">
+
+        <button
+            onclick="closeTngQR()"
+            style="
+                position:absolute;
+                right:12px;
+                top:8px;
+                border:none;
+                background:none;
+                font-size:28px;
+                cursor:pointer;
+            ">
+            ×
+        </button>
+
+        <h2 style="margin:10px 0 18px;">
+            TNG QR
+        </h2>
+
+        <img
+            src="tng-qr.jpg"
+            alt="TNG QR"
+            style="
+                width:100%;
+                max-width:350px;
+                display:block;
+                margin:auto;
+                border-radius:12px;
+            ">
+
+    </div>
+</div>
+
+<script>
+function openTngQR() {
+    document.getElementById("tngQrPopup").style.display = "flex";
+}
+
+function closeTngQR(event) {
+    document.getElementById("tngQrPopup").style.display = "none";
+}
+</script>
 </body>
 </html>

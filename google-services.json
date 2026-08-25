@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "539388506127",
+    "project_id": "probashi-foundation",
+    "storage_bucket": "probashi-foundation.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539388506127:android:939721c72b352c07c1f37a",
+        "android_client_info": {
+          "package_name": "com.probashi.foundation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLTe6dIq3lSV38CEA9Rt-eNl3c7Tb-bUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07130d">
 
-<title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
+<title>প্রবাসী ও যুব কল্যাণ সমবায় সমিতি</title>
 
 <style>
 *{
@@ -18,25 +18,10 @@ html{
     scroll-behavior:smooth;
 }
 
-:root{
-    --bg:#050805;
-    --bg2:#0b120d;
-    --gold:#ffd700;
-    --gold2:#d4af37;
-    --green:#00a651;
-    --card:#101510;
-    --text:#ffffff;
-    --muted:#b9b9b9;
-    --border:rgba(255,215,0,.28);
-}
-
 body{
-    font-family:Arial,"Noto Sans Bengali","Noto Sans Bangla",sans-serif;
-    background:
-        radial-gradient(circle at 50% 0%,rgba(255,215,0,.12),transparent 35%),
-        radial-gradient(circle at 0% 50%,rgba(0,166,81,.08),transparent 35%),
-        var(--bg);
-    color:var(--text);
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
+    background:#07130d;
+    color:#fff;
     min-height:100vh;
     padding-bottom:90px;
 }
@@ -46,112 +31,83 @@ a{
     color:inherit;
 }
 
-button,
-input{
-    font-family:inherit;
-}
-
 .container{
     width:min(1100px,94%);
     margin:auto;
 }
 
-/* =========================
- HEADER
-========================= */
+/* HEADER */
 
 .header{
     text-align:center;
-    padding:25px 12px 22px;
-    border-bottom:1px solid var(--border);
+    padding:22px 12px;
     background:
-        radial-gradient(circle at 50% 0%,rgba(255,215,0,.14),transparent 45%),
-        rgba(5,8,5,.88);
-    backdrop-filter:blur(18px);
+        radial-gradient(circle at top,
+        rgba(255,215,0,.18),
+        transparent 45%),
+        #07130d;
+    border-bottom:1px solid rgba(255,215,0,.35);
     position:sticky;
     top:0;
     z-index:1000;
+    backdrop-filter:blur(18px);
 }
 
 .profile-logo{
-    width:105px;
-    height:105px;
+    width:95px;
+    height:95px;
     object-fit:cover;
     border-radius:50%;
-    display:block;
-    margin:auto;
-    border:4px solid var(--gold);
-    box-shadow:
-        0 0 0 5px rgba(0,166,81,.55),
-        0 0 35px rgba(255,215,0,.5),
-        0 12px 30px #000;
-    animation:logoFloat 4s ease-in-out infinite;
+    border:4px solid #d4af37;
     background:#fff;
-}
-
-@keyframes logoFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-7px);
-    }
+    box-shadow:
+        0 0 0 4px #00843d,
+        0 0 30px rgba(255,215,0,.5);
 }
 
 .title{
-    margin-top:15px;
-    font-size:29px;
+    margin-top:12px;
+    font-size:27px;
     font-weight:900;
-    color:var(--gold);
-    text-shadow:
-        0 0 8px rgba(255,215,0,.45),
-        0 3px 8px #000;
+    color:#ffd700;
+    text-shadow:0 3px 10px #000;
 }
 
 .subtitle{
-    margin-top:8px;
-    color:#ccc;
+    margin-top:7px;
+    color:#bbb;
     font-size:13px;
 }
 
-.info-line{
-    margin-top:10px;
-    color:#ddd;
-    font-size:13px;
-}
+/* NAV */
 
 .nav{
     display:flex;
     justify-content:center;
     gap:8px;
     flex-wrap:wrap;
-    margin-top:17px;
+    margin-top:16px;
 }
 
 .nav a{
     padding:9px 14px;
-    border-radius:22px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.12);
-    color:#ddd;
+    border-radius:20px;
+    background:#101c15;
+    border:1px solid rgba(255,215,0,.2);
     font-size:12px;
     font-weight:bold;
-    transition:.25s;
 }
 
 .nav a:hover{
-    color:var(--gold);
-    border-color:var(--gold);
-    transform:translateY(-3px);
+    border-color:#ffd700;
+    transform:translateY(-2px);
 }
 
-/* =========================
- HERO
-========================= */
+/* HERO */
 
 .hero{
     text-align:center;
-    padding:35px 10px 20px;
+    padding:35px 10px 25px;
 }
 
 .hero h1{
@@ -159,35 +115,29 @@ input{
 }
 
 .hero h1 span{
-    color:var(--gold);
-    text-shadow:0 0 12px rgba(255,215,0,.35);
+    color:#ffd700;
 }
 
 .hero p{
     margin-top:10px;
-    color:#aaa;
-    font-size:14px;
+    color:#bbb;
     line-height:1.7;
 }
 
-/* =========================
- PLATFORM
-========================= */
+/* CARDS */
 
 .platform-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:16px;
+    gap:15px;
     margin:20px 0 35px;
 }
 
 .card{
-    position:relative;
-    min-height:180px;
-    padding:20px 10px;
-    border-radius:23px;
+    min-height:165px;
+    padding:18px 10px;
+    border-radius:22px;
     text-align:center;
-
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -195,141 +145,63 @@ input{
 
     background:
         linear-gradient(145deg,
-        rgba(255,255,255,.08),
+        rgba(255,255,255,.12),
         rgba(255,255,255,.025));
 
-    border:1px solid var(--border);
+    border:1px solid rgba(255,215,0,.25);
 
     box-shadow:
-        0 12px 28px rgba(0,0,0,.55),
-        inset 0 1px rgba(255,255,255,.12);
+        0 12px 25px rgba(0,0,0,.5),
+        inset 0 1px rgba(255,255,255,.15);
 
-    backdrop-filter:blur(12px);
-
-    transition:.35s;
-    overflow:hidden;
-}
-
-.card::before{
-    content:"";
-    position:absolute;
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:var(--gold);
-    filter:blur(70px);
-    opacity:.09;
+    backdrop-filter:blur(15px);
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px) scale(1.025);
-    border-color:var(--gold);
-    box-shadow:
-        0 18px 40px rgba(0,0,0,.7),
-        0 0 20px rgba(255,215,0,.15);
-}
-
-.number{
-    position:absolute;
-    top:10px;
-    left:10px;
-
-    width:35px;
-    height:35px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    color:var(--gold);
-    border:2px solid var(--gold);
-
-    font-size:16px;
-    font-weight:900;
-
-    box-shadow:0 0 12px rgba(255,215,0,.25);
+    transform:translateY(-8px) scale(1.02);
+    border-color:#ffd700;
 }
 
 .icon{
-    width:76px;
-    height:76px;
-    border-radius:50%;
-
+    width:68px;
+    height:68px;
+    border-radius:20px;
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:34px;
 
-    border:2px solid rgba(255,255,255,.45);
+    background:linear-gradient(145deg,#ffe56b,#d4af37,#765700);
 
     box-shadow:
-        8px 10px 18px rgba(0,0,0,.6),
-        inset 4px 4px 9px rgba(255,255,255,.35),
-        inset -6px -6px 10px rgba(0,0,0,.3);
+        7px 8px 14px #000,
+        inset 3px 3px 7px rgba(255,255,255,.5);
 }
 
 .card h3{
-    margin-top:13px;
-    font-size:15px;
+    margin-top:12px;
+    color:#fff;
 }
 
 .card p{
     margin-top:5px;
-    color:#aaa;
     font-size:11px;
+    color:#aaa;
 }
 
-.facebook{
-    background:linear-gradient(145deg,#2384ff,#0753c7,#032c70);
-}
-
-.youtube{
-    background:linear-gradient(145deg,#ff5c5c,#df0000,#710000);
-}
-
-.tiktok{
-    background:linear-gradient(145deg,#333,#111,#000);
-}
-
-.whatsapp{
-    background:linear-gradient(145deg,#43e87a,#00a94f,#00582b);
-}
-
-.tng{
-    background:linear-gradient(145deg,#21c7a5,#008f78,#004d42);
-}
-
-.bkash{
-    background:linear-gradient(145deg,#ff78ad,#e2136e,#8b003c);
-}
-
-.gold-icon{
-    background:linear-gradient(145deg,#fff079,#d4af37,#765700);
-}
-
-/* =========================
- SECTION
-========================= */
+/* SECTIONS */
 
 .section{
-    margin:38px 0;
+    margin:35px 0;
 }
 
 .section-title{
     text-align:center;
-    color:var(--gold);
+    color:#ffd700;
+    margin-bottom:18px;
     font-size:23px;
-    font-weight:900;
-    margin-bottom:20px;
-    text-shadow:0 0 10px rgba(255,215,0,.25);
 }
-
-/* =========================
- LINKS
-========================= */
 
 .links{
     display:grid;
@@ -340,55 +212,42 @@ input{
 .link-box{
     display:flex;
     align-items:center;
-    gap:14px;
-
-    padding:16px;
-
+    gap:13px;
+    padding:15px;
     border-radius:18px;
 
     background:
-        linear-gradient(145deg,
-        rgba(17,35,24,.95),
-        rgba(5,9,7,.98));
+        linear-gradient(145deg,#14241a,#080d0a);
 
-    border:1px solid var(--border);
+    border:1px solid rgba(255,215,0,.22);
 
     box-shadow:
-        0 9px 22px rgba(0,0,0,.5),
+        0 8px 20px rgba(0,0,0,.5),
         inset 0 1px rgba(255,255,255,.08);
 
-    transition:.3s;
+    transition:.25s;
 }
 
 .link-box:hover{
     transform:translateY(-4px);
-    border-color:var(--gold);
+    border-color:#ffd700;
 }
 
 .small-icon{
-    min-width:50px;
     width:50px;
+    min-width:50px;
     height:50px;
-
     border-radius:15px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:23px;
-
-    background:linear-gradient(145deg,#ffe96a,#d4af37,#765700);
-
-    color:#111;
-
-    box-shadow:
-        5px 6px 10px #000,
-        inset 2px 2px 5px rgba(255,255,255,.45);
+    font-size:25px;
+    background:linear-gradient(145deg,#ffe56b,#d4af37,#765700);
+    box-shadow:4px 5px 10px #000;
 }
 
 .link-box h3{
-    color:var(--gold);
+    color:#ffd700;
     font-size:15px;
 }
 
@@ -398,213 +257,77 @@ input{
     margin-top:4px;
 }
 
-/* =========================
- PAYMENT
-========================= */
+/* PAYMENT */
 
 .payment-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:16px;
+    gap:15px;
 }
 
-.payment-card{
-    padding:22px;
+.payment{
+    padding:25px;
     border-radius:22px;
     text-align:center;
-
-    background:
-        linear-gradient(145deg,
-        rgba(255,255,255,.06),
-        rgba(255,255,255,.015));
-
-    border:1px solid var(--border);
-
-    box-shadow:0 12px 28px rgba(0,0,0,.55);
-}
-
-.payment-card h3{
-    color:var(--gold);
-    margin-bottom:12px;
+    background:linear-gradient(145deg,#17251c,#080c09);
+    border:1px solid rgba(255,215,0,.3);
 }
 
 .payment-icon{
-    width:85px;
-    height:85px;
-    border-radius:50%;
-    margin:0 auto 13px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:25px;
-    font-weight:900;
-
-    border:3px solid #fff;
-
-    box-shadow:
-        0 8px 18px #000,
-        inset 4px 4px 8px rgba(255,255,255,.3);
+    font-size:55px;
+    margin-bottom:10px;
 }
 
-.payment-icon.bkash-icon{
-    background:linear-gradient(145deg,#ff4d9b,#e2136e,#780038);
+.payment h3{
+    color:#ffd700;
 }
 
-.payment-icon.tng-icon{
-    background:linear-gradient(145deg,#22d9b5,#009d84,#005c4c);
-}
-
-.payment-number{
-    margin:8px 0;
-    color:#fff;
-    font-size:17px;
-    font-weight:bold;
-}
-
-.payment-btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:11px 20px;
-    border-radius:22px;
-    border:1px solid var(--gold);
-    background:rgba(255,215,0,.08);
-    color:var(--gold);
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* =========================
- QR POPUP
-========================= */
-
-.popup{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:99999;
-
-    background:rgba(0,0,0,.82);
-
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-}
-
-.popup-box{
-    position:relative;
-    width:min(420px,95%);
-    padding:20px;
-
-    background:#fff;
-    color:#111;
-
-    border-radius:22px;
-    text-align:center;
-
-    box-shadow:0 20px 60px #000;
-}
-
-.popup-box img{
-    width:100%;
-    max-width:340px;
-    max-height:65vh;
-    object-fit:contain;
-    border-radius:12px;
-}
-
-.close-btn{
-    position:absolute;
-    right:10px;
-    top:5px;
-
-    width:38px;
-    height:38px;
-
+.payment button{
+    margin-top:14px;
+    padding:11px 22px;
     border:0;
-    border-radius:50%;
-
-    background:#111;
-    color:#fff;
-
-    font-size:25px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#ffe56b,#d4af37,#765700);
+    font-weight:bold;
     cursor:pointer;
 }
 
-/* =========================
- CONTACT
-========================= */
-
-.contact-box{
-    padding:28px 18px;
-    text-align:center;
-    border-radius:23px;
-
-    background:
-        radial-gradient(circle at top,
-        rgba(255,215,0,.12),
-        transparent 55%),
-        rgba(255,255,255,.035);
-
-    border:1px solid var(--border);
-}
-
-.contact-box p{
-    color:#bbb;
-    line-height:1.8;
-    font-size:14px;
-}
-
-/* =========================
- FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     text-align:center;
     padding:30px 10px;
-    color:#888;
-    font-size:12px;
-    border-top:1px solid rgba(255,215,0,.15);
+    color:#999;
 }
 
 footer strong{
-    color:var(--gold);
+    color:#ffd700;
 }
 
-/* =========================
- BOTTOM
-========================= */
+/* BOTTOM */
 
 .bottom-menu{
     position:fixed;
     left:0;
     right:0;
     bottom:0;
+    height:75px;
     z-index:5000;
 
-    height:78px;
-
     display:flex;
-    justify-content:space-around;
     align-items:center;
+    justify-content:space-around;
 
-    background:
-        linear-gradient(180deg,
-        rgba(7,13,9,.96),
-        rgba(0,0,0,.99));
-
-    border-top:2px solid var(--gold);
-
-    box-shadow:0 -8px 30px rgba(0,0,0,.7);
+    background:rgba(3,8,5,.97);
+    border-top:2px solid #d4af37;
+    box-shadow:0 -8px 25px #000;
 }
 
 .bottom-item{
     flex:1;
     max-width:90px;
     text-align:center;
-    color:#888;
+    color:#aaa;
     font-size:9px;
     font-weight:bold;
 }
@@ -612,260 +335,146 @@ footer strong{
 .bottom-icon{
     width:38px;
     height:38px;
-    margin:0 auto 4px;
-
+    margin:auto;
+    margin-bottom:4px;
     border-radius:12px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:18px;
-
-    background:linear-gradient(145deg,#272727,#080808);
-
-    box-shadow:
-        3px 4px 7px #000,
-        inset 1px 1px 3px rgba(255,255,255,.2);
-}
-
-.bottom-item.active{
-    color:var(--gold);
-}
-
-.bottom-item.active .bottom-icon{
-    background:linear-gradient(145deg,#ffe56b,#d4af37,#765700);
-    color:#111;
+    font-size:19px;
+    background:#111;
 }
 
 .bottom-logo-item{
     flex:1;
     max-width:90px;
     text-align:center;
-    color:var(--gold);
+    color:#ffd700;
     font-size:9px;
-    font-weight:bold;
 }
 
 .bottom-logo{
-    width:50px;
-    height:50px;
-    object-fit:cover;
-    border-radius:50%;
-    border:3px solid var(--gold);
-
-    box-shadow:
-        0 0 0 3px var(--green),
-        0 0 18px rgba(255,215,0,.5);
-}
-
-/* =========================
- ADMIN BUTTON
-========================= */
-
-.admin-open{
-    position:fixed;
-    right:16px;
-    top:16px;
-    z-index:6000;
-
     width:48px;
     height:48px;
-
+    object-fit:cover;
     border-radius:50%;
-
-    border:2px solid var(--gold);
-
-    background:#07130d;
-    color:var(--gold);
-
-    font-size:22px;
-
-    box-shadow:
-        0 5px 15px #000,
-        0 0 15px rgba(255,215,0,.25);
-
-    cursor:pointer;
+    border:3px solid #d4af37;
+    box-shadow:0 0 0 3px #00843d;
 }
 
-/* =========================
- ADMIN PANEL
-========================= */
+/* POPUP */
 
-.admin-overlay{
+.popup{
     display:none;
-
     position:fixed;
     inset:0;
-    z-index:100000;
-
-    background:rgba(0,0,0,.88);
-
-    overflow:auto;
-
+    background:rgba(0,0,0,.82);
+    z-index:99999;
+    align-items:center;
+    justify-content:center;
     padding:20px;
 }
 
-.admin-panel{
-    width:min(700px,100%);
-    margin:20px auto;
-
+.popup-box{
+    width:min(430px,95%);
+    max-height:90vh;
+    overflow:auto;
+    background:#101814;
+    border:1px solid #d4af37;
+    border-radius:22px;
     padding:22px;
-
-    border-radius:25px;
-
-    background:
-        linear-gradient(145deg,#101812,#050805);
-
-    border:1px solid var(--gold);
-
-    box-shadow:
-        0 20px 70px #000,
-        0 0 30px rgba(255,215,0,.15);
+    box-shadow:0 15px 50px #000;
 }
 
-.admin-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-
-    margin-bottom:20px;
+.popup-box h2{
+    color:#ffd700;
+    text-align:center;
+    margin-bottom:18px;
 }
 
-.admin-header h2{
-    color:var(--gold);
-}
-
-.admin-close{
-    width:40px;
-    height:40px;
-    border:1px solid var(--gold);
-    border-radius:50%;
-    background:#111;
+.close{
+    float:right;
+    background:none;
+    border:0;
     color:#fff;
-    font-size:24px;
+    font-size:27px;
+    cursor:pointer;
 }
 
-.admin-section{
-    margin-top:20px;
-    padding:17px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,215,0,.16);
-}
-
-.admin-section h3{
-    color:var(--gold);
-    margin-bottom:13px;
-    font-size:16px;
-}
-
-.admin-field{
-    margin-bottom:12px;
-}
-
-.admin-field label{
-    display:block;
-    color:#bbb;
-    font-size:12px;
-    margin-bottom:6px;
-}
-
-.admin-field input{
+.qr{
     width:100%;
-    padding:12px;
+    max-width:330px;
+    display:block;
+    margin:10px auto;
+    border-radius:15px;
+}
 
+/* ADMIN LOGIN */
+
+#adminLogin{
+    display:none;
+}
+
+.admin-input{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
     border-radius:12px;
-
-    border:1px solid #444;
-
-    background:#050805;
+    border:1px solid #555;
+    background:#07130d;
     color:#fff;
-
     outline:none;
 }
 
-.admin-field input:focus{
-    border-color:var(--gold);
+.admin-input:focus{
+    border-color:#ffd700;
 }
 
-.admin-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+.admin-btn{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    border:0;
+    border-radius:13px;
+    background:linear-gradient(145deg,#ffe56b,#d4af37,#765700);
+    color:#111;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ADMIN PANEL */
+
+#adminPanel{
+    display:none;
+}
+
+.admin-section{
+    margin-top:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#0a120d;
+    border:1px solid rgba(255,215,0,.18);
+}
+
+.admin-section h3{
+    color:#ffd700;
+    margin-bottom:10px;
 }
 
 .color-row{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.color-box{
-    display:flex;
-    align-items:center;
+    grid-template-columns:1fr 1fr;
     gap:10px;
-
-    padding:10px;
-
-    border-radius:12px;
-    background:#080b09;
 }
 
-.color-box input{
-    width:50px;
-    height:40px;
-    padding:2px;
+.color-row input{
+    width:100%;
+    height:45px;
+    border:0;
+    background:none;
 }
 
-.admin-actions{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:20px;
-}
-
-.admin-btn{
-    padding:13px;
-    border-radius:14px;
-    border:1px solid var(--gold);
-
-    background:linear-gradient(145deg,#ffe96a,#d4af37,#765700);
-    color:#111;
-
-    font-weight:900;
-    cursor:pointer;
-}
-
-.admin-btn.dark{
-    background:#101510;
-    color:var(--gold);
-}
-
-.password-screen{
-    max-width:400px;
-    margin:70px auto;
-    padding:25px;
-
-    border-radius:22px;
-
-    background:#0b110d;
-    border:1px solid var(--gold);
-
-    text-align:center;
-}
-
-.password-screen h2{
-    color:var(--gold);
-    margin-bottom:18px;
-}
-
-/* =========================
- RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:800px){
 
@@ -873,8 +482,7 @@ footer strong{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .admin-grid,
-    .color-row{
+    .payment-grid{
         grid-template-columns:1fr;
     }
 }
@@ -882,41 +490,33 @@ footer strong{
 @media(max-width:600px){
 
     .title{
-        font-size:23px;
-        line-height:1.4;
+        font-size:22px;
     }
 
-    .profile-logo{
-        width:88px;
-        height:88px;
-    }
-
-    .platform-grid{
-        gap:10px;
-    }
-
-    .card{
-        min-height:155px;
-    }
-
-    .icon{
-        width:65px;
-        height:65px;
-        font-size:28px;
-    }
-
-    .links,
-    .payment-grid{
+    .links{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        padding-top:28px;
+    .profile-logo{
+        width:82px;
+        height:82px;
+    }
+}
+
+@media(max-width:380px){
+
+    .platform-grid{
+        gap:9px;
     }
 
-    .admin-open{
-        top:10px;
-        right:10px;
+    .card{
+        min-height:140px;
+    }
+
+    .icon{
+        width:58px;
+        height:58px;
+        font-size:28px;
     }
 }
 </style>
@@ -924,124 +524,102 @@ footer strong{
 
 <body>
 
-<!-- ADMIN OPEN -->
-<button class="admin-open" onclick="openAdmin()">⚙️</button>
-
-
-<!-- HEADER -->
-
 <header class="header" id="home">
 
-    <img id="logo"
-         class="profile-logo"
-         src="logo.png"
-         alt="Logo">
+<img id="logo"
+src="logo.png"
+class="profile-logo"
+alt="Logo">
 
-    <h1 class="title" id="orgName">
-        বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
-    </h1>
+<h1 class="title" id="siteName">
+প্রবাসী ও যুব কল্যাণ সমবায় সমিতি
+</h1>
 
-    <p class="subtitle">
-        প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম
-    </p>
+<p class="subtitle" id="siteSubtitle">
+প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম
+</p>
 
-    <div class="info-line">
-        📍 <span id="location">কলারাপুর মালয়েশিয়া</span>
-        &nbsp; • &nbsp;
-        📅 <span id="established">01.01.2026</span>
-    </div>
-
-    <nav class="nav">
-        <a href="#home">🏠 Home</a>
-        <a href="#community">👥 Community</a>
-        <a href="#services">🌐 Services</a>
-        <a href="#payment">💳 Payment</a>
-        <a href="#contact">📱 Contact</a>
-    </nav>
+<nav class="nav">
+<a href="#home">🏠 Home</a>
+<a href="#community">👥 Community</a>
+<a href="#services">🌐 Services</a>
+<a href="#payment">💳 Payment</a>
+<a href="#contact">📱 Contact</a>
+</nav>
 
 </header>
 
-
 <main class="container">
-
-
-<!-- HERO -->
 
 <section class="hero">
 
-    <h1>
-        🌟 <span>আমাদের ডিজিটাল প্ল্যাটফর্ম</span>
-    </h1>
+<h1>🌟 <span>আমাদের ডিজিটাল প্ল্যাটফর্ম</span></h1>
 
-    <p>
-        বাংলাদেশ ও প্রবাসী ভাই-বোনদের
-        যোগাযোগ, তথ্য ও সহযোগিতার জন্য
-    </p>
+<p>
+প্রবাসী ভাই-বোনদের যোগাযোগ, তথ্য,
+সেবা ও সহযোগিতার জন্য একটি আধুনিক প্ল্যাটফর্ম।
+</p>
 
 </section>
 
-
-<!-- MAIN 4 -->
+<!-- MAIN CARDS -->
 
 <section id="community">
 
 <div class="platform-grid">
 
-<a class="card facebook"
-href="https://www.facebook.com/share/1DPBjB3ePJ/"
+<a class="card"
+id="facebookCard"
+href="https://www.facebook.com/"
 target="_blank">
 
-<div class="number">1</div>
-<div class="icon">f</div>
+<div class="icon">📘</div>
 
 <h3>Facebook Page</h3>
-<p>আমাদের ফেসবুক পেজ</p>
+
+<p>আমাদের Facebook Page</p>
 
 </a>
 
+<a class="card"
+id="serviceCard"
+href="#services">
 
-<a class="card youtube"
-href="https://www.youtube.com/@Bangladeshprobashifundclubf"
+<div class="icon">🌐</div>
+
+<h3>Services</h3>
+
+<p>প্রবাসীদের সেবা</p>
+
+</a>
+
+<a class="card"
+id="youtubeCard"
+href="https://youtube.com/"
 target="_blank">
 
-<div class="number">2</div>
-<div class="icon">▶</div>
+<div class="icon">▶️</div>
 
 <h3>YouTube</h3>
-<p>আমাদের ভিডিও</p>
+
+<p>ভিডিও দেখুন</p>
 
 </a>
 
+<a class="card"
+href="#contact">
 
-<a class="card tiktok"
-href="https://www.tiktok.com/"
-target="_blank">
+<div class="icon">📱</div>
 
-<div class="number">3</div>
-<div class="icon">♪</div>
+<h3>Contact</h3>
 
-<h3>TikTok</h3>
-<p>আমাদের TikTok</p>
-
-</a>
-
-
-<a class="card facebook"
-href="https://www.facebook.com/share/g/1Y9TcjfiZP/"
-target="_blank">
-
-<div class="number">4</div>
-<div class="icon">f</div>
-
-<h3>Facebook Group</h3>
-<p>গ্রুপে যুক্ত হন</p>
+<p>যোগাযোগ করুন</p>
 
 </a>
 
 </div>
 
 </section>
-
 
 <!-- COMMUNITY -->
 
@@ -1054,70 +632,57 @@ target="_blank">
 <div class="links">
 
 <a class="link-box"
-href="https://www.facebook.com/share/1DPBjB3ePJ/"
+id="facebookLink"
+href="https://www.facebook.com/"
 target="_blank">
 
 <div class="small-icon">📘</div>
 
 <div>
 <h3>Facebook Page</h3>
-<p>আমাদের ফেসবুক পেজে যুক্ত হন</p>
+<p>আমাদের Facebook Page-এ যুক্ত হন</p>
 </div>
 
 </a>
 
-
 <a class="link-box"
-href="https://www.facebook.com/share/g/1Y9TcjfiZP/"
-target="_blank">
-
-<div class="small-icon">👥</div>
-
-<div>
-<h3>Facebook Group</h3>
-<p>আমাদের Facebook Group</p>
-</div>
-
-</a>
-
-
-<a class="link-box"
-href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4"
+id="whatsappGroupLink"
+href="https://chat.whatsapp.com/"
 target="_blank">
 
 <div class="small-icon">💬</div>
 
 <div>
 <h3>WhatsApp Group</h3>
-<p>মূল WhatsApp গ্রুপ</p>
+<p>WhatsApp Group-এ যুক্ত হন</p>
 </div>
 
 </a>
 
-
 <a class="link-box"
-href="https://m.me/j/AbazuYGAWNXaKYj3/?send_source=gc%3Acopy_invite_link_c"
+id="whatsappChannelLink"
+href="https://whatsapp.com/channel/"
 target="_blank">
 
-<div class="small-icon">💬</div>
+<div class="small-icon">📢</div>
 
 <div>
-<h3>Messenger Group</h3>
-<p>Messenger গ্রুপে যুক্ত হন</p>
+<h3>WhatsApp Channel</h3>
+<p>আমাদের Channel Follow করুন</p>
 </div>
 
 </a>
 
-
 <a class="link-box"
-href="https://s.imoim.net/nLU12X"
+id="youtubeLink"
+href="https://youtube.com/"
 target="_blank">
 
-<div class="small-icon">📞</div>
+<div class="small-icon">▶️</div>
 
 <div>
-<h3>IMO Group</h3>
-<p>IMO গ্রুপে যুক্ত হন</p>
+<h3>YouTube</h3>
+<p>আমাদের ভিডিও দেখুন</p>
 </div>
 
 </a>
@@ -1125,7 +690,6 @@ target="_blank">
 </div>
 
 </section>
-
 
 <!-- SERVICES -->
 
@@ -1138,70 +702,53 @@ target="_blank">
 <div class="links">
 
 <a class="link-box"
-href="https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment"
-target="_blank">
+href="#"
+id="serviceLink">
 
 <div class="small-icon">📅</div>
 
 <div>
-<h3>ESKL Appointment</h3>
+<h3>Appointment</h3>
 <p>Appointment Book করুন</p>
 </div>
 
 </a>
 
-
 <a class="link-box"
-href="https://chat.whatsapp.com/HcEMStEP3un4uYDBBfH5b0?s=cl&p=a&ilr=4"
-target="_blank">
+href="#"
+id="driverLink">
 
 <div class="small-icon">🚗</div>
 
 <div>
 <h3>Driver Group</h3>
-<p>ড্রাইভার গ্রুপ</p>
+<p>Driver Group-এ যুক্ত হন</p>
 </div>
 
 </a>
 
-
 <a class="link-box"
-href="https://chat.whatsapp.com/Jl7W0RXQjEI7Mhgj5riBhu?s=qt&p=a&ilr=0"
-target="_blank">
+href="#"
+id="workerLink">
 
 <div class="small-icon">👷</div>
 
 <div>
 <h3>Worker Group</h3>
-<p>ওয়ার্কার গ্রুপ</p>
+<p>Worker Group-এ যুক্ত হন</p>
 </div>
 
 </a>
 
-
 <a class="link-box"
-href="https://wa.me/qr/5SBSJ55KMO7CB1"
-target="_blank">
+href="#"
+id="contactLink">
 
 <div class="small-icon">📲</div>
 
 <div>
 <h3>WhatsApp Contact</h3>
-<p>WhatsApp-এ যোগাযোগ</p>
-</div>
-
-</a>
-
-
-<a class="link-box"
-href="https://wa.me/message/6ZU4EZJFBGAFM1"
-target="_blank">
-
-<div class="small-icon">💚</div>
-
-<div>
-<h3>WhatsApp Message</h3>
-<p>সরাসরি মেসেজ করুন</p>
+<p>WhatsApp-এ যোগাযোগ করুন</p>
 </div>
 
 </a>
@@ -1210,54 +757,521 @@ target="_blank">
 
 </section>
 
-
 <!-- PAYMENT -->
 
 <section class="section" id="payment">
 
 <h2 class="section-title">
-💳 Payment & QR
+💳 Payment
 </h2>
 
 <div class="payment-grid">
 
+<div class="payment">
 
-<!-- BKASH -->
+<div class="payment-icon">📱</div>
 
-<div class="payment-card">
+<h3>TNG Digital</h3>
 
-<div class="payment-icon bkash-icon">
-bKash
-</div>
+<p style="margin-top:7px;color:#aaa;">
+TNG Digital QR Payment
+</p>
 
-<h3>bKash Payment</h3>
-
-<div class="payment-number" id="bkashNumber">
-Admin থেকে সেট করুন
-</div>
-
-<button class="payment-btn"
-onclick="openQR('bkash')">
-📷 bKash QR
+<button onclick="openQR('tng')">
+Show TNG QR
 </button>
 
 </div>
 
+<div class="payment">
 
-<!-- TNG -->
+<div class="payment-icon">💗</div>
 
-<div class="payment-card">
+<h3>bKash</h3>
 
-<div class="payment-icon tng-icon">
-TNG
+<p style="margin-top:7px;color:#aaa;">
+bKash Payment
+</p>
+
+<button onclick="openQR('bkash')">
+Show bKash QR
+</button>
+
 </div>
 
-<h3>Touch 'n Go</h3>
-
-<div class="payment-number" id="tngNumber">
-Admin থেকে সেট করুন
 </div>
 
-<button class="payment-btn"
-onclick="openQR('tng')">
-📷
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<h2 class="section-title">
+📱 যোগাযোগ
+</h2>
+
+<div class="contact-box"
+style="text-align:center;padding:25px;border-radius:22px;background:#101814;border:1px solid rgba(255,215,0,.25);">
+
+<p style="color:#bbb;line-height:1.8;">
+যোগাযোগের জন্য নিচের WhatsApp ব্যবহার করুন।
+</p>
+
+<br>
+
+<a id="mainContact"
+href="#"
+target="_blank"
+style="
+display:inline-block;
+padding:13px 25px;
+border-radius:25px;
+background:linear-gradient(145deg,#ffe56b,#d4af37,#765700);
+color:#111;
+font-weight:bold;
+">
+📲 WhatsApp Contact
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026
+<strong id="footerName">
+প্রবাসী ও যুব কল্যাণ সমবায় সমিতি
+</strong>
+</p>
+
+<p style="margin-top:7px;">
+ঐক্য • সেবা • উন্নয়ন
+</p>
+
+</footer>
+
+</main>
+
+<!-- BOTTOM -->
+
+<nav class="bottom-menu">
+
+<a href="#home" class="bottom-item">
+<div class="bottom-icon">🏠</div>
+Home
+</a>
+
+<a href="#community" class="bottom-item">
+<div class="bottom-icon">👥</div>
+Community
+</a>
+
+<a href="#home" class="bottom-logo-item">
+
+<img id="bottomLogo"
+src="logo.png"
+class="bottom-logo"
+alt="Logo">
+
+Logo
+
+</a>
+
+<a href="#services" class="bottom-item">
+<div class="bottom-icon">🌐</div>
+Services
+</a>
+
+<a href="#contact" class="bottom-item">
+<div class="bottom-icon">📱</div>
+Contact
+</a>
+
+</nav>
+
+<!-- QR POPUP -->
+
+<div id="qrPopup" class="popup" onclick="closeQR()">
+
+<div class="popup-box"
+onclick="event.stopPropagation()">
+
+<button class="close"
+onclick="closeQR()">
+×
+</button>
+
+<h2 id="qrTitle">
+Payment QR
+</h2>
+
+<img id="qrImage"
+class="qr"
+src=""
+alt="QR">
+
+</div>
+
+</div>
+
+<!-- ADMIN LOGIN -->
+
+<div id="adminLogin" class="popup">
+
+<div class="popup-box">
+
+<button class="close"
+onclick="closeAdminLogin()">
+×
+</button>
+
+<h2>🔐 Admin Login</h2>
+
+<input
+id="adminUser"
+class="admin-input"
+placeholder="Admin Username">
+
+<input
+id="adminPass"
+class="admin-input"
+type="password"
+placeholder="Password">
+
+<button class="admin-btn"
+onclick="loginAdmin()">
+Login
+</button>
+
+<p id="loginMessage"
+style="text-align:center;color:#ff6666;margin-top:10px;">
+</p>
+
+</div>
+
+</div>
+
+<!-- ADMIN PANEL -->
+
+<div id="adminPanel" class="popup">
+
+<div class="popup-box">
+
+<button class="close"
+onclick="closeAdminPanel()">
+×
+</button>
+
+<h2>⚙️ Admin Panel</h2>
+
+<!-- BASIC -->
+
+<div class="admin-section">
+
+<h3>📝 Website Information</h3>
+
+<input
+id="editName"
+class="admin-input"
+placeholder="Website Name">
+
+<input
+id="editSubtitle"
+class="admin-input"
+placeholder="Subtitle">
+
+<button class="admin-btn"
+onclick="saveBasic()">
+Save Information
+</button>
+
+</div>
+
+<!-- LOGO -->
+
+<div class="admin-section">
+
+<h3>🖼️ Logo</h3>
+
+<p style="color:#aaa;font-size:12px;line-height:1.6;">
+নতুন logo.png একই website folder-এ আপলোড করুন।
+তারপর নিচের বাটন চাপুন।
+</p>
+
+<button class="admin-btn"
+onclick="changeLogo()">
+Apply Logo
+</button>
+
+</div>
+
+<!-- COLORS -->
+
+<div class="admin-section">
+
+<h3>🎨 Colors</h3>
+
+<div class="color-row">
+
+<div>
+<p style="color:#aaa;font-size:11px;">
+Background
+</p>
+
+<input
+type="color"
+id="bgColor"
+value="#07130d">
+</div>
+
+<div>
+<p style="color:#aaa;font-size:11px;">
+Gold
+</p>
+
+<input
+type="color"
+id="goldColor"
+value="#ffd700">
+</div>
+
+<div>
+<p style="color:#aaa;font-size:11px;">
+Green
+</p>
+
+<input
+type="color"
+id="greenColor"
+value="#00843d">
+</div>
+
+<div>
+<p style="color:#aaa;font-size:11px;">
+Card
+</p>
+
+<input
+type="color"
+id="cardColor"
+value="#101814">
+</div>
+
+</div>
+
+<button class="admin-btn"
+onclick="saveColors()">
+🎨 Apply Colors
+</button>
+
+</div>
+
+<!-- LINKS -->
+
+<div class="admin-section">
+
+<h3>🔗 Website Links</h3>
+
+<input id="editFacebook"
+class="admin-input"
+placeholder="Facebook Page Link">
+
+<input id="editWhatsappGroup"
+class="admin-input"
+placeholder="WhatsApp Group Link">
+
+<input id="editWhatsappChannel"
+class="admin-input"
+placeholder="WhatsApp Channel Link">
+
+<input id="editYoutube"
+class="admin-input"
+placeholder="YouTube Link">
+
+<input id="editService"
+class="admin-input"
+placeholder="Appointment Link">
+
+<input id="editDriver"
+class="admin-input"
+placeholder="Driver Group Link">
+
+<input id="editWorker"
+class="admin-input"
+placeholder="Worker Group Link">
+
+<input id="editContact"
+class="admin-input"
+placeholder="WhatsApp Contact Link">
+
+<button class="admin-btn"
+onclick="saveLinks()">
+🔗 Save All Links
+</button>
+
+</div>
+
+<!-- PAYMENT -->
+
+<div class="admin-section">
+
+<h3>💳 Payment</h3>
+
+<p style="color:#aaa;font-size:12px;line-height:1.6;">
+TNG QR-এর জন্য <b>tng-qr.jpg</b><br>
+bKash QR-এর জন্য <b>bkash-qr.jpg</b><br>
+ফাইল দুটি website folder-এ রাখুন।
+</p>
+
+<button class="admin-btn"
+onclick="alert('QR files: tng-qr.jpg এবং bkash-qr.jpg')">
+QR File Instructions
+</button>
+
+</div>
+
+<!-- LOGOUT -->
+
+<div class="admin-section">
+
+<button class="admin-btn"
+onclick="logoutAdmin()">
+🚪 Logout
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =====================================
+   ADMIN LOGIN
+===================================== */
+
+const ADMIN_USERNAME = "MDRAFIK1987";
+const ADMIN_PASSWORD = "BPM@2026!";
+
+
+/* =====================================
+   ADMIN OPEN
+===================================== */
+
+/*
+   Logo-তে 5 বার দ্রুত চাপ দিলে
+   Admin Login খুলবে।
+*/
+
+let logoClicks = 0;
+let clickTimer;
+
+document.getElementById("logo").addEventListener("click",function(){
+
+    logoClicks++;
+
+    clearTimeout(clickTimer);
+
+    clickTimer=setTimeout(function(){
+        logoClicks=0;
+    },1200);
+
+    if(logoClicks>=5){
+
+        logoClicks=0;
+
+        document.getElementById("adminLogin").style.display="flex";
+
+    }
+
+});
+
+
+/* =====================================
+   LOGIN
+===================================== */
+
+function loginAdmin(){
+
+    const user=document.getElementById("adminUser").value;
+    const pass=document.getElementById("adminPass").value;
+
+    if(user===ADMIN_USERNAME && pass===ADMIN_PASSWORD){
+
+        sessionStorage.setItem("adminLogged","yes");
+
+        document.getElementById("adminLogin").style.display="none";
+
+        document.getElementById("adminPanel").style.display="flex";
+
+        loadAdminData();
+
+    }else{
+
+        document.getElementById("loginMessage").innerText=
+        "❌ Username অথবা Password ভুল";
+
+    }
+
+}
+
+
+/* =====================================
+   CLOSE
+===================================== */
+
+function closeAdminLogin(){
+
+    document.getElementById("adminLogin").style.display="none";
+
+}
+
+function closeAdminPanel(){
+
+    document.getElementById("adminPanel").style.display="none";
+
+}
+
+
+/* =====================================
+   LOGOUT
+===================================== */
+
+function logoutAdmin(){
+
+    sessionStorage.removeItem("adminLogged");
+
+    closeAdminPanel();
+
+}
+
+
+/* =====================================
+   BASIC INFO
+===================================== */
+
+function saveBasic(){
+
+    const name=document.getElementById("editName").value;
+    const subtitle=document.getElementById("editSubtitle").value;
+
+    if(name){
+
+        localStorage.setItem("siteName",name);
+
+        document.getElementById("siteName").innerText=name;
+        document.getElementById("footerName").innerText=name;
+
+    }
+
+    if(subtitle){
+
+        localStorage.setItem("siteSubtitle",subtitle);
+
+        document.getElementById("siteSubtitle").innerText=subtitle;
+
+    }

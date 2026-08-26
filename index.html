@@ -1,395 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#06140d">
+<meta name="theme-color" content="#07130d">
 <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
 
 <style>
-:root{
---bg:#06140d;
---panel:#14231b;
---gold:#ffd43b;
---accent:#0b9b50;
---text:#fff;
---muted:#aeb8b1;
-}
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-
 body{
-font-family:Arial,"Noto Sans Bengali","Noto Sans Bangla",sans-serif;
-background:radial-gradient(circle at 50% 0,#193622 0,#06140d 42%,#020704 100%);
-color:var(--text);
-padding-bottom:90px
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:radial-gradient(circle at top,#173b25,#07130d 55%,#020604);
+color:#fff;min-height:100vh;padding-bottom:85px
 }
-
 a{text-decoration:none;color:inherit}
-
-.wrap{
-width:min(1100px,94%);
-margin:auto
-}
+.wrap{width:min(1100px,94%);margin:auto}
 
 header{
-text-align:center;
-padding:20px 10px 18px;
-border-bottom:1px solid #ffd43b55;
-background:#020904cc;
-position:sticky;
-top:0;
-z-index:1000;
-backdrop-filter:blur(12px)
+text-align:center;padding:22px 10px 18px;
+border-bottom:1px solid #d4af37;
+background:rgba(4,12,7,.86);
+backdrop-filter:blur(15px);
+position:sticky;top:0;z-index:10
 }
 
 .logo{
-width:95px;
-height:95px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid var(--gold);
-box-shadow:0 0 0 4px #00843d99,0 0 28px #ffd43b66;
-background:#fff
+width:92px;height:92px;border-radius:50%;
+object-fit:cover;border:4px solid #d4af37;
+box-shadow:0 0 0 4px #00843d,0 0 28px #d4af37;
+animation:float 3s ease-in-out infinite
 }
 
 h1{
-color:var(--gold);
-font-size:28px;
-margin-top:10px;
-text-shadow:0 3px 10px #000
+margin-top:10px;color:#ffd700;font-size:clamp(22px,5vw,32px);
+text-shadow:0 0 15px #d4af37
 }
 
-.sub,.meta{
-color:var(--muted);
-font-size:13px;
-margin-top:7px
+.sub{color:#ccc;margin:7px}
+
+.nav{
+display:flex;justify-content:center;gap:7px;
+flex-wrap:wrap;margin-top:14px
 }
 
-nav.top{
-display:flex;
-justify-content:center;
-gap:8px;
-flex-wrap:wrap;
-margin-top:14px
+.nav a{
+padding:9px 13px;border-radius:20px;
+border:1px solid #6e5a16;background:#101a13;
+color:#fff;font-weight:bold;font-size:12px
 }
 
-nav.top a{
-padding:9px 13px;
-border:1px solid #ffd43b44;
-border-radius:22px;
-background:#122019;
-font-size:12px;
-font-weight:bold
+.hero{text-align:center;padding:30px 5px}
+.hero h2{font-size:27px;color:#ffd700}
+.hero p{color:#bbb;margin-top:8px}
+
+section{margin:32px 0}
+
+.title{
+text-align:center;color:#ffd700;
+margin-bottom:16px;font-size:23px
 }
 
-.hero{
-text-align:center;
-padding:35px 8px 20px
-}
-
-.hero h2{
-color:var(--gold);
-font-size:27px
-}
-
-.hero p{
-color:var(--muted);
-margin-top:9px;
-line-height:1.8
-}
-
-.grid4{
+.grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:15px
-}
-
-.card,.box,.pay{
-border:1px solid #ffd43b44;
-background:linear-gradient(145deg,#1b2c22,#07100b);
-border-radius:22px;
-box-shadow:0 10px 25px #0008,inset 0 1px #fff1;
-transition:.25s
+gap:14px
 }
 
 .card{
+position:relative;
 min-height:175px;
-padding:16px 10px;
+padding:20px 10px;
+border-radius:23px;
 text-align:center;
+background:linear-gradient(145deg,#17251c,#080d0a);
+border:1px solid rgba(255,215,0,.3);
+box-shadow:
+0 12px 30px #0008,
+inset 0 1px #fff3;
+transition:.3s;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center
 }
 
-.card:hover,.box:hover{
-transform:translateY(-5px);
-border-color:var(--gold)
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+border-color:#ffd700;
+box-shadow:0 18px 40px #000,0 0 22px #d4af3730
 }
 
 .icon{
-width:70px;
-height:70px;
-border-radius:20px;
+width:72px;height:72px;
+border-radius:50%;
 display:grid;
 place-items:center;
 font-size:34px;
-background:linear-gradient(145deg,#fff17b,var(--gold),#765700);
-box-shadow:6px 8px 14px #000,inset 3px 3px 7px #fff7;
-color:#111
+background:radial-gradient(
+circle at 30% 25%,
+#fff078,#d4af37 48%,#765700
+);
+box-shadow:
+0 0 22px #d4af3766,
+inset 3px 3px 8px #fff8,
+inset -5px -5px 8px #0008;
+animation:float 3s ease-in-out infinite
+}
+
+.num{
+position:absolute;
+right:12px;
+top:10px;
+color:#ffd700;
+font-size:21px;
+font-weight:900;
+text-shadow:0 0 10px #ffd700
 }
 
 .card h3{
-margin-top:12px;
-font-size:16px
+margin-top:13px;
+font-size:15px
 }
 
-.card p,.box p{
-color:var(--muted);
+.card p{
 font-size:11px;
+color:#aaa;
 margin-top:5px
-}
-
-section{
-margin:34px 0
-}
-
-.st{
-text-align:center;
-color:var(--gold);
-font-size:24px;
-margin-bottom:18px
-}
-
-.links{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:13px
-}
-
-.box{
-display:flex;
-align-items:center;
-gap:13px;
-padding:14px
-}
-
-.smicon{
-min-width:50px;
-width:50px;
-height:50px;
-border-radius:15px;
-display:grid;
-place-items:center;
-font-size:24px;
-background:linear-gradient(145deg,#fff17b,var(--gold),#765700);
-color:#111
-}
-
-.box h3{
-font-size:15px;
-color:var(--gold)
-}
-
-.paygrid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px
-}
-
-.pay{
-text-align:center;
-padding:28px 15px
-}
-
-.pay .pi{
-font-size:55px
-}
-
-.pay h3{
-color:var(--gold);
-margin-top:8px;
-font-size:20px
-}
-
-.pay p{
-color:var(--muted);
-margin:7px 0 16px
-}
-
-.btn,
-.admin button{
-border:0;
-border-radius:24px;
-padding:11px 20px;
-background:linear-gradient(145deg,#fff17b,var(--gold),#8b6500);
-font-weight:900;
-color:#111;
-cursor:pointer
-}
-
-.video{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px
-}
-
-.vid{
-background:#070c09;
-border:1px solid #ffd43b44;
-border-radius:18px;
-overflow:hidden
-}
-
-.vid iframe{
-width:100%;
-aspect-ratio:16/9;
-border:0
-}
-
-.vid div{
-padding:10px;
-font-size:13px
 }
 
 .contact{
 text-align:center;
 padding:25px;
-border:1px solid #ffd43b44;
-border-radius:22px;
-background:#102218
-}
-
-.contact p{
-color:var(--muted);
-line-height:1.8
+border:1px solid #d4af37;
+border-radius:20px;
+background:#101a13
 }
 
 footer{
 text-align:center;
-color:#9ca79f;
-padding:28px 10px;
-border-top:1px solid #ffd43b33;
+color:#999;
+padding:30px;
+border-top:1px solid #d4af3730;
 margin-top:30px
 }
 
-footer b{
-color:var(--gold)
-}
-
-/* BOTTOM */
-
 .bottom{
 position:fixed;
+bottom:0;
 left:0;
 right:0;
-bottom:0;
-height:78px;
-z-index:2000;
-background:#020704f5;
-border-top:2px solid var(--gold);
+height:70px;
+background:#030805f5;
+border-top:2px solid #d4af37;
 display:flex;
 justify-content:space-around;
-align-items:center
+align-items:center;
+z-index:20
 }
 
 .bottom a{
-flex:1;
-max-width:90px;
 text-align:center;
-color:#aaa;
-font-size:9px;
-font-weight:bold
+font-size:10px;
+color:#bbb
 }
 
-.bi{
-width:37px;
-height:37px;
-margin:auto auto 4px;
-border-radius:12px;
-display:grid;
-place-items:center;
-font-size:19px;
-background:#151a17;
-box-shadow:3px 4px 7px #000
-}
-
-.bottom a:first-child{
-color:var(--gold)
-}
-
-.bottom a:first-child .bi{
-background:linear-gradient(145deg,#fff17b,var(--gold),#765700);
-color:#111
-}
-
-.blogo{
-width:49px;
-height:49px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid var(--gold);
-box-shadow:0 0 0 3px #00843d,0 0 15px #ffd43b88
-}
-
-/* QR */
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:#000c;
-z-index:99999;
-align-items:center;
-justify-content:center;
-padding:18px
-}
-
-.modal.show{
-display:flex
-}
-
-.modalbox{
-width:min(430px,96%);
-background:#fff;
-color:#111;
-border-radius:20px;
-padding:20px;
-text-align:center;
-position:relative
-}
-
-.modalbox img{
-max-width:100%;
-max-height:70vh;
-object-fit:contain
-}
-
-.x{
-position:absolute;
-right:8px;
-top:3px;
-border:0;
-background:none;
-font-size:30px
-}
-
-/* ADMIN BUTTON */
-
-#gear{
-position:fixed;
-right:12px;
-top:12px;
-z-index:3000;
-width:42px;
-height:42px;
-border-radius:50%;
-border:1px solid var(--gold);
-background:#07100b;
-color:var(--gold);
-cursor:pointer
+.bottom b{
+display:block;
+font-size:22px;
+color:#ffd700;
+margin-bottom:2px
 }
 
 /* ADMIN */
@@ -398,185 +178,121 @@ cursor:pointer
 display:none;
 position:fixed;
 inset:0;
-z-index:100000;
-background:#020604f7;
-padding:15px;
+background:#000d;
+z-index:100;
+padding:20px;
 overflow:auto
 }
 
-.admin.open{
-display:block
+.login-box,
+.panel{
+max-width:700px;
+margin:40px auto;
+background:#101a13;
+border:1px solid #d4af37;
+border-radius:22px;
+padding:20px;
+box-shadow:0 20px 60px #000
 }
 
-.ap{
-width:min(850px,100%);
-margin:10px auto;
-background:#101a14;
-border:1px solid #ffd43b55;
-border-radius:20px;
-padding:20px
+.login-box{
+max-width:360px;
+margin-top:80px
 }
 
-.ahead{
-display:flex;
-justify-content:space-between;
-align-items:center
+.admin h2{
+color:#ffd700;
+margin-bottom:15px
 }
 
-.ap h2,
-.ap h3{
-color:var(--gold)
-}
-
-.ag{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-margin-top:10px
-}
-
-.f{
-display:flex;
-flex-direction:column;
-gap:5px
-}
-
-.f.full{
-grid-column:1/-1
-}
-
-.f label{
-font-size:12px;
-color:#bbb
-}
-
-.f input,
-.f textarea{
-background:#06100a;
-color:#fff;
-border:1px solid #4b5c50;
-border-radius:9px;
-padding:9px
-}
-
-.f input[type=color]{
-height:42px;
-padding:3px
-}
-
-.features{
-display:grid;
-gap:7px;
-margin-top:10px
-}
-
-.fe{
-display:grid;
-grid-template-columns:40px 1fr 1fr 1fr;
-gap:6px;
-align-items:center;
-background:#07100b;
-padding:7px;
-border-radius:9px
-}
-
-.fe input{
+input{
 width:100%;
-min-width:0;
-background:#142019;
-color:#fff;
-border:1px solid #425147;
-padding:8px;
-border-radius:7px
+padding:12px;
+margin:6px 0;
+border-radius:10px;
+border:1px solid #555;
+background:#07100a;
+color:#fff
 }
 
-.note{
-color:#bbb;
-font-size:12px;
-line-height:1.6;
-margin:10px 0
+button{
+cursor:pointer;
+border:0;
+border-radius:10px;
+padding:11px 15px;
+font-weight:bold;
+background:linear-gradient(145deg,#ffe56b,#d4af37);
+color:#111;
+margin:5px 2px
 }
 
-.actions{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
+.close-btn{
+background:#333;
+color:#fff
+}
+
+.hide{display:none}
+
+.admin-list{
+display:grid;
+gap:10px;
 margin-top:15px
 }
 
-.secondary{
-background:#26362d!important;
-color:#fff!important;
-border:1px solid #506257!important
+.edit{
+border:1px solid #444;
+border-radius:14px;
+padding:12px
 }
 
-/* MOBILE */
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+}
 
 @media(max-width:800px){
-
-.grid4{
-grid-template-columns:repeat(2,1fr)
+.grid{grid-template-columns:repeat(2,1fr)}
 }
 
-.video{
-grid-template-columns:1fr
+@media(max-width:430px){
+.grid{gap:9px}
+.card{min-height:150px}
+.icon{
+width:60px;
+height:60px;
+font-size:29px
 }
-
-}
-
-@media(max-width:600px){
-
-h1{
-font-size:23px
-}
-
-.logo{
-width:84px;
-height:84px
-}
-
-.links,
-.paygrid{
-grid-template-columns:1fr
-}
-
-.ag{
-grid-template-columns:1fr
-}
-
-.fe{
-grid-template-columns:38px 1fr 1fr
-}
-
-.fe input:nth-child(4){
-grid-column:2/-1
-}
-
+.card h3{font-size:13px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ADMIN BUTTON -->
-<button id="gear">⚙️</button>
-
 <header id="home">
 
-<img id="logo" class="logo" alt="Logo">
+<img id="logo"
+class="logo"
+src="logo.png"
+alt="Logo">
 
-<h1 id="title"></h1>
+<h1 id="siteName">
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
+</h1>
 
-<p id="sub" class="sub"></p>
+<div class="sub">
+প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম
+</div>
 
-<p id="meta" class="meta"></p>
-
-<nav class="top">
+<nav class="nav">
 <a href="#home">🏠 Home</a>
-<a href="#community">👥 Community</a>
-<a href="#services">🌐 Services</a>
-<a href="#payment">💳 Payment</a>
+<a href="#features">✨ Features</a>
 <a href="#contact">📱 Contact</a>
+
+<a href="#"
+onclick="openAdmin();return false">
+🔐 Admin
+</a>
 </nav>
 
 </header>
@@ -584,86 +300,45 @@ grid-column:2/-1
 
 <main class="wrap">
 
-<div class="hero">
-<h2 id="heroTitle"></h2>
-<p id="heroText"></p>
-</div>
+<section class="hero">
 
-
-<!-- 13 FEATURES -->
-
-<section id="community">
-<div id="cards" class="grid4"></div>
-</section>
-
-
-<!-- COMMUNITY -->
-
-<section>
-
-<h2 class="st">
-👥 আমাদের কমিউনিটি
+<h2>
+🌟 Future Digital Platform
 </h2>
 
-<div id="communityLinks" class="links"></div>
+<p>
+সকল প্রয়োজনীয় সেবা ও যোগাযোগ এক জায়গায়
+</p>
 
 </section>
 
 
-<!-- SERVICES -->
+<section id="features">
 
-<section id="services">
-
-<h2 class="st">
-🛠️ প্রবাসী সেবা
+<h2 class="title">
+✨ Feature Center
 </h2>
 
-<div id="serviceLinks" class="links"></div>
+<div id="grid" class="grid"></div>
 
 </section>
 
-
-<!-- PAYMENT -->
-
-<section id="payment">
-
-<h2 class="st">
-💳 Payment
-</h2>
-
-<div id="payments" class="paygrid"></div>
-
-</section>
-
-
-<!-- YOUTUBE -->
-
-<section id="youtube">
-
-<h2 class="st">
-▶️ YouTube Channel
-</h2>
-
-<div id="videos" class="video"></div>
-
-</section>
-
-
-<!-- CONTACT -->
 
 <section id="contact">
 
-<h2 class="st">
+<h2 class="title">
 📱 যোগাযোগ
 </h2>
 
 <div class="contact">
 
-<p id="contactText"></p>
+<h3>
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
+</h3>
 
-<br>
-
-<div id="contactLinks" class="links"></div>
+<p style="color:#aaa;margin-top:8px">
+আপনার প্রয়োজনীয় Feature-এ ক্লিক করে সরাসরি সেবায় যান।
+</p>
 
 </div>
 
@@ -673,278 +348,158 @@ grid-column:2/-1
 <footer>
 
 © 2026
+<strong style="color:#ffd700">
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
+</strong>
 
-<b id="foot"></b>
+<br><br>
 
-<br>
-
-<span id="tag"></span>
+ঐক্য • সেবা • উন্নয়ন
 
 </footer>
 
 </main>
 
 
-<!-- BOTTOM MENU -->
-
 <nav class="bottom">
 
 <a href="#home">
-
-<div class="bi">
-🏠
-</div>
-
+<b>⌂</b>
 Home
-
 </a>
 
-
-<a href="#community">
-
-<div class="bi">
-👥
-</div>
-
-Community
-
+<a href="#features">
+<b>✦</b>
+Features
 </a>
-
 
 <a href="#home">
 
-<img id="blogo" class="blogo">
-
-<br>
-
-<small>Logo</small>
-
-</a>
-
-
-<a href="#services">
-
-<div class="bi">
-🌐
-</div>
-
-Services
+<img
+src="logo.png"
+style="
+width:43px;
+height:43px;
+border-radius:50%;
+border:2px solid #d4af37;
+object-fit:cover
+">
 
 </a>
-
 
 <a href="#contact">
-
-<div class="bi">
-📱
-</div>
-
+<b>☎</b>
 Contact
+</a>
 
+<a href="#"
+onclick="openAdmin();return false">
+<b>⚙</b>
+Admin
 </a>
 
 </nav>
 
 
-<!-- QR POPUP -->
-
-<div id="modal" class="modal" onclick="closeQR()">
-
-<div class="modalbox" onclick="event.stopPropagation()">
-
-<button class="x" onclick="closeQR()">
-×
-</button>
-
-<h2 id="qrname"></h2>
-
-<img id="qr">
-
-</div>
-
-</div>
-
-
-<!-- ADMIN PANEL -->
+<!-- ADMIN -->
 
 <div id="admin" class="admin">
 
-<div class="ap">
 
-<div class="ahead">
+<div id="loginBox" class="login-box">
 
-<h2>
-⚙️ Admin Panel
+<h2 style="text-align:center">
+🔐 Admin Login
 </h2>
 
-<button class="secondary" onclick="closeAdmin()">
-✕ Close
+<input
+id="user"
+placeholder="Admin Username">
+
+<input
+id="pass"
+type="password"
+placeholder="Password">
+
+<button
+style="width:100%"
+onclick="login()">
+Login
 </button>
+
+<button
+class="close-btn"
+style="width:100%"
+onclick="closeAdmin()">
+Close
+</button>
+
+<p
+id="err"
+style="
+color:#ff7070;
+text-align:center;
+margin-top:8px
+">
+</p>
 
 </div>
 
 
-<p class="note">
+<div id="panel" class="panel hide">
 
-এখান থেকে Logo, TNG QR, bKash QR,
-সব লেখা, Feature, Link এবং Color পরিবর্তন করতে পারবেন।
+<h2>
+⚙ Admin Panel
+</h2>
 
-<b>Save Changes</b> করার পর
-<b>Download Updated HTML</b> চাপবেন।
-
-তারপর নতুন index.html GitHub-এ আপলোড করবেন।
-
+<p style="color:#aaa;margin-bottom:15px">
+এখান থেকে Feature, Icon, Link এবং Logo পরিবর্তন করুন।
 </p>
 
 
-<h3>
-🎨 Website Settings
-</h3>
+<label>Website Name</label>
+
+<input
+id="editSite"
+placeholder="Website Name">
 
 
-<div class="ag">
+<label>Logo File</label>
 
-<div class="f">
-<label>Website Title</label>
-<input id="aTitle">
-</div>
-
-<div class="f">
-<label>Subtitle</label>
-<input id="aSub">
-</div>
-
-<div class="f">
-<label>Location</label>
-<input id="aLoc">
-</div>
-
-<div class="f">
-<label>Established</label>
-<input id="aEst">
-</div>
-
-<div class="f">
-<label>Hero Title</label>
-<input id="aHero">
-</div>
-
-<div class="f full">
-<label>Hero Text</label>
-<textarea id="aHeroText"></textarea>
-</div>
+<input
+id="editLogo"
+placeholder="logo.png">
 
 
-<div class="f">
-<label>Background Color</label>
-<input id="cBg" type="color">
-</div>
-
-<div class="f">
-<label>Panel Color</label>
-<input id="cPanel" type="color">
-</div>
-
-<div class="f">
-<label>Gold Color</label>
-<input id="cGold" type="color">
-</div>
-
-<div class="f">
-<label>Green Color</label>
-<input id="cAccent" type="color">
-</div>
-
-</div>
-
-
-<h3 style="margin-top:18px">
-🖼️ Logo / QR
-</h3>
-
-
-<div class="ag">
-
-<div class="f">
-<label>Logo পরিবর্তন</label>
-<input id="logoFile" type="file" accept="image/*">
-</div>
-
-<div class="f">
-<label>TNG QR পরিবর্তন</label>
-<input id="tngFile" type="file" accept="image/*">
-</div>
-
-<div class="f">
-<label>bKash QR পরিবর্তন</label>
-<input id="bkFile" type="file" accept="image/*">
-</div>
-
-</div>
-
-
-<h3 style="margin-top:18px">
-🔗 13 Feature
-</h3>
-
-<div id="editors" class="features"></div>
-
-
-<h3 style="margin-top:18px">
-💳 Payment
-</h3>
-
-
-<div class="ag">
-
-<div class="f">
-<label>TNG Title</label>
-<input id="tTitle">
-</div>
-
-<div class="f">
-<label>bKash Title</label>
-<input id="bTitle">
-</div>
-
-<div class="f">
-<label>TNG Description</label>
-<input id="tDesc">
-</div>
-
-<div class="f">
-<label>bKash Description</label>
-<input id="bDesc">
-</div>
-
-</div>
-
-
-<div class="actions">
-
-<button onclick="save()">
-💾 Save Changes
+<button onclick="saveSite()">
+💾 Save Site
 </button>
 
-<button onclick="downloadUpdated()">
-⬇️ Download Updated HTML
+
+<button onclick="addFeature()">
+➕ Add Feature
 </button>
 
-<button class="secondary" onclick="resetAll()">
-↩️ Reset
+
+<button
+onclick="logout()"
+class="close-btn">
+Logout
 </button>
 
+
+<div
+id="adminList"
+class="admin-list">
 </div>
 
 
-<p class="note">
-
-⚠️ GitHub Pages-এ সরাসরি Admin Database থাকে না।
-তাই Admin Panel-এ পরিবর্তন করার পর
-<b>Download Updated HTML</b> চাপবেন।
-নতুন index.html GitHub-এ আপলোড করলেই পরিবর্তন Live হবে।
-
-</p>
+<button
+onclick="closeAdmin()"
+class="close-btn"
+style="width:100%">
+Close Panel
+</button>
 
 </div>
 
@@ -953,780 +508,362 @@ Contact
 
 <script>
 
-/* =========================
-   DEFAULT DATA
-========================= */
+const ADMIN_USER="MDRAFIK1987";
 
-window.DEFAULT={
+const ADMIN_PASS="MDRAFIK@1987";
 
-title:"বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন",
 
-sub:"প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম",
-
-loc:"কলারাপুর মালয়েশিয়া",
+const defaultFeatures=[
 
-est:"01.01.2026",
-
-hero:"আমাদের ডিজিটাল প্ল্যাটফর্ম",
-
-heroText:
-"প্রবাসী ভাই-বোনদের যোগাযোগ, তথ্য, সেবা ও সহযোগিতার জন্য একটি আধুনিক প্ল্যাটফর্ম।",
-
-contact:
-"যোগাযোগের জন্য নিচের WhatsApp ব্যবহার করুন।",
-
-tag:
-"ঐক্য • সেবা • উন্নয়ন",
-
-colors:{
-bg:"#06140d",
-panel:"#14231b",
-gold:"#ffd43b",
-accent:"#0b9b50"
-},
-
-logo:"logo.png",
-
-tngQR:"tng-qr.jpg",
-
-bkQR:"bkash-qr.jpg",
-
-tTitle:"TNG Digital",
-
-bTitle:"bKash",
-
-tDesc:"TNG Digital QR Payment",
-
-bDesc:"bKash Payment",
-
-features:[
-
-[
-"📘",
-"Facebook Page",
-"আমাদের Facebook Page",
-"https://www.facebook.com/share/1DPBjB3ePJ/"
-],
-
-[
-"▶️",
-"YouTube",
-"আমাদের ভিডিও দেখুন",
-"https://www.youtube.com/@Bangladeshprobashifundclubf"
-],
-
-[
-"🎵",
-"TikTok",
-"TikTok-এ যুক্ত হন",
-"#contact"
-],
-
-[
-"👥",
-"Facebook Group",
-"আমাদের Group",
-"#community"
-],
-
-[
-"💬",
-"WhatsApp Group",
-"WhatsApp Group-এ যুক্ত হন",
-"https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4"
-],
-
-[
-"📣",
-"WhatsApp Channel",
-"Channel Follow করুন",
-"#contact"
-],
-
-[
-"📱",
-"WhatsApp Contact",
-"WhatsApp-এ যোগাযোগ",
-"https://wa.me/qr/5SBSJ55KMO7CB1"
-],
-
-[
-"📅",
-"Appointment",
-"Appointment Book করুন",
-"https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment"
-],
-
-[
-"✓",
-"eVerify",
-"eVerify সেবা",
-"#services"
-],
-
-[
-"📰",
-"News & Notice",
-"নোটিশ ও সংবাদ",
-"#services"
-],
-
-[
-"❤️",
-"Donation",
-"সহযোগিতা করুন",
-"#payment"
-],
-
-[
-"📍",
-"Location",
-"আমাদের অবস্থান",
-"#contact"
-],
-
-[
-"🛠️",
-"Contact & Support",
-"সহায়তার জন্য যোগাযোগ",
-"https://wa.me/qr/5SBSJ55KMO7CB1"
-]
-
-],
-
-community:[
-
-[
-"📘",
-"Facebook Page",
-"আমাদের Facebook Page-এ যুক্ত হন",
-"https://www.facebook.com/share/1DPBjB3ePJ/"
-],
-
-[
-"💬",
-"WhatsApp Group",
-"WhatsApp Group-এ যুক্ত হন",
-"https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4"
-],
-
-[
-"📣",
-"WhatsApp Channel",
-"আমাদের Channel Follow করুন",
-"#contact"
-],
-
-[
-"▶️",
-"YouTube",
-"আমাদের ভিডিও দেখুন",
-"https://www.youtube.com/@Bangladeshprobashifundclubf"
-
-]
-
-],
-
-services:[
-
-[
-"📅",
-"ESKL Appointment",
-"Appointment Book করুন",
-"https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment"
-],
-
-[
-"🚗",
-"Driver Group",
-"ড্রাইভার গ্রুপ",
-"https://chat.whatsapp.com/HcEMStEP3un4uYDBBfH5b0?s=cl&p=a&ilr=4"
-],
-
-[
-"👷",
-"Worker Group",
-"ওয়ার্কার গ্রুপ",
-"https://chat.whatsapp.com/Jl7W0RXQjEI7Mhgj5riBhu?s=qt&p=a&ilr=0"
-],
-
-[
-"📲",
-"WhatsApp Contact",
-"WhatsApp-এ যোগাযোগ",
-"https://wa.me/qr/5SBSJ55KMO7CB1"
-],
-
-[
-"💚",
-"WhatsApp Message",
-"সরাসরি মেসেজ করুন",
-"https://wa.me/message/6ZU4EZJFBGAFM1"
-]
-
-],
-
-videos:[
-
-[
-"DXB7gdJUlMw",
-"আমাদের YouTube ভিডিও"
-],
-
-[
-"I2mc2RXCEIA",
-"প্রবাসীদের জন্য তথ্য"
-],
-
-[
-"KumLOhgtgsM",
-"আমাদের কার্যক্রম"
-]
-
-]
-
-};
-
-
-/* =========================
-   LOAD SAVED DATA
-========================= */
-
-let d=JSON.parse(JSON.stringify(window.DEFAULT));
-
-try{
-
-let s=localStorage.getItem("BPM_ADMIN");
-
-if(s){
-d=Object.assign(d,JSON.parse(s));
-}
-
-}catch(e){}
-
-
-/* =========================
-   HELPERS
-========================= */
-
-const $=id=>document.getElementById(id);
-
-const esc=s=>String(s??"").replace(
-/[&<>"']/g,
-m=>({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[m])
-);
-
-
-/* =========================
-   RENDER WEBSITE
-========================= */
+["👥","Community","Facebook Page","#"],
+
+["🌐","Services","প্রবাসী সেবা","#"],
+
+["▶️","YouTube","ভিডিও দেখুন","#"],
+
+["📱","Contact","যোগাযোগ","#"],
+
+["💬","WhatsApp Group","গ্রুপে যুক্ত হন","#"],
+
+["📢","WhatsApp Channel","চ্যানেলে যুক্ত হন","#"],
+
+["🎵","TikTok","TikTok","#"],
+
+["📘","Facebook Group","Facebook Group","#"],
+
+["📅","Appointment","Appointment","#"],
+
+["🚗","Driver Group","Driver Group","#"],
+
+["👷","Worker Group","Worker Group","#"],
+
+["💚","WhatsApp Message","Message","#"],
+
+["💳","bKash","bKash Payment","#"],
+
+["🟢","TNG Digital","TNG Digital","#"],
+
+["⭐","New Feature","নিজের নাম দিন","#"],
+
+["🔗","New Link","নিজের লিংক দিন","#"],
+
+["📄","Information","তথ্য","#"],
+
+["🛠️","Support","সহায়তা","#"],
+
+["📢","Notice","নোটিশ","#"],
+
+["🌐","Website","Website","#"],
+
+["✨","Future","Future Feature","#"]
+
+];
+
+
+let features=
+JSON.parse(
+localStorage.getItem("bpmFeatures")
+||
+"null"
+)
+||
+defaultFeatures;
+
 
 function render(){
 
-document.documentElement.style.setProperty(
-"--bg",
-d.colors.bg
-);
+const grid=
+document.getElementById("grid");
 
-document.documentElement.style.setProperty(
-"--panel",
-d.colors.panel
-);
+grid.innerHTML="";
 
-document.documentElement.style.setProperty(
-"--gold",
-d.colors.gold
-);
+features.forEach(
+(f,i)=>{
 
-document.documentElement.style.setProperty(
-"--accent",
-d.colors.accent
-);
+const a=
+document.createElement("a");
 
+a.className="card";
 
-$("logo").src=d.logo;
+a.href=f[3]||"#";
 
-$("blogo").src=d.logo;
+a.target="_blank";
 
-$("title").textContent=d.title;
-
-$("foot").textContent=d.title;
-
-$("sub").textContent=d.sub;
-
-$("meta").textContent=
-"✦ "+d.loc+"   ▣ "+d.est;
-
-$("heroTitle").textContent=d.hero;
-
-$("heroText").textContent=d.heroText;
-
-$("contactText").textContent=d.contact;
-
-$("tag").textContent=d.tag;
-
-
-/* FIRST 4 FEATURES */
-
-$("cards").innerHTML=d.features
-.slice(0,4)
-.map(f=>`
-
-<a class="card"
-href="${esc(f[3])}"
-${f[3].startsWith("http")?"target=_blank":""}>
+a.innerHTML=`
 
 <div class="icon">
-${esc(f[0])}
+${f[0]}
+</div>
+
+<div class="num">
+${i+1}
 </div>
 
 <h3>
-${esc(f[1])}
+${f[1]}
 </h3>
 
 <p>
-${esc(f[2])}
+${f[2]}
 </p>
-
-</a>
-
-`)
-.join("");
-
-
-/* OTHER LINK BOXES */
-
-const box=f=>`
-
-<a class="box"
-href="${esc(f[3])}"
-${f[3].startsWith("http")?"target=_blank":""}>
-
-<div class="smicon">
-${esc(f[0])}
-</div>
-
-<div>
-
-<h3>
-${esc(f[1])}
-</h3>
-
-<p>
-${esc(f[2])}
-</p>
-
-</div>
-
-</a>
 
 `;
 
-
-$("communityLinks").innerHTML=
-d.community.map(box).join("");
-
-$("serviceLinks").innerHTML=
-d.services.map(box).join("");
-
-
-/* PAYMENT */
-
-$("payments").innerHTML=`
-
-<div class="pay">
-
-<div class="pi">
-📱
-</div>
-
-<h3>
-${esc(d.tTitle)}
-</h3>
-
-<p>
-${esc(d.tDesc)}
-</p>
-
-<button
-class="btn"
-onclick="qrOpen('t')">
-
-Show TNG QR
-
-</button>
-
-</div>
-
-
-<div class="pay">
-
-<div class="pi">
-💗
-</div>
-
-<h3>
-${esc(d.bTitle)}
-</h3>
-
-<p>
-${esc(d.bDesc)}
-</p>
-
-<button
-class="btn"
-onclick="qrOpen('b')">
-
-Show bKash QR
-
-</button>
-
-</div>
-
-`;
-
-
-/* YOUTUBE */
-
-$("videos").innerHTML=
-d.videos.map(v=>`
-
-<div class="vid">
-
-<iframe
-src="https://www.youtube.com/embed/${esc(v[0])}"
-title="${esc(v[1])}"
-allowfullscreen>
-</iframe>
-
-<div>
-${esc(v[1])}
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* =========================
-   QR
-========================= */
-
-function qrOpen(x){
-
-$("qrname").textContent=
-x==="t"?d.tTitle:d.bTitle;
-
-$("qr").src=
-x==="t"?d.tngQR:d.bkQR;
-
-$("modal").classList.add("show");
-
-}
-
-function closeQR(){
-
-$("modal").classList.remove("show");
-
-}
-
-
-/* =========================
-   ADMIN FORM
-========================= */
-
-function fill(){
-
-aTitle.value=d.title;
-aSub.value=d.sub;
-aLoc.value=d.loc;
-aEst.value=d.est;
-aHero.value=d.hero;
-aHeroText.value=d.heroText;
-
-cBg.value=d.colors.bg;
-cPanel.value=d.colors.panel;
-cGold.value=d.colors.gold;
-cAccent.value=d.colors.accent;
-
-tTitle.value=d.tTitle;
-bTitle.value=d.bTitle;
-tDesc.value=d.tDesc;
-bDesc.value=d.bDesc;
-
-
-/* 13 FEATURES */
-
-$("editors").innerHTML=
-d.features.map((f,i)=>`
-
-<div class="fe">
-
-<b>
-${esc(f[0])}
-</b>
-
-<input
-id="f${i}t"
-value="${esc(f[1])}"
-placeholder="Title">
-
-<input
-id="f${i}d"
-value="${esc(f[2])}"
-placeholder="Description">
-
-<input
-id="f${i}u"
-value="${esc(f[3])}"
-placeholder="Link">
-
-</div>
-
-`).join("");
-
-}
-
-
-/* =========================
-   READ ADMIN
-========================= */
-
-function read(){
-
-d.title=aTitle.value;
-
-d.sub=aSub.value;
-
-d.loc=aLoc.value;
-
-d.est=aEst.value;
-
-d.hero=aHero.value;
-
-d.heroText=aHeroText.value;
-
-d.colors={
-bg:cBg.value,
-panel:cPanel.value,
-gold:cGold.value,
-accent:cAccent.value
-};
-
-d.tTitle=tTitle.value;
-
-d.bTitle=bTitle.value;
-
-d.tDesc=tDesc.value;
-
-d.bDesc=bDesc.value;
-
-
-d.features.forEach((f,i)=>{
-
-f[1]=$("f"+i+"t").value;
-
-f[2]=$("f"+i+"d").value;
-
-f[3]=$("f"+i+"u").value;
+grid.appendChild(a);
 
 });
 
 }
 
 
-/* =========================
-   SAVE
-========================= */
+function openAdmin(){
 
-function save(){
+document.getElementById("admin")
+.style.display="block";
 
-read();
+document.getElementById("loginBox")
+.classList.remove("hide");
 
-localStorage.setItem(
-"BPM_ADMIN",
-JSON.stringify(d)
-);
-
-render();
-
-alert("✅ Save হয়েছে!");
+document.getElementById("panel")
+.classList.add("hide");
 
 }
-
-
-/* =========================
-   IMAGE UPLOAD
-========================= */
-
-function img(input,key){
-
-let f=input.files[0];
-
-if(!f)return;
-
-let r=new FileReader();
-
-r.onload=()=>{
-
-d[key]=r.result;
-
-save();
-
-fill();
-
-};
-
-r.readAsDataURL(f);
-
-}
-
-
-logoFile.onchange=
-()=>img(logoFile,"logo");
-
-tngFile.onchange=
-()=>img(tngFile,"tngQR");
-
-bkFile.onchange=
-()=>img(bkFile,"bkQR");
-
-
-/* =========================
-   OPEN ADMIN
-========================= */
-
-$("gear").onclick=()=>{
-
-fill();
-
-$("admin").classList.add("open");
-
-};
 
 
 function closeAdmin(){
 
-$("admin").classList.remove("open");
+document.getElementById("admin")
+.style.display="none";
 
 }
 
 
-/* =========================
-   RESET
-========================= */
+function login(){
 
-function resetAll(){
+const u=
+document.getElementById("user").value;
+
+const p=
+document.getElementById("pass").value;
 
 if(
-confirm(
-"সব Admin পরিবর্তন মুছে ফেলবেন?"
-)
+u===ADMIN_USER &&
+p===ADMIN_PASS
 ){
 
-localStorage.removeItem("BPM_ADMIN");
+document.getElementById("loginBox")
+.classList.add("hide");
 
-d=JSON.parse(
-JSON.stringify(window.DEFAULT)
+document.getElementById("panel")
+.classList.remove("hide");
+
+document.getElementById("editSite")
+.value=
+localStorage.getItem("bpmName")
+||
+document.getElementById("siteName")
+.textContent;
+
+document.getElementById("editLogo")
+.value=
+localStorage.getItem("bpmLogo")
+||
+"logo.png";
+
+renderAdmin();
+
+}else{
+
+document.getElementById("err")
+.textContent=
+"Username অথবা Password ভুল!";
+
+}
+
+}
+
+
+function saveSite(){
+
+const name=
+document.getElementById("editSite")
+.value.trim()
+||
+"বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন";
+
+const logo=
+document.getElementById("editLogo")
+.value.trim()
+||
+"logo.png";
+
+localStorage.setItem(
+"bpmName",
+name
+);
+
+localStorage.setItem(
+"bpmLogo",
+logo
+);
+
+document.getElementById("siteName")
+.textContent=name;
+
+document.querySelectorAll(".logo")
+.forEach(
+x=>x.src=logo
+);
+
+alert("Site settings saved!");
+
+}
+
+
+function addFeature(){
+
+features.push(
+[
+"⭐",
+"New Feature",
+"নিজের নাম দিন",
+"#"
+]
+);
+
+save();
+
+renderAdmin();
+
+}
+
+
+function save(){
+
+localStorage.setItem(
+"bpmFeatures",
+JSON.stringify(features)
 );
 
 render();
 
-fill();
-
-}
-
 }
 
 
-/* =========================
-   DOWNLOAD UPDATED HTML
-========================= */
+function renderAdmin(){
 
-function downloadUpdated(){
+const list=
+document.getElementById("adminList");
 
-read();
+list.innerHTML="";
 
-localStorage.setItem(
-"BPM_ADMIN",
-JSON.stringify(d)
-);
+features.forEach(
+(f,i)=>{
 
-let doc=
-document.documentElement.cloneNode(true);
+const box=
+document.createElement("div");
 
-let scripts=
-[...doc.querySelectorAll("script")];
+box.className="edit";
 
-let s=
-scripts.find(
-x=>x.textContent.includes(
-"window.DEFAULT="
-)
-);
+box.innerHTML=`
 
-if(s){
+<b style="color:#ffd700">
+Feature ${i+1}
+</b>
 
-let js=
-JSON.stringify(d)
-.replace(/</g,"\\u003c");
+<input
+value="${escapeHtml(f[0])}"
+placeholder="Icon"
+onchange="
+features[${i}][0]=this.value;
+save()
+">
 
-s.textContent=
-s.textContent.replace(
-/window\.DEFAULT=\{[\s\S]*?\};/,
-"window.DEFAULT="+js+";"
-);
+<input
+value="${escapeHtml(f[1])}"
+placeholder="Feature Name"
+onchange="
+features[${i}][1]=this.value;
+save()
+">
 
-}
+<input
+value="${escapeHtml(f[2])}"
+placeholder="Description"
+onchange="
+features[${i}][2]=this.value;
+save()
+">
 
+<input
+value="${escapeHtml(f[3])}"
+placeholder="Link"
+onchange="
+features[${i}][3]=this.value;
+save()
+">
 
-let blob=
-new Blob(
-[
-"<!doctype html>\n",
-doc.outerHTML
-],
-{
-type:
-"text/html;charset=utf-8"
-}
-);
+<button
+onclick="
+features.splice(${i},1);
+save();
+renderAdmin()
+">
+🗑 Delete
+</button>
 
+`;
 
-let a=
-document.createElement("a");
+list.appendChild(box);
 
-a.href=
-URL.createObjectURL(blob);
-
-a.download=
-"index.html";
-
-a.click();
-
-setTimeout(
-()=>{
-URL.revokeObjectURL(a.href)
-},
-1000
-);
-
-alert(
-"✅ Updated index.html তৈরি হয়েছে।\n\nGitHub-এ পুরোনো index.html-এর জায়গায় নতুনটি দিন।"
-);
+});
 
 }
 
 
-/* START */
+function escapeHtml(value){
+
+return String(value)
+.replace(/"/g,"&quot;");
+
+}
+
+
+function logout(){
+
+document.getElementById("panel")
+.classList.add("hide");
+
+document.getElementById("loginBox")
+.classList.remove("hide");
+
+document.getElementById("user")
+.value="";
+
+document.getElementById("pass")
+.value="";
+
+}
+
+
+document.getElementById("siteName")
+.textContent=
+localStorage.getItem("bpmName")
+||
+"বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন";
+
+
+const savedLogo=
+localStorage.getItem("bpmLogo")
+||
+"logo.png";
+
+
+document.querySelectorAll(".logo")
+.forEach(
+x=>x.src=savedLogo
+);
+
 
 render();
 

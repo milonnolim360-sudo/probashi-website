@@ -2,783 +2,815 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন">
+
 <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
 
 <style>
+:root{
+ --bg:#040914;
+ --bg2:#071525;
+ --card:#0b1726;
+ --card2:#102238;
+ --gold:#ffd700;
+ --gold2:#d4af37;
+ --text:#ffffff;
+ --muted:#aeb9c9;
+ --green:#08a878;
+ --border:rgba(255,215,0,.25);
+}
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+ scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,"Noto Sans Bengali","Noto Sans Bangla",sans-serif;
-    background:
-        radial-gradient(circle at 50% -10%,#193d5d,transparent 35%),
-        radial-gradient(circle at 0% 50%,#063d34,transparent 30%),
-        #040914;
-    color:#fff;
-    min-height:100vh;
-    padding-bottom:95px;
+ font-family:Arial,"Noto Sans Bengali","Noto Sans Bangla",sans-serif;
+ background:
+ radial-gradient(circle at 50% -10%,#193d5d,transparent 35%),
+ radial-gradient(circle at 0% 50%,#063d34,transparent 30%),
+ var(--bg);
+ color:var(--text);
+ min-height:100vh;
+ padding-bottom:90px;
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
+ text-decoration:none;
+ color:inherit;
 }
 
-button,
-input,
-select{
-    font-family:inherit;
+button,input{
+ font-family:inherit;
 }
 
 .container{
-    width:min(1120px,94%);
-    margin:auto;
+ width:min(1120px,94%);
+ margin:auto;
 }
 
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 
 .header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    text-align:center;
-    padding:18px 12px;
-    background:rgba(4,9,20,.94);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(212,175,55,.4);
+ position:sticky;
+ top:0;
+ z-index:1000;
+ text-align:center;
+ padding:18px 12px;
+ background:rgba(4,9,20,.94);
+ backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--border);
 }
 
 .logo{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #d4af37;
-    background:#fff;
-    box-shadow:
-        0 0 0 3px #087f65,
-        0 0 30px rgba(212,175,55,.5);
+ width:90px;
+ height:90px;
+ border-radius:50%;
+ object-fit:cover;
+ border:3px solid var(--gold2);
+ box-shadow:
+ 0 0 0 3px var(--green),
+ 0 0 30px rgba(212,175,55,.5);
+ background:white;
 }
 
 .title{
-    margin-top:10px;
-    font-size:clamp(22px,5vw,32px);
-    font-weight:900;
-    color:#ffd700;
-    text-shadow:0 0 18px rgba(255,215,0,.25);
+ margin-top:10px;
+ font-size:clamp(22px,5vw,32px);
+ font-weight:900;
+ color:var(--gold);
+ text-shadow:0 0 18px rgba(255,215,0,.25);
 }
 
 .subtitle{
-    margin-top:6px;
-    font-size:13px;
-    color:#aeb9c9;
+ margin-top:6px;
+ font-size:13px;
+ color:var(--muted);
 }
 
 .nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:7px;
-    margin-top:15px;
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:7px;
+ margin-top:15px;
 }
 
 .nav a{
-    padding:9px 13px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.12);
-    color:#dbe4ef;
-    transition:.25s;
+ padding:9px 13px;
+ border-radius:20px;
+ font-size:11px;
+ font-weight:bold;
+ background:rgba(255,255,255,.06);
+ border:1px solid rgba(255,255,255,.12);
+ color:#dbe4ef;
+ transition:.25s;
 }
 
 .nav a:hover{
-    border-color:#ffd700;
-    color:#ffd700;
-    transform:translateY(-2px);
+ border-color:var(--gold);
+ color:var(--gold);
+ transform:translateY(-2px);
 }
 
-/* =========================
-HERO
-========================= */
+/* HERO */
 
 .hero{
-    text-align:center;
-    padding:40px 10px 25px;
+ text-align:center;
+ padding:40px 10px 25px;
 }
 
 .hero h2{
-    font-size:28px;
-    color:#ffd700;
+ font-size:28px;
+ color:var(--gold);
 }
 
 .hero p{
-    margin-top:10px;
-    color:#aeb9c9;
-    font-size:14px;
-    line-height:1.7;
+ margin-top:10px;
+ color:var(--muted);
+ font-size:14px;
+ line-height:1.7;
 }
 
-/* =========================
-SECTION
-========================= */
+/* SECTION */
 
 .section-title{
-    text-align:center;
-    font-size:24px;
-    color:#ffd700;
-    margin:28px 0 20px;
+ text-align:center;
+ font-size:24px;
+ color:var(--gold);
+ margin:32px 0 20px;
 }
 
-/* =========================
-FEATURES
-========================= */
+/* FEATURES */
 
 .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:16px;
 }
 
 .feature-card{
-    min-height:185px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:18px 10px;
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(28,45,63,.92),
-            rgba(6,13,24,.97)
-        );
-
-    border:1px solid rgba(255,255,255,.1);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.5),
-        inset 0 1px rgba(255,255,255,.1);
-
-    transition:.3s;
+ min-height:185px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:18px 10px;
+ border-radius:24px;
+ background:
+ linear-gradient(145deg,
+ rgba(28,45,63,.92),
+ rgba(6,13,24,.97));
+ border:1px solid rgba(255,255,255,.1);
+ box-shadow:
+ 0 15px 35px rgba(0,0,0,.5),
+ inset 0 1px rgba(255,255,255,.1);
+ transition:.3s;
 }
 
 .feature-card:hover{
-    transform:translateY(-7px) scale(1.02);
-    border-color:#d4af37;
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.65),
-        0 0 25px rgba(212,175,55,.15);
+ transform:translateY(-7px) scale(1.02);
+ border-color:var(--gold);
+ box-shadow:
+ 0 20px 45px rgba(0,0,0,.65),
+ 0 0 25px rgba(212,175,55,.15);
 }
 
 .feature-icon{
-    width:76px;
-    height:76px;
-    border-radius:50%;
+ width:76px;
+ height:76px;
+ border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:34px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+ background:
+ radial-gradient(circle at 30% 25%,
+ #ffffff,
+ #72e7ce 12%,
+ #159b7f 40%,
+ #075545 70%,
+ #031c18);
 
-    font-size:34px;
+ border:2px solid rgba(255,255,255,.35);
 
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #72e7ce 12%,
-            #159b7f 40%,
-            #075545 70%,
-            #031c18
-        );
-
-    border:2px solid rgba(255,255,255,.35);
-
-    box-shadow:
-        7px 9px 18px rgba(0,0,0,.55),
-        inset 4px 4px 9px rgba(255,255,255,.5),
-        inset -6px -6px 10px rgba(0,0,0,.55);
+ box-shadow:
+ 7px 9px 18px rgba(0,0,0,.55),
+ inset 4px 4px 9px rgba(255,255,255,.5),
+ inset -6px -6px 10px rgba(0,0,0,.55);
 }
 
 .feature-card:nth-child(3n) .feature-icon{
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #fff,
-            #ffe875 12%,
-            #d4af37 45%,
-            #765700 75%,
-            #261d00
-        );
+ background:
+ radial-gradient(circle at 30% 25%,
+ #fff,
+ #ffe875 12%,
+ #d4af37 45%,
+ #765700 75%,
+ #261d00);
 }
 
 .feature-card:nth-child(4n) .feature-icon{
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #fff,
-            #9ab5ff 12%,
-            #4163c5 45%,
-            #101d50 75%,
-            #050a20
-        );
+ background:
+ radial-gradient(circle at 30% 25%,
+ #fff,
+ #9ab5ff 12%,
+ #4163c5 45%,
+ #101d50 75%,
+ #050a20);
 }
 
 .feature-card h3{
-    margin-top:14px;
-    font-size:16px;
-    color:#f6df77;
+ margin-top:14px;
+ font-size:16px;
+ color:#f6df77;
 }
 
 .feature-card p{
-    margin-top:5px;
-    font-size:11px;
-    color:#aab6c6;
+ margin-top:5px;
+ font-size:11px;
+ color:var(--muted);
 }
 
-/* =========================
-VIDEO
-========================= */
+/* VIDEO */
 
 .youtube{
-    margin-top:45px;
+ margin-top:42px;
 }
 
 .channel-box{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:17px;
-    border-radius:20px;
-    margin-bottom:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #14283b,
-            #07101c
-        );
-
-    border:1px solid rgba(255,215,0,.3);
+ display:flex;
+ align-items:center;
+ gap:14px;
+ padding:17px;
+ border-radius:20px;
+ margin-bottom:18px;
+ background:linear-gradient(145deg,#14283b,#07101c);
+ border:1px solid var(--border);
 }
 
 .youtube-icon{
-    width:58px;
-    height:58px;
-    min-width:58px;
-    border-radius:17px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ff7777,
-            #d90000,
-            #650000
-        );
-
-    box-shadow:
-        inset 3px 3px 6px rgba(255,255,255,.3),
-        inset -5px -5px 8px rgba(0,0,0,.5),
-        0 8px 15px rgba(0,0,0,.5);
+ width:58px;
+ height:58px;
+ min-width:58px;
+ border-radius:17px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:28px;
+ background:linear-gradient(145deg,#ff7777,#d90000,#650000);
+ box-shadow:
+ inset 3px 3px 6px rgba(255,255,255,.3),
+ inset -5px -5px 8px rgba(0,0,0,.5),
+ 0 8px 15px rgba(0,0,0,.5);
 }
 
 .channel-box h3{
-    color:#ffd700;
-    font-size:16px;
+ color:var(--gold);
+ font-size:16px;
 }
 
 .channel-box p{
-    margin-top:4px;
-    font-size:11px;
-    color:#9eabbc;
+ margin-top:4px;
+ font-size:11px;
+ color:#9eabbc;
 }
 
-/* VIDEO GRID */
-
 .video-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:17px;
 }
 
 .video-card{
-    width:100%;
-    overflow:hidden;
-    border-radius:20px;
-    background:#07101a;
-    border:2px solid rgba(255,215,0,.35);
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.65);
+ overflow:hidden;
+ border-radius:20px;
+ background:#07101a;
+ border:1px solid var(--border);
+ box-shadow:0 12px 30px rgba(0,0,0,.65);
 }
 
 .video-card iframe{
-    width:100%;
-    height:auto;
-    min-height:230px;
-    aspect-ratio:16/9;
-    display:block;
-    border:0;
-    background:#000;
-}
-
-.video-card.short{
-    max-width:330px;
-    margin-left:auto;
-    margin-right:auto;
+ width:100%;
+ aspect-ratio:16/9;
+ display:block;
+ border:0;
 }
 
 .video-card.short iframe{
-    aspect-ratio:9/16;
-    min-height:500px;
+ aspect-ratio:9/16;
 }
 
 .video-title{
-    padding:13px;
-    text-align:center;
-    font-size:14px;
-    font-weight:bold;
-    color:#ffd700;
+ padding:13px;
+ font-size:13px;
+ color:var(--gold);
 }
 
-/* =========================
-PAYMENT
-========================= */
+/* PAYMENT */
 
 .payment{
-    margin-top:45px;
+ margin-top:42px;
 }
 
 .payment-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:17px;
 }
 
 .payment-card{
-    padding:25px;
-    text-align:center;
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #142a27,
-            #071019
-        );
-
-    border:1px solid rgba(212,175,55,.35);
-
-    box-shadow:
-        0 14px 30px rgba(0,0,0,.5);
-
-    transition:.3s;
-}
-
-.payment-card:hover{
-    transform:translateY(-5px);
-    border-color:#ffd700;
+ padding:23px;
+ text-align:center;
+ border-radius:22px;
+ background:linear-gradient(145deg,#142a27,#071019);
+ border:1px solid var(--border);
+ box-shadow:0 14px 30px rgba(0,0,0,.5);
 }
 
 .payment-icon{
-    width:72px;
-    height:72px;
-    margin:auto auto 12px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:22px;
-    font-size:42px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #e8e8e8
-        );
-
-    box-shadow:
-        5px 7px 15px rgba(0,0,0,.5),
-        inset 3px 3px 7px rgba(255,255,255,.8),
-        inset -4px -4px 8px rgba(0,0,0,.2);
+ width:70px;
+ height:70px;
+ margin:0 auto 12px;
+ border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:36px;
+ background:linear-gradient(145deg,#172d3d,#07101c);
+ box-shadow:
+ inset 3px 3px 7px rgba(255,255,255,.2),
+ inset -5px -5px 9px rgba(0,0,0,.5),
+ 0 8px 18px rgba(0,0,0,.4);
 }
 
 .payment-card h3{
-    color:#ffd700;
-    font-size:18px;
+ color:var(--gold);
 }
 
 .payment-card p{
-    margin-top:6px;
-    color:#9eabbc;
-    font-size:12px;
+ margin-top:7px;
+ color:#9eabbc;
+ font-size:13px;
 }
 
-/* =========================
-CONTACT
-========================= */
+.payment-btn{
+ margin-top:13px;
+ padding:11px 20px;
+ border:0;
+ border-radius:22px;
+ background:linear-gradient(145deg,#ffe875,#d4af37,#765700);
+ color:#111;
+ font-weight:900;
+ cursor:pointer;
+}
+
+.bkash-number{
+ font-size:20px !important;
+ color:#fff !important;
+ font-weight:900;
+ letter-spacing:1px;
+}
+
+/* QR POPUP */
+
+.popup{
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:99998;
+ background:rgba(0,0,0,.85);
+ backdrop-filter:blur(8px);
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+}
+
+.popup-box{
+ width:min(430px,95%);
+ background:#fff;
+ color:#111;
+ border-radius:24px;
+ padding:20px;
+ text-align:center;
+ position:relative;
+ box-shadow:0 20px 60px #000;
+}
+
+.popup-box h2{
+ margin:8px 0 18px;
+}
+
+.qr-image{
+ width:100%;
+ max-width:350px;
+ max-height:70vh;
+ object-fit:contain;
+ display:block;
+ margin:auto;
+ border-radius:15px;
+}
+
+.close-btn{
+ position:absolute;
+ right:10px;
+ top:5px;
+ width:38px;
+ height:38px;
+ border:0;
+ background:none;
+ font-size:30px;
+ cursor:pointer;
+}
+
+/* CONTACT */
 
 .contact{
-    margin-top:45px;
-    padding:30px 18px;
-    text-align:center;
-
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #103c35,
-            #07111d
-        );
-
-    border:1px solid rgba(20,210,170,.25);
+ margin-top:40px;
+ padding:28px 18px;
+ text-align:center;
+ border-radius:24px;
+ background:linear-gradient(145deg,#103c35,#07111d);
+ border:1px solid rgba(20,210,170,.25);
 }
 
 .contact p{
-    color:#b5c0ce;
-    line-height:1.8;
+ color:#b5c0ce;
+ line-height:1.8;
 }
 
-/* =========================
-FOOTER
-========================= */
+.contact-btn{
+ display:inline-block;
+ margin-top:18px;
+ padding:12px 22px;
+ border-radius:25px;
+ background:linear-gradient(145deg,#ffe875,#d4af37,#765700);
+ color:#111;
+ font-weight:900;
+}
+
+/* FOOTER */
 
 footer{
-    margin-top:35px;
-    padding:28px 10px;
-    text-align:center;
-
-    border-top:1px solid rgba(212,175,55,.18);
-
-    color:#778294;
-    font-size:12px;
+ margin-top:35px;
+ padding:28px 10px;
+ text-align:center;
+ border-top:1px solid rgba(212,175,55,.18);
+ color:#778294;
+ font-size:12px;
 }
 
 footer strong{
-    color:#ffd700;
+ color:var(--gold);
 }
 
-/* =========================
-BOTTOM MENU
-========================= */
+/* BOTTOM */
 
 .bottom{
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:76px;
-    z-index:5000;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-
-    background:rgba(3,8,15,.97);
-    backdrop-filter:blur(18px);
-
-    border-top:1px solid #d4af37;
-
-    box-shadow:
-        0 -10px 30px rgba(0,0,0,.6);
+ position:fixed;
+ left:0;
+ right:0;
+ bottom:0;
+ height:76px;
+ z-index:5000;
+ display:flex;
+ align-items:center;
+ justify-content:space-around;
+ background:rgba(3,8,15,.97);
+ backdrop-filter:blur(18px);
+ border-top:1px solid var(--gold2);
+ box-shadow:0 -10px 30px rgba(0,0,0,.6);
 }
 
 .bottom-item{
-    flex:1;
-    max-width:90px;
-    text-align:center;
-
-    font-size:9px;
-    font-weight:bold;
-
-    color:#8490a0;
+ flex:1;
+ max-width:90px;
+ text-align:center;
+ font-size:9px;
+ font-weight:bold;
+ color:#8490a0;
 }
 
 .bottom-icon{
-    width:38px;
-    height:38px;
-    margin:auto auto 4px;
-
-    border-radius:13px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:19px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1c2c3d,
-            #050a12
-        );
+ width:38px;
+ height:38px;
+ margin:auto auto 4px;
+ border-radius:13px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:19px;
+ background:linear-gradient(145deg,#1c2c3d,#050a12);
 }
 
 .bottom-item:hover{
-    color:#ffd700;
+ color:var(--gold);
 }
 
 .bottom-logo{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    object-fit:cover;
-
-    border:3px solid #d4af37;
-
-    box-shadow:
-        0 0 0 3px #087f65,
-        0 0 20px rgba(212,175,55,.4);
+ width:48px;
+ height:48px;
+ border-radius:50%;
+ object-fit:cover;
+ border:3px solid var(--gold2);
+ box-shadow:
+ 0 0 0 3px var(--green),
+ 0 0 20px rgba(212,175,55,.4);
 }
 
-/* =========================
-ADMIN OVERLAY
-========================= */
+/* ADMIN BUTTON */
+
+.admin-open{
+ position:fixed;
+ right:14px;
+ bottom:88px;
+ z-index:6000;
+ width:50px;
+ height:50px;
+ border-radius:50%;
+ border:1px solid var(--gold);
+ background:linear-gradient(145deg,#ffe875,#d4af37,#765700);
+ color:#111;
+ font-size:22px;
+ cursor:pointer;
+ box-shadow:0 7px 20px rgba(0,0,0,.5);
+}
+
+/* ADMIN OVERLAY */
 
 .admin-overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-
-    z-index:99999;
-
-    overflow:auto;
-    padding:20px;
-
-    background:rgba(0,0,0,.9);
-
-    backdrop-filter:blur(8px);
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:99999;
+ overflow:auto;
+ padding:20px;
+ background:rgba(0,0,0,.90);
+ backdrop-filter:blur(8px);
 }
 
 .admin-box{
-    width:min(780px,100%);
-    margin:30px auto;
-
-    padding:22px;
-
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #122131,
-            #050b14
-        );
-
-    border:1px solid #d4af37;
-
-    box-shadow:
-        0 25px 70px #000;
+ width:min(850px,100%);
+ margin:20px auto;
+ padding:22px;
+ border-radius:24px;
+ background:
+ linear-gradient(145deg,#102238,#050b14);
+ border:1px solid var(--gold2);
+ box-shadow:0 20px 60px #000;
 }
 
-.admin-login{
-    max-width:400px;
-    margin:70px auto;
+.admin-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ margin-bottom:20px;
 }
 
-.admin-title{
-    text-align:center;
-    color:#ffd700;
-    margin-bottom:20px;
+.admin-head h2{
+ color:var(--gold);
+}
+
+.admin-close{
+ width:42px;
+ height:42px;
+ border:0;
+ border-radius:50%;
+ background:#1c2a39;
+ color:#fff;
+ font-size:25px;
+ cursor:pointer;
 }
 
 .admin-section{
-    margin-top:25px;
-    padding-top:18px;
-
-    border-top:1px solid rgba(255,215,0,.2);
+ margin-top:18px;
+ padding:18px;
+ border-radius:18px;
+ background:rgba(255,255,255,.04);
+ border:1px solid rgba(255,255,255,.08);
 }
 
 .admin-section h3{
-    color:#ffd700;
-    margin-bottom:10px;
+ color:var(--gold);
+ margin-bottom:14px;
 }
 
-.input{
-    width:100%;
-    padding:13px;
-
-    margin:6px 0;
-
-    border-radius:12px;
-
-    border:1px solid #35475b;
-
-    background:#050b14;
-    color:#fff;
-
-    outline:none;
+.admin-label{
+ display:block;
+ color:#cdd6e1;
+ font-size:12px;
+ margin:12px 0 6px;
 }
 
-.input:focus{
-    border-color:#ffd700;
+.admin-input,
+.admin-file{
+ width:100%;
+ padding:12px;
+ border-radius:12px;
+ border:1px solid rgba(255,255,255,.15);
+ background:#07111f;
+ color:#fff;
+ outline:none;
 }
 
-.btn{
-    border:0;
-
-    padding:11px 16px;
-
-    margin:5px 3px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff09a,
-            #d4af37
-        );
-
-    color:#111;
+.admin-input:focus{
+ border-color:var(--gold);
 }
 
-.btn:hover{
-    transform:translateY(-1px);
+.admin-grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
 }
 
-.btn.dark{
-    background:#202d3b;
-    color:#fff;
+.admin-btn{
+ padding:12px 18px;
+ border:0;
+ border-radius:22px;
+ background:linear-gradient(145deg,#ffe875,#d4af37,#765700);
+ color:#111;
+ font-weight:900;
+ cursor:pointer;
+ margin-top:12px;
 }
 
-.btn.red{
-    background:#8d2020;
-    color:#fff;
+.admin-btn.secondary{
+ background:#17283a;
+ color:#fff;
+ border:1px solid rgba(255,255,255,.15);
 }
 
-.admin-item{
-    padding:14px;
-    margin-top:12px;
-
-    border-radius:17px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid #26394d;
+.admin-status{
+ margin-top:12px;
+ color:#72e7ce;
+ font-size:13px;
 }
 
-.admin-item strong{
-    color:#ffd700;
+.feature-admin{
+ margin-top:10px;
+ padding:14px;
+ border-radius:15px;
+ background:#07111f;
+ border:1px solid rgba(255,255,255,.08);
 }
 
-.admin-help{
-    color:#9eabbc;
-    font-size:11px;
-    line-height:1.6;
-    margin:5px 0 10px;
+.feature-admin-title{
+ color:var(--gold);
+ font-weight:bold;
+ margin-bottom:8px;
 }
 
-.hidden{
-    display:none !important;
+.preview-logo{
+ width:70px;
+ height:70px;
+ object-fit:cover;
+ border-radius:50%;
+ border:2px solid var(--gold);
+ margin-top:10px;
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+.color-row{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+
+.color-control{
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
+
+.color-control input{
+ width:55px;
+ height:40px;
+ padding:2px;
+}
+
+/* LOGIN */
+
+.login-box{
+ width:min(420px,100%);
+ margin:80px auto;
+ padding:25px;
+ border-radius:24px;
+ background:linear-gradient(145deg,#102238,#050b14);
+ border:1px solid var(--gold2);
+ box-shadow:0 20px 60px #000;
+ text-align:center;
+}
+
+.login-box h2{
+ color:var(--gold);
+ margin-bottom:15px;
+}
+
+.login-error{
+ color:#ff6b6b;
+ font-size:12px;
+ margin-top:10px;
+ display:none;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:850px){
 
-    .feature-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+ .feature-grid{
+  grid-template-columns:repeat(2,1fr);
+ }
 
-}
-
-@media(max-width:700px){
-
-    .video-grid{
-        grid-template-columns:1fr;
-    }
-
-    .video-card.short{
-        margin:auto;
-    }
+ .video-grid{
+  grid-template-columns:1fr 1fr;
+ }
 
 }
 
 @media(max-width:600px){
 
-    .payment-grid{
-        grid-template-columns:1fr;
-    }
+ .header{
+  padding:15px 8px;
+ }
 
-    .title{
-        font-size:23px;
-    }
+ .logo{
+  width:78px;
+  height:78px;
+ }
 
-    .logo{
-        width:82px;
-        height:82px;
-    }
+ .title{
+  font-size:22px;
+ }
+
+ .feature-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+ }
+
+ .feature-card{
+  min-height:155px;
+  padding:14px 8px;
+ }
+
+ .feature-icon{
+  width:62px;
+  height:62px;
+  font-size:29px;
+ }
+
+ .feature-card h3{
+  font-size:14px;
+ }
+
+ .video-grid{
+  grid-template-columns:1fr;
+ }
+
+ .payment-grid{
+  grid-template-columns:1fr;
+ }
+
+ .admin-grid,
+ .color-row{
+  grid-template-columns:1fr;
+ }
+
+ .bottom{
+  height:72px;
+ }
+
+ .bottom-logo{
+  width:44px;
+  height:44px;
+ }
 
 }
 
-@media(max-width:430px){
+@media(max-width:380px){
 
-    .feature-grid{
-        gap:10px;
-    }
+ .nav a{
+  padding:8px 9px;
+  font-size:10px;
+ }
 
-    .feature-card{
-        min-height:165px;
-    }
+ .feature-card h3{
+  font-size:13px;
+ }
 
-    .feature-icon{
-        width:64px;
-        height:64px;
-        font-size:29px;
-    }
-
-    .feature-card h3{
-        font-size:14px;
-    }
-
-    .nav a{
-        padding:8px 10px;
-        font-size:10px;
-    }
-
-    .bottom-item{
-        font-size:8px;
-    }
-
-    .bottom-logo{
-        width:45px;
-        height:45px;
-    }
+ .feature-icon{
+  width:58px;
+  height:58px;
+  font-size:27px;
+ }
 
 }
 </style>
@@ -786,628 +818,597 @@ RESPONSIVE
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
+<!-- HEADER -->
 
 <header class="header" id="home">
 
-    <img
-        id="mainLogo"
-        src="logo.png"
-        class="logo"
-        alt="বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন"
-    >
+<img id="siteLogo"
+src="logo.png"
+alt="বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন"
+class="logo">
 
-    <h1
-        id="siteTitle"
-        class="title">
-        বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
-    </h1>
+<h1 id="siteTitle" class="title">
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
+</h1>
 
-    <p class="subtitle">
-        প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম
-    </p>
+<p id="siteSubtitle" class="subtitle">
+প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম
+</p>
 
-    <nav class="nav">
+<nav class="nav">
 
-        <a href="#home">🏠 Home</a>
+<a href="#home">🏠 Home</a>
+<a href="#features">✨ Features</a>
+<a href="#youtube">▶️ YouTube</a>
+<a href="#payment">💳 Payment</a>
+<a href="#contact">📱 Contact</a>
 
-        <a href="#features">✨ Features</a>
-
-        <a href="#youtube">▶️ Videos</a>
-
-        <a href="#payment">💳 Payment</a>
-
-        <a href="#contact">📱 Contact</a>
-
-        <a
-            href="#"
-            onclick="openAdmin();return false;">
-            ⚙️ Admin
-        </a>
-
-    </nav>
+</nav>
 
 </header>
 
 
 <main class="container">
 
-<!-- =========================
-HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-    <h2>
-        ✨ Premium Digital Platform
-    </h2>
+<h2>🌟 আমাদের প্ল্যাটফর্ম</h2>
 
-    <p>
-        বাংলাদেশ ও প্রবাসী ভাই-বোনদের তথ্য,
-        যোগাযোগ ও সহযোগিতার জন্য
-    </p>
+<p>
+বাংলাদেশ ও প্রবাসী ভাই-বোনদের যোগাযোগ,
+তথ্য ও সহযোগিতার জন্য
+</p>
 
 </section>
 
 
-<!-- =========================
-FEATURES
-========================= -->
+<!-- FEATURES -->
 
 <section id="features">
 
-    <h2 class="section-title">
-        ✨ আমাদের Features
-    </h2>
+<h2 class="section-title">
+✨ আমাদের Features
+</h2>
 
-    <div
-        id="featureGrid"
-        class="feature-grid">
-    </div>
+<div id="featureGrid" class="feature-grid">
+</div>
 
 </section>
 
 
-<!-- =========================
-YOUTUBE
-========================= -->
+<!-- YOUTUBE -->
 
-<section
-    id="youtube"
-    class="youtube">
+<section class="youtube" id="youtube">
 
-    <h2 class="section-title">
-        ▶️ আমাদের YouTube Videos
-    </h2>
+<h2 class="section-title">
+▶️ আমাদের YouTube Channel
+</h2>
 
+<a
+class="channel-box"
+href="https://www.youtube.com/@Bangladeshprobashifundclubf"
+target="_blank">
 
-    <a
-        href="https://www.youtube.com/@Bangladeshprobashifundclubf"
-        target="_blank"
-        class="channel-box">
+<div class="youtube-icon">▶️</div>
 
-        <div class="youtube-icon">
-            ▶️
-        </div>
+<div>
+<h3>YouTube Channel</h3>
+<p>চ্যানেলে আরও ভিডিও দেখুন</p>
+</div>
 
-        <div>
+</a>
 
-            <h3>
-                YouTube Channel
-            </h3>
-
-            <p>
-                চ্যানেলে আরও ভিডিও দেখুন
-            </p>
-
-        </div>
-
-    </a>
-
-
-    <!--
-    IMPORTANT:
-    ভিডিওগুলো সরাসরি HTML-এ রাখা হয়েছে।
-    JavaScript এগুলো মুছে ফেলবে না।
-    -->
-
-    <div
-        id="videoGrid"
-        class="video-grid">
-
-
-        <!-- VIDEO 1 -->
-
-        <div class="video-card">
-
-            <iframe
-                src="https://www.youtube.com/embed/I2mc2RXCEIA"
-                title="প্রবাসীদের জন্য তথ্য"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
-            <div class="video-title">
-                প্রবাসীদের জন্য তথ্য
-            </div>
-
-        </div>
-
-
-        <!-- VIDEO 2 -->
-
-        <div class="video-card">
-
-            <iframe
-                src="https://www.youtube.com/embed/DXB7gdJUlMw"
-                title="আমাদের YouTube ভিডিও"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
-            <div class="video-title">
-                আমাদের YouTube ভিডিও
-            </div>
-
-        </div>
-
-
-        <!-- VIDEO 3 SHORTS -->
-
-        <div class="video-card short">
-
-            <iframe
-                src="https://www.youtube.com/embed/Uvav8yUb93c"
-                title="YouTube Shorts"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
-            <div class="video-title">
-                YouTube Shorts
-            </div>
-
-        </div>
-
-
-        <!-- VIDEO 4 -->
-
-        <div class="video-card">
-
-            <iframe
-                src="https://www.youtube.com/embed/KumLOhgtgsM"
-                title="আমাদের কার্যক্রম"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
-            <div class="video-title">
-                আমাদের কার্যক্রম
-            </div>
-
-        </div>
-
-
-    </div>
+<div id="videoGrid" class="video-grid">
+</div>
 
 </section>
 
 
-<!-- =========================
-PAYMENT
-========================= -->
+<!-- PAYMENT -->
 
-<section
-    id="payment"
-    class="payment">
+<section class="payment" id="payment">
 
-    <h2 class="section-title">
-        💳 Digital Payment
-    </h2>
+<h2 class="section-title">
+💳 Payment
+</h2>
 
+<div class="payment-grid">
 
-    <div class="payment-grid">
+<!-- TNG -->
 
+<div class="payment-card">
 
-        <div class="payment-card">
+<div class="payment-icon">
+🟢
+</div>
 
-            <div class="payment-icon">
-                💗
-            </div>
+<h3>TNG QR</h3>
 
-            <h3>
-                bKash
-            </h3>
+<p>
+QR Code স্ক্যান করে Payment করুন
+</p>
 
-            <p>
-                bKash Payment
-            </p>
+<button
+class="payment-btn"
+onclick="openTngQR()">
 
-        </div>
+📱 TNG QR দেখুন
 
+</button>
 
-        <div class="payment-card">
-
-            <div class="payment-icon">
-                🟢
-            </div>
-
-            <h3>
-                TNG Digital
-            </h3>
-
-            <p>
-                Touch 'n Go Digital
-            </p>
-
-        </div>
+</div>
 
 
-    </div>
+<!-- BKASH -->
 
-</section>
+<div class="payment-card">
 
+<div class="payment-icon">
+🩷
+</div>
 
-<!-- =========================
-CONTACT
-========================= -->
+<h3>bKash</h3>
 
-<section id="contact">
+<p>
+bKash Number
+</p>
 
-    <div class="contact">
+<p
+id="bkashNumber"
+class="bkash-number">
+নম্বর সেট করা হয়নি
+</p>
 
-        <h2 class="section-title">
-            📱 যোগাযোগ
-        </h2>
+<button
+class="payment-btn"
+onclick="copyBkash()">
 
-        <p>
-            বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশনের সাথে
-            যোগাযোগ ও প্রয়োজনীয় সেবা নিতে
-            আমাদের Features ব্যবহার করুন।
-        </p>
+📋 Number Copy
 
-    </div>
+</button>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
-FOOTER
-========================= -->
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">
+📱 যোগাযোগ
+</h2>
+
+<p>
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশনের সাথে
+যোগাযোগ করতে WhatsApp ব্যবহার করুন।
+</p>
+
+<a
+class="contact-btn"
+href="https://wa.me/qr/5SBSJ55KMO7CB1"
+target="_blank">
+
+📲 WhatsApp Contact
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    © 2026
+<p>
+© 2026
+<strong id="footerTitle">
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
+</strong>
+</p>
 
-    <strong>
-        বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন
-    </strong>
-
-    <br><br>
-
-    ঐক্য • সেবা • উন্নয়ন
+<p style="margin-top:6px;">
+ঐক্য • সেবা • উন্নয়ন
+</p>
 
 </footer>
 
 </main>
 
 
-<!-- =========================
-BOTTOM MENU
-========================= -->
+<!-- BOTTOM MENU -->
 
 <nav class="bottom">
 
-    <a
-        href="#home"
-        class="bottom-item">
+<a href="#home" class="bottom-item">
 
-        <div class="bottom-icon">
-            🏠
-        </div>
+<div class="bottom-icon">🏠</div>
+Home
 
-        Home
+</a>
 
-    </a>
+<a href="#features" class="bottom-item">
 
+<div class="bottom-icon">✨</div>
+Features
 
-    <a
-        href="#features"
-        class="bottom-item">
+</a>
 
-        <div class="bottom-icon">
-            ✨
-        </div>
+<a href="#home">
 
-        Features
+<img
+id="bottomLogo"
+src="logo.png"
+class="bottom-logo"
+alt="Logo">
 
-    </a>
+</a>
 
+<a href="#youtube" class="bottom-item">
 
-    <a
-        href="#home"
-        class="bottom-item">
+<div class="bottom-icon">▶️</div>
+YouTube
 
-        <img
-            id="bottomLogo"
-            src="logo.png"
-            class="bottom-logo"
-            alt="Logo">
+</a>
 
-        Logo
+<a href="#contact" class="bottom-item">
 
-    </a>
+<div class="bottom-icon">📱</div>
+Contact
 
-
-    <a
-        href="#youtube"
-        class="bottom-item">
-
-        <div class="bottom-icon">
-            ▶️
-        </div>
-
-        Videos
-
-    </a>
-
-
-    <a
-        href="#"
-        onclick="openAdmin();return false;"
-        class="bottom-item">
-
-        <div class="bottom-icon">
-            ⚙️
-        </div>
-
-        Admin
-
-    </a>
+</a>
 
 </nav>
 
 
-<!-- =========================
-ADMIN OVERLAY
-========================= -->
+<!-- ADMIN OPEN -->
+
+<button
+class="admin-open"
+onclick="openAdmin()"
+title="Admin Panel">
+
+⚙️
+
+</button>
+
+
+<!-- TNG QR POPUP -->
 
 <div
-    id="adminOverlay"
-    class="admin-overlay">
+id="tngPopup"
+class="popup"
+onclick="closeTngQR(event)">
 
+<div
+class="popup-box"
+onclick="event.stopPropagation()">
 
-    <!-- LOGIN -->
+<button
+class="close-btn"
+onclick="closeTngQR()">
 
-    <div
-        id="loginBox"
-        class="admin-box admin-login">
+×
+</button>
 
-        <h2 class="admin-title">
-            🔐 Admin Login
-        </h2>
+<h2>🟢 TNG QR</h2>
 
-        <input
-            id="username"
-            class="input"
-            placeholder="Username">
+<img
+id="tngQrImage"
+class="qr-image"
+src="tng-qr.jpg"
+alt="TNG QR">
 
-        <input
-            id="password"
-            class="input"
-            type="password"
-            placeholder="Password">
+</div>
 
-        <button
-            class="btn"
-            style="width:100%;"
-            onclick="login()">
-            Login
-        </button>
+</div>
 
-        <button
-            class="btn dark"
-            style="width:100%;"
-            onclick="closeAdmin()">
-            Close
-        </button>
 
-        <p
-            id="loginError"
-            style="text-align:center;color:#ff7070;margin-top:10px;">
-        </p>
+<!-- ADMIN -->
 
-    </div>
+<div
+id="adminOverlay"
+class="admin-overlay">
 
+<!-- LOGIN -->
 
-    <!-- ADMIN PANEL -->
+<div
+id="adminLogin"
+class="login-box">
 
-    <div
-        id="adminPanel"
-        class="admin-box hidden">
+<h2>🔐 Admin Panel</h2>
 
+<p style="color:#aeb9c9;font-size:13px;">
+Admin Password দিন
+</p>
 
-        <h2 class="admin-title">
-            ⚙️ Admin Panel
-        </h2>
+<input
+id="adminPassword"
+class="admin-input"
+type="password"
+placeholder="Password">
 
+<button
+class="admin-btn"
+onclick="adminLogin()">
 
-        <!-- WEBSITE -->
+🔓 Login
 
-        <div class="admin-section">
+</button>
 
-            <h3>
-                🌐 Website Settings
-            </h3>
+<p
+id="loginError"
+class="login-error">
 
-            <p class="admin-help">
-                এখান থেকে Website Name এবং Logo পরিবর্তন করতে পারবেন।
-            </p>
+Password ভুল হয়েছে
 
-            <input
-                id="adminName"
-                class="input"
-                placeholder="Website Name">
+</p>
 
-            <input
-                id="adminLogo"
-                class="input"
-                placeholder="Logo file যেমন: logo.png">
+</div>
 
-            <button
-                class="btn"
-                onclick="saveSettings()">
-                💾 Save Website
-            </button>
 
-        </div>
+<!-- ADMIN PANEL -->
 
+<div
+id="adminPanel"
+class="admin-box"
+style="display:none;">
 
-        <!-- COLORS -->
+<div class="admin-head">
 
-        <div class="admin-section">
+<h2>⚙️ Admin Panel</h2>
 
-            <h3>
-                🎨 Color Settings
-            </h3>
+<button
+class="admin-close"
+onclick="closeAdmin()">
 
-            <p class="admin-help">
-                Display-এর প্রধান রং পরিবর্তন করতে পারবেন।
-            </p>
+×
+</button>
 
-            <label>
-                Main Gold
-            </label>
+</div>
 
-            <input
-                id="goldColor"
-                class="input"
-                type="color"
-                value="#ffd700">
 
-            <label>
-                Main Background
-            </label>
+<!-- BASIC -->
 
-            <input
-                id="bgColor"
-                class="input"
-                type="color"
-                value="#040914">
+<div class="admin-section">
 
-            <button
-                class="btn"
-                onclick="saveColors()">
-                🎨 Apply Colors
-            </button>
+<h3>🌐 Website Settings</h3>
 
-        </div>
+<label class="admin-label">
+Website Name
+</label>
 
+<input
+id="adminTitle"
+class="admin-input"
+type="text">
 
-        <!-- FEATURES -->
+<label class="admin-label">
+Subtitle
+</label>
 
-        <div class="admin-section">
+<input
+id="adminSubtitle"
+class="admin-input"
+type="text">
 
-            <h3>
-                ✨ Features
-            </h3>
+<label class="admin-label">
+Logo
+</label>
 
-            <p class="admin-help">
-                নতুন Feature যোগ, নাম, Icon, Description এবং Link পরিবর্তন করতে পারবেন।
-            </p>
+<input
+id="logoUpload"
+class="admin-file"
+type="file"
+accept="image/*">
 
-            <button
-                class="btn"
-                onclick="addFeature()">
-                ➕ Add Feature
-            </button>
+<img
+id="adminLogoPreview"
+class="preview-logo"
+src="logo.png">
 
-            <div id="adminFeatures">
-            </div>
+<button
+class="admin-btn"
+onclick="saveBasic()">
 
-        </div>
+💾 Save Website
 
+</button>
 
-        <!-- VIDEOS -->
+</div>
 
-        <div class="admin-section">
 
-            <h3>
-                ▶️ YouTube Videos
-            </h3>
+<!-- COLORS -->
 
-            <p class="admin-help">
-                YouTube-এর পুরো লিংক অথবা Video ID দিতে পারবেন।
-                Shorts-এর ক্ষেত্রেও পুরো Shorts link দেওয়া যাবে।
-            </p>
+<div class="admin-section">
 
-            <button
-                class="btn"
-                onclick="addVideo()">
-                ➕ Add Video
-            </button>
+<h3>🎨 Color Settings</h3>
 
-            <div id="adminVideos">
-            </div>
+<div class="color-row">
 
-        </div>
+<div class="color-control">
 
+<label>Background</label>
 
-        <!-- PAYMENT -->
+<input
+id="bgColor"
+type="color"
+value="#040914">
 
-        <div class="admin-section">
+</div>
 
-            <h3>
-                💳 Payment
-            </h3>
+<div class="color-control">
 
-            <p class="admin-help">
-                bKash ও TNG-এর Link/QR file পরে এখানে সেট করতে পারবেন।
-            </p>
+<label>Gold</label>
 
-            <input
-                id="bkashLink"
-                class="input"
-                placeholder="bKash Link">
+<input
+id="goldColor"
+type="color"
+value="#ffd700">
 
-            <input
-                id="tngLink"
-                class="input"
-                placeholder="TNG Link">
+</div>
 
-            <button
-                class="btn"
-                onclick="savePayment()">
-                💾 Save Payment
-            </button>
+<div class="color-control">
 
-        </div>
+<label>Green</label>
 
+<input
+id="greenColor"
+type="color"
+value="#08a878">
 
-        <div style="margin-top:25px;text-align:center;">
+</div>
 
-            <button
-                class="btn dark"
-                onclick="logout()">
-                Logout
-            </button>
+<div class="color-control">
 
-            <button
-                class="btn dark"
-                onclick="closeAdmin()">
-                Close
-            </button>
+<label>Card</label>
 
-        </div>
+<input
+id="cardColor"
+type="color"
+value="#0b1726">
 
+</div>
 
-    </div>
+</div>
+
+<button
+class="admin-btn"
+onclick="saveColors()">
+
+🎨 Save Colors
+
+</button>
+
+</div>
+
+
+<!-- PAYMENT -->
+
+<div class="admin-section">
+
+<h3>💳 Payment Settings</h3>
+
+<p style="font-size:12px;color:#aeb9c9;">
+TNG-তে শুধু QR Code থাকবে। TNG Number বা Link লাগবে না।
+</p>
+
+<label class="admin-label">
+TNG QR Image
+</label>
+
+<input
+id="tngUpload"
+class="admin-file"
+type="file"
+accept="image/*">
+
+<img
+id="adminTngPreview"
+class="preview-logo"
+src="tng-qr.jpg">
+
+<br>
+
+<button
+class="admin-btn"
+onclick="saveTngQR()">
+
+🟢 Save TNG QR
+
+</button>
+
+
+<label class="admin-label">
+bKash Number
+</label>
+
+<input
+id="adminBkash"
+class="admin-input"
+type="text"
+placeholder="01XXXXXXXXX">
+
+<button
+class="admin-btn"
+onclick="savePayment()">
+
+💾 Save bKash Number
+
+</button>
+
+</div>
+
+
+<!-- FEATURES -->
+
+<div class="admin-section">
+
+<h3>✨ Feature Settings</h3>
+
+<p style="font-size:12px;color:#aeb9c9;">
+এখান থেকে Feature-এর নাম ও Link পরিবর্তন করতে পারবেন।
+কোনো Serial Number দেখানো হবে না।
+</p>
+
+<div id="featureAdminList">
+</div>
+
+<button
+class="admin-btn"
+onclick="saveFeatures()">
+
+💾 Save All Features
+
+</button>
+
+</div>
+
+
+<!-- VIDEOS -->
+
+<div class="admin-section">
+
+<h3>▶️ YouTube Videos</h3>
+
+<p style="font-size:12px;color:#aeb9c9;">
+YouTube ভিডিওর ID দিন। যেমন:
+I2mc2RXCEIA
+</p>
+
+<div id="videoAdminList">
+</div>
+
+<button
+class="admin-btn"
+onclick="saveVideos()">
+
+💾 Save Videos
+
+</button>
+
+</div>
+
+
+<div
+id="adminStatus"
+class="admin-status">
+</div>
+
+<button
+class="admin-btn secondary"
+onclick="logoutAdmin()">
+
+🔒 Logout
+
+</button>
+
+</div>
 
 </div>
 
@@ -1415,936 +1416,1081 @@ ADMIN OVERLAY
 <script>
 
 /* ==================================================
-ADMIN LOGIN
+   DEFAULT DATA
 ================================================== */
 
-const ADMIN_USER = "MDRAFIK1987";
-const ADMIN_PASS = "MDRAFIK@1987";
+const DEFAULT_FEATURES = [
+
+{
+ icon:"👥",
+ name:"Community",
+ link:"https://www.facebook.com/share/1DPBjB3ePJ/",
+ desc:"আমাদের Facebook Community"
+},
+
+{
+ icon:"📘",
+ name:"Facebook Page",
+ link:"https://www.facebook.com/share/1DPBjB3ePJ/",
+ desc:"আমাদের Facebook Page"
+},
+
+{
+ icon:"💬",
+ name:"WhatsApp Group",
+ link:"https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4",
+ desc:"মূল WhatsApp Group"
+},
+
+{
+ icon:"💬",
+ name:"Messenger Group",
+ link:"https://m.me/j/AbazuYGAWNXaKYj3/?send_source=gc%3Acopy_invite_link_c",
+ desc:"Messenger Group"
+},
+
+{
+ icon:"📞",
+ name:"IMO Group",
+ link:"https://s.imoim.net/nLU12X",
+ desc:"IMO Group"
+},
+
+{
+ icon:"🌐",
+ name:"Services",
+ link:"https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment",
+ desc:"প্রবাসীদের সেবা"
+},
+
+{
+ icon:"📅",
+ name:"ESKL Appointment",
+ link:"https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment",
+ desc:"Appointment Book করুন"
+},
+
+{
+ icon:"🚗",
+ name:"Driver Group",
+ link:"https://chat.whatsapp.com/HcEMStEP3un4uYDBBfH5b0?s=cl&p=a&ilr=4",
+ desc:"Driver Group"
+},
+
+{
+ icon:"👷",
+ name:"Worker Group",
+ link:"https://chat.whatsapp.com/Jl7W0RXQjEI7Mhgj5riBhu?s=qt&p=a&ilr=0",
+ desc:"Worker Group"
+},
+
+{
+ icon:"📲",
+ name:"WhatsApp Contact",
+ link:"https://wa.me/qr/5SBSJ55KMO7CB1",
+ desc:"WhatsApp-এ যোগাযোগ"
+},
+
+{
+ icon:"💚",
+ name:"WhatsApp Message",
+ link:"https://wa.me/message/6ZU4EZJFBGAFM1",
+ desc:"সরাসরি Message করুন"
+},
+
+{
+ icon:"▶️",
+ name:"YouTube",
+ link:"https://www.youtube.com/@Bangladeshprobashifundclubf",
+ desc:"YouTube Channel"
+},
+
+{
+ icon:"🎵",
+ name:"TikTok",
+ link:"#",
+ desc:"TikTok"
+},
+
+{
+ icon:"👥",
+ name:"Facebook Group",
+ link:"#",
+ desc:"Facebook Group"
+},
+
+{
+ icon:"📣",
+ name:"Updates",
+ link:"#",
+ desc:"সর্বশেষ Updates"
+},
+
+{
+ icon:"📢",
+ name:"News",
+ link:"#",
+ desc:"প্রবাসী News"
+},
+
+{
+ icon:"🤝",
+ name:"Support",
+ link:"#",
+ desc:"সহযোগিতা"
+},
+
+{
+ icon:"🛠️",
+ name:"Help",
+ link:"#",
+ desc:"সহায়তা"
+},
+
+{
+ icon:"📋",
+ name:"Information",
+ link:"#",
+ desc:"গুরুত্বপূর্ণ তথ্য"
+},
+
+{
+ icon:"🌍",
+ name:"Expatriate",
+ link:"#",
+ desc:"প্রবাসীদের জন্য"
+},
+
+{
+ icon:"📱",
+ name:"Contact",
+ link:"#contact",
+ desc:"যোগাযোগ করুন"
+}
+
+];
 
 
-/* ==================================================
-DEFAULT FEATURES - 21
-================================================== */
+/* VIDEOS */
 
-const defaultFeatures = [
+const DEFAULT_VIDEOS = [
 
-    ["👥","Community","Facebook Page","https://www.facebook.com/share/1DPBjB3ePJ/"],
+{
+ id:"I2mc2RXCEIA",
+ title:"প্রবাসীদের জন্য তথ্য",
+ short:false
+},
 
-    ["🌐","Services","প্রবাসীদের সেবা","https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment"],
+{
+ id:"DXB7gdJUlMw",
+ title:"আমাদের YouTube ভিডিও",
+ short:false
+},
 
-    ["▶️","YouTube","YouTube Channel","https://www.youtube.com/@Bangladeshprobashifundclubf"],
+{
+ id:"Uvav8yUb93c",
+ title:"YouTube Shorts",
+ short:true
+},
 
-    ["📱","Contact","যোগাযোগ","#contact"],
-
-    ["💬","WhatsApp Group","মূল WhatsApp Group","https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4"],
-
-    ["📢","WhatsApp Channel","WhatsApp Channel","#"],
-
-    ["🎵","TikTok","TikTok","#"],
-
-    ["📘","Facebook Group","Facebook Group","#"],
-
-    ["📅","Appointment","Appointment Service","https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment"],
-
-    ["🚗","Driver Group","Driver Group","https://chat.whatsapp.com/HcEMStEP3un4uYDBBfH5b0?s=cl&p=a&ilr=4"],
-
-    ["👷","Worker Group","Worker Group","https://chat.whatsapp.com/Jl7W0RXQjEI7Mhgj5riBhu?s=qt&p=a&ilr=0"],
-
-    ["💚","WhatsApp Message","Direct Message","https://wa.me/message/6ZU4EZJFBGAFM1"],
-
-    ["💗","bKash","bKash Payment","#payment"],
-
-    ["🟢","TNG Digital","Touch n Go","#payment"],
-
-    ["⭐","New Feature","আপনার Feature","#"],
-
-    ["🔗","New Link","নিজের Link","#"],
-
-    ["📄","Information","গুরুত্বপূর্ণ তথ্য","#"],
-
-    ["🛠️","Support","সহায়তা","#contact"],
-
-    ["📢","Notice","গুরুত্বপূর্ণ Notice","#"],
-
-    ["🌐","Website","Official Website","#"],
-
-    ["✨","Future","Future Feature","#"]
+{
+ id:"KumLOhgtgsM",
+ title:"আমাদের কার্যক্রম",
+ short:false
+}
 
 ];
 
 
 /* ==================================================
-DEFAULT VIDEOS
+   STORAGE
 ================================================== */
 
-const defaultVideos = [
+function getFeatures(){
 
-    [
-        "I2mc2RXCEIA",
-        "প্রবাসীদের জন্য তথ্য",
-        "normal"
-    ],
+ const data=localStorage.getItem("bp_features");
 
-    [
-        "DXB7gdJUlMw",
-        "আমাদের YouTube ভিডিও",
-        "normal"
-    ],
+ return data
+ ? JSON.parse(data)
+ : DEFAULT_FEATURES;
 
-    [
-        "Uvav8yUb93c",
-        "YouTube Shorts",
-        "short"
-    ],
+}
 
-    [
-        "KumLOhgtgsM",
-        "আমাদের কার্যক্রম",
-        "normal"
-    ]
+function getVideos(){
 
-];
+ const data=localStorage.getItem("bp_videos");
 
-
-/* ==================================================
-LOAD DATA
-================================================== */
-
-let features = loadJSON(
-    "BPM_FEATURES",
-    defaultFeatures
-);
-
-let videos = loadJSON(
-    "BPM_VIDEOS",
-    defaultVideos
-);
-
-
-/* ==================================================
-HELPER
-================================================== */
-
-function loadJSON(key, fallback){
-
-    try{
-
-        const saved =
-            localStorage.getItem(key);
-
-        if(saved){
-
-            const parsed =
-                JSON.parse(saved);
-
-            if(Array.isArray(parsed)){
-                return parsed;
-            }
-
-        }
-
-    }catch(e){
-
-        console.log(e);
-
-    }
-
-    return JSON.parse(
-        JSON.stringify(fallback)
-    );
+ return data
+ ? JSON.parse(data)
+ : DEFAULT_VIDEOS;
 
 }
 
 
 /* ==================================================
-ESCAPE
-================================================== */
-
-function esc(value){
-
-    return String(value ?? "")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* ==================================================
-RENDER FEATURES
+   RENDER FEATURES
 ================================================== */
 
 function renderFeatures(){
 
-    const grid =
-        document.getElementById("featureGrid");
+ const grid=document.getElementById("featureGrid");
 
-    grid.innerHTML = "";
+ const features=getFeatures();
 
-    features.forEach(function(feature){
+ grid.innerHTML="";
 
-        const icon = feature[0] || "⭐";
-        const name = feature[1] || "Feature";
-        const desc = feature[2] || "";
-        const link = feature[3] || "#";
+ features.forEach((f)=>{
 
-        const card =
-            document.createElement("a");
+ const card=document.createElement("a");
 
-        card.className =
-            "feature-card";
+ card.className="feature-card";
 
-        card.href = link;
+ card.href=f.link || "#";
 
-        if(
-            link.startsWith("http://") ||
-            link.startsWith("https://")
-        ){
+ if(f.link && f.link.startsWith("http")){
+  card.target="_blank";
+ }
 
-            card.target = "_blank";
-            card.rel = "noopener";
+ card.innerHTML=`
 
-        }
+ <div class="feature-icon">
+ ${escapeHtml(f.icon)}
+ </div>
 
-        card.innerHTML = `
+ <h3>
+ ${escapeHtml(f.name)}
+ </h3>
 
-            <div class="feature-icon">
-                ${esc(icon)}
-            </div>
+ <p>
+ ${escapeHtml(f.desc)}
+ </p>
 
-            <h3>
-                ${esc(name)}
-            </h3>
+ `;
 
-            <p>
-                ${esc(desc)}
-            </p>
+ grid.appendChild(card);
 
-        `;
-
-        grid.appendChild(card);
-
-    });
+ });
 
 }
 
 
 /* ==================================================
-ADMIN FEATURE LIST
+   RENDER VIDEOS
 ================================================== */
 
-function renderAdminFeatures(){
+function renderVideos(){
 
-    const box =
-        document.getElementById("adminFeatures");
+ const grid=document.getElementById("videoGrid");
 
-    box.innerHTML = "";
+ const videos=getVideos();
 
-    features.forEach(function(feature,index){
+ grid.innerHTML="";
 
-        const item =
-            document.createElement("div");
+ videos.forEach((v)=>{
 
-        item.className =
-            "admin-item";
+ if(!v.id) return;
 
-        item.innerHTML = `
+ const card=document.createElement("div");
 
-            <strong>
-                Feature ${index + 1}
-            </strong>
+ card.className=
+ "video-card"+
+ (v.short ? " short" : "");
 
-            <input
-                class="input"
-                value="${esc(feature[0])}"
-                placeholder="Icon"
-                onchange="
-                    features[${index}][0]=this.value;
-                    saveFeatures();
-                ">
+ card.innerHTML=`
 
-            <input
-                class="input"
-                value="${esc(feature[1])}"
-                placeholder="Feature Name"
-                onchange="
-                    features[${index}][1]=this.value;
-                    saveFeatures();
-                ">
+ <iframe
+ src="https://www.youtube.com/embed/${encodeURIComponent(v.id)}"
+ title="${escapeHtml(v.title)}"
+ loading="lazy"
+ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+ allowfullscreen>
+ </iframe>
 
-            <input
-                class="input"
-                value="${esc(feature[2])}"
-                placeholder="Description"
-                onchange="
-                    features[${index}][2]=this.value;
-                    saveFeatures();
-                ">
+ <div class="video-title">
+ ${escapeHtml(v.title)}
+ </div>
 
-            <input
-                class="input"
-                value="${esc(feature[3])}"
-                placeholder="Link"
-                onchange="
-                    features[${index}][3]=this.value;
-                    saveFeatures();
-                ">
+ `;
 
-            <button
-                class="btn red"
-                onclick="
-                    deleteFeature(${index});
-                ">
-                🗑️ Delete
-            </button>
+ grid.appendChild(card);
 
-        `;
-
-        box.appendChild(item);
-
-    });
+ });
 
 }
 
 
 /* ==================================================
-SAVE FEATURES
-================================================== */
-
-function saveFeatures(){
-
-    localStorage.setItem(
-        "BPM_FEATURES",
-        JSON.stringify(features)
-    );
-
-    renderFeatures();
-
-}
-
-
-/* ==================================================
-ADD FEATURE
-================================================== */
-
-function addFeature(){
-
-    features.push([
-        "⭐",
-        "New Feature",
-        "Description",
-        "#"
-    ]);
-
-    saveFeatures();
-    renderAdminFeatures();
-
-}
-
-
-/* ==================================================
-DELETE FEATURE
-================================================== */
-
-function deleteFeature(index){
-
-    if(
-        !confirm(
-            "এই Feature মুছে ফেলবেন?"
-        )
-    ){
-        return;
-    }
-
-    features.splice(index,1);
-
-    saveFeatures();
-    renderAdminFeatures();
-
-}
-
-
-/* ==================================================
-VIDEO ID EXTRACTOR
-================================================== */
-
-function extractVideoID(value){
-
-    value =
-        String(value || "").trim();
-
-    if(!value){
-        return "";
-    }
-
-    const patterns = [
-
-        /youtu\.be\/([^?&/]+)/i,
-
-        /youtube\.com\/watch\?v=([^?&/]+)/i,
-
-        /youtube\.com\/shorts\/([^?&/]+)/i,
-
-        /youtube\.com\/embed\/([^?&/]+)/i
-
-    ];
-
-    for(
-        let i=0;
-        i<patterns.length;
-        i++
-    ){
-
-        const match =
-            value.match(patterns[i]);
-
-        if(match){
-            return match[1];
-        }
-
-    }
-
-    return value
-        .replace(/\?.*$/,"")
-        .replace(/\/.*$/,"");
-
-}
-
-
-/* ==================================================
-RENDER ADMIN VIDEOS
-================================================== */
-
-function renderAdminVideos(){
-
-    const box =
-        document.getElementById("adminVideos");
-
-    box.innerHTML = "";
-
-    videos.forEach(function(video,index){
-
-        const item =
-            document.createElement("div");
-
-        item.className =
-            "admin-item";
-
-        item.innerHTML = `
-
-            <strong>
-                Video ${index + 1}
-            </strong>
-
-            <input
-                class="input"
-                value="${esc(video[0])}"
-                placeholder="YouTube Link অথবা Video ID"
-                onchange="
-                    videos[${index}][0]=extractVideoID(this.value);
-                    saveVideos();
-                    renderAdminVideos();
-                ">
-
-            <input
-                class="input"
-                value="${esc(video[1])}"
-                placeholder="Video Title"
-                onchange="
-                    videos[${index}][1]=this.value;
-                    saveVideos();
-                ">
-
-            <select
-                class="input"
-                onchange="
-                    videos[${index}][2]=this.value;
-                    saveVideos();
-                    renderAdminVideos();
-                ">
-
-                <option
-                    value="normal"
-                    ${video[2] === "normal" ? "selected" : ""}>
-                    Normal Video
-                </option>
-
-                <option
-                    value="short"
-                    ${video[2] === "short" ? "selected" : ""}>
-                    YouTube Shorts
-                </option>
-
-            </select>
-
-            <button
-                class="btn red"
-                onclick="
-                    deleteVideo(${index});
-                ">
-                🗑️ Delete Video
-            </button>
-
-        `;
-
-        box.appendChild(item);
-
-    });
-
-}
-
-
-/* ==================================================
-SAVE VIDEOS
-================================================== */
-
-function saveVideos(){
-
-    localStorage.setItem(
-        "BPM_VIDEOS",
-        JSON.stringify(videos)
-    );
-
-}
-
-
-/* ==================================================
-ADD VIDEO
-================================================== */
-
-function addVideo(){
-
-    videos.push([
-        "",
-        "নতুন YouTube ভিডিও",
-        "normal"
-    ]);
-
-    saveVideos();
-    renderAdminVideos();
-
-}
-
-
-/* ==================================================
-DELETE VIDEO
-================================================== */
-
-function deleteVideo(index){
-
-    if(
-        !confirm(
-            "এই ভিডিও মুছে ফেলবেন?"
-        )
-    ){
-        return;
-    }
-
-    videos.splice(index,1);
-
-    saveVideos();
-    renderAdminVideos();
-
-}
-
-
-/* ==================================================
-ADMIN OPEN
+   ADMIN
 ================================================== */
 
 function openAdmin(){
 
-    document.getElementById(
-        "adminOverlay"
-    ).style.display = "block";
+ document.getElementById("adminOverlay").style.display="block";
 
-    document.getElementById(
-        "loginBox"
-    ).classList.remove("hidden");
+ document.getElementById("adminLogin").style.display="block";
 
-    document.getElementById(
-        "adminPanel"
-    ).classList.add("hidden");
+ document.getElementById("adminPanel").style.display="none";
+
+ document.getElementById("adminPassword").value="";
 
 }
-
-
-/* ==================================================
-ADMIN CLOSE
-================================================== */
 
 function closeAdmin(){
 
-    document.getElementById(
-        "adminOverlay"
-    ).style.display = "none";
+ document.getElementById("adminOverlay").style.display="none";
+
+}
+
+function adminLogin(){
+
+ const password=
+ document.getElementById("adminPassword").value;
+
+ if(password==="MDRAFIK@1987"){
+
+ document.getElementById("adminLogin").style.display="none";
+
+ document.getElementById("adminPanel").style.display="block";
+
+ loadAdmin();
+
+ }else{
+
+ document.getElementById("loginError").style.display="block";
+
+ }
+
+}
+
+function logoutAdmin(){
+
+ document.getElementById("adminPanel").style.display="none";
+
+ document.getElementById("adminLogin").style.display="block";
+
+ document.getElementById("adminPassword").value="";
 
 }
 
 
 /* ==================================================
-LOGIN
+   LOAD ADMIN
 ================================================== */
 
-function login(){
+function loadAdmin(){
 
-    const username =
-        document.getElementById(
-            "username"
-        ).value.trim();
+ const title=
+ localStorage.getItem("bp_title") ||
+ "বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন";
 
-    const password =
-        document.getElementById(
-            "password"
-        ).value;
+ const subtitle=
+ localStorage.getItem("bp_subtitle") ||
+ "প্রবাসীদের জন্য তথ্য, যোগাযোগ ও সহযোগিতার প্ল্যাটফর্ম";
 
-    if(
-        username === ADMIN_USER &&
-        password === ADMIN_PASS
-    ){
+ document.getElementById("adminTitle").value=title;
 
-        document.getElementById(
-            "loginBox"
-        ).classList.add("hidden");
+ document.getElementById("adminSubtitle").value=subtitle;
 
-        document.getElementById(
-            "adminPanel"
-        ).classList.remove("hidden");
 
-        loadAdminSettings();
+ const bkash=
+ localStorage.getItem("bp_bkash") || "";
 
-        renderAdminFeatures();
+ document.getElementById("adminBkash").value=bkash;
 
-        renderAdminVideos();
 
-    }else{
+ const logo=
+ localStorage.getItem("bp_logo");
 
-        document.getElementById(
-            "loginError"
-        ).textContent =
-            "Username অথবা Password ভুল!";
+ if(logo){
 
-    }
+ document.getElementById("adminLogoPreview").src=logo;
+
+ }
+
+
+ const tng=
+ localStorage.getItem("bp_tng");
+
+ if(tng){
+
+ document.getElementById("adminTngPreview").src=tng;
+
+ document.getElementById("tngQrImage").src=tng;
+
+ }
+
+
+ renderFeatureAdmin();
+
+ renderVideoAdmin();
 
 }
 
 
 /* ==================================================
-LOGOUT
+   BASIC SAVE
 ================================================== */
 
-function logout(){
+function saveBasic(){
 
-    document.getElementById(
-        "adminPanel"
-    ).classList.add("hidden");
+ const title=
+ document.getElementById("adminTitle").value.trim();
 
-    document.getElementById(
-        "loginBox"
-    ).classList.remove("hidden");
+ const subtitle=
+ document.getElementById("adminSubtitle").value.trim();
 
-    document.getElementById(
-        "username"
-    ).value = "";
+ if(title){
 
-    document.getElementById(
-        "password"
-    ).value = "";
+ localStorage.setItem("bp_title",title);
+
+ }
+
+ if(subtitle){
+
+ localStorage.setItem("bp_subtitle",subtitle);
+
+ }
+
+ document.getElementById("siteTitle").textContent=title;
+
+ document.getElementById("footerTitle").textContent=title;
+
+ document.getElementById("siteSubtitle").textContent=subtitle;
+
+ saveLogoFile();
+
+ showStatus("Website Settings Saved ✓");
 
 }
 
 
 /* ==================================================
-SETTINGS
+   LOGO
 ================================================== */
 
-function loadAdminSettings(){
+function saveLogoFile(){
 
-    document.getElementById(
-        "adminName"
-    ).value =
-        localStorage.getItem("BPM_NAME")
-        ||
-        "বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন";
+ const file=
+ document.getElementById("logoUpload").files[0];
 
-    document.getElementById(
-        "adminLogo"
-    ).value =
-        localStorage.getItem("BPM_LOGO")
-        ||
-        "logo.png";
+ if(!file) return;
 
-    document.getElementById(
-        "goldColor"
-    ).value =
-        localStorage.getItem("BPM_GOLD")
-        ||
-        "#ffd700";
+ const reader=new FileReader();
 
-    document.getElementById(
-        "bgColor"
-    ).value =
-        localStorage.getItem("BPM_BG")
-        ||
-        "#040914";
+ reader.onload=function(e){
 
-    document.getElementById(
-        "bkashLink"
-    ).value =
-        localStorage.getItem("BPM_BKASH")
-        ||
-        "#";
+ const image=e.target.result;
 
-    document.getElementById(
-        "tngLink"
-    ).value =
-        localStorage.getItem("BPM_TNG")
-        ||
-        "#";
+ localStorage.setItem("bp_logo",image);
+
+ document.getElementById("siteLogo").src=image;
+
+ document.getElementById("bottomLogo").src=image;
+
+ document.getElementById("adminLogoPreview").src=image;
+
+ };
+
+ reader.readAsDataURL(file);
 
 }
 
 
 /* ==================================================
-SAVE WEBSITE
+   TNG
 ================================================== */
 
-function saveSettings(){
+function saveTngQR(){
 
-    const name =
-        document.getElementById(
-            "adminName"
-        ).value.trim()
-        ||
-        "বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন";
+ const file=
+ document.getElementById("tngUpload").files[0];
 
-    const logo =
-        document.getElementById(
-            "adminLogo"
-        ).value.trim()
-        ||
-        "logo.png";
+ if(!file){
 
-    localStorage.setItem(
-        "BPM_NAME",
-        name
-    );
+ showStatus("TNG QR Image নির্বাচন করুন");
 
-    localStorage.setItem(
-        "BPM_LOGO",
-        logo
-    );
+ return;
 
-    document.getElementById(
-        "siteTitle"
-    ).textContent = name;
+ }
 
-    document.getElementById(
-        "mainLogo"
-    ).src = logo;
+ const reader=new FileReader();
 
-    document.getElementById(
-        "bottomLogo"
-    ).src = logo;
+ reader.onload=function(e){
 
-    alert(
-        "Website Settings Saved!"
-    );
+ const image=e.target.result;
+
+ localStorage.setItem("bp_tng",image);
+
+ document.getElementById("tngQrImage").src=image;
+
+ document.getElementById("adminTngPreview").src=image;
+
+ showStatus("TNG QR Saved ✓");
+
+ };
+
+ reader.readAsDataURL(file);
 
 }
 
 
 /* ==================================================
-COLORS
-================================================== */
-
-function saveColors(){
-
-    const gold =
-        document.getElementById(
-            "goldColor"
-        ).value;
-
-    const bg =
-        document.getElementById(
-            "bgColor"
-        ).value;
-
-    localStorage.setItem(
-        "BPM_GOLD",
-        gold
-    );
-
-    localStorage.setItem(
-        "BPM_BG",
-        bg
-    );
-
-    applyColors();
-
-    alert(
-        "Colors Changed!"
-    );
-
-}
-
-
-/* ==================================================
-APPLY COLORS
-================================================== */
-
-function applyColors(){
-
-    const gold =
-        localStorage.getItem(
-            "BPM_GOLD"
-        )
-        ||
-        "#ffd700";
-
-    const bg =
-        localStorage.getItem(
-            "BPM_BG"
-        )
-        ||
-        "#040914";
-
-    document.documentElement.style.setProperty(
-        "--admin-gold",
-        gold
-    );
-
-    document.body.style.backgroundColor =
-        bg;
-
-    document.querySelectorAll(
-        ".title,.section-title,.feature-card h3,.video-title,.payment-card h3,footer strong,.channel-box h3"
-    ).forEach(function(el){
-
-        el.style.color = gold;
-
-    });
-
-}
-
-
-/* ==================================================
-PAYMENT
+   BKASH
 ================================================== */
 
 function savePayment(){
 
-    const bkash =
-        document.getElementById(
-            "bkashLink"
-        ).value.trim()
-        ||
-        "#";
+ const number=
+ document.getElementById("adminBkash").value.trim();
 
-    const tng =
-        document.getElementById(
-            "tngLink"
-        ).value.trim()
-        ||
-        "#";
+ localStorage.setItem("bp_bkash",number);
 
-    localStorage.setItem(
-        "BPM_BKASH",
-        bkash
-    );
+ document.getElementById("bkashNumber").textContent=
+ number || "নম্বর সেট করা হয়নি";
 
-    localStorage.setItem(
-        "BPM_TNG",
-        tng
-    );
+ showStatus("bKash Number Saved ✓");
 
-    const paymentCards =
-        document.querySelectorAll(
-            ".payment-card"
-        );
+}
 
-    if(paymentCards[0]){
-        paymentCards[0].onclick =
-            function(){
-                if(bkash !== "#"){
-                    window.open(
-                        bkash,
-                        "_blank"
-                    );
-                }
-            };
-    }
+function copyBkash(){
 
-    if(paymentCards[1]){
-        paymentCards[1].onclick =
-            function(){
-                if(tng !== "#"){
-                    window.open(
-                        tng,
-                        "_blank"
-                    );
-                }
-            };
-    }
+ const number=
+ document.getElementById("bkashNumber").textContent;
 
-    alert(
-        "Payment Settings Saved!"
-    );
+ if(!number || number==="নম্বর সেট করা হয়নি"){
+
+ alert("আগে Admin Panel থেকে bKash Number দিন");
+
+ return;
+
+ }
+
+ navigator.clipboard.writeText(number)
+ .then(()=>alert("bKash Number Copy হয়েছে ✓"))
+ .catch(()=>alert(number));
 
 }
 
 
 /* ==================================================
-LOAD SAVED WEBSITE
+   QR
 ================================================== */
 
-(function(){
+function openTngQR(){
 
-    const savedName =
-        localStorage.getItem(
-            "BPM_NAME"
-        );
+ const image=
+ localStorage.getItem("bp_tng");
 
-    const savedLogo =
-        localStorage.getItem(
-            "BPM_LOGO"
-        );
+ if(image){
 
-    if(savedName){
+ document.getElementById("tngQrImage").src=image;
 
-        document.getElementById(
-            "siteTitle"
-        ).textContent =
-            savedName;
+ }
 
-    }
+ document.getElementById("tngPopup").style.display="flex";
 
-    if(savedLogo){
+}
 
-        document.getElementById(
-            "mainLogo"
-        ).src =
-            savedLogo;
+function closeTngQR(event){
 
-        document.getElementById(
-            "bottomLogo"
-        ).src =
-            savedLogo;
+ if(event && event.target!==event.currentTarget){
 
-    }
+ return;
 
-    applyColors();
+ }
 
-})();
+ document.getElementById("tngPopup").style.display="none";
+
+}
 
 
 /* ==================================================
-START
+   COLORS
 ================================================== */
 
-renderFeatures();
+function saveColors(){
+
+ const bg=
+ document.getElementById("bgColor").value;
+
+ const gold=
+ document.getElementById("goldColor").value;
+
+ const green=
+ document.getElementById("greenColor").value;
+
+ const card=
+ document.getElementById("cardColor").value;
+
+ document.documentElement.style.setProperty("--bg",bg);
+
+ document.documentElement.style.setProperty("--gold",gold);
+
+ document.documentElement.style.setProperty("--green",green);
+
+ document.documentElement.style.setProperty("--card",card);
+
+ localStorage.setItem("bp_bg",bg);
+
+ localStorage.setItem("bp_gold",gold);
+
+ localStorage.setItem("bp_green",green);
+
+ localStorage.setItem("bp_card",card);
+
+ showStatus("Colors Saved ✓");
+
+}
+
+function loadColors(){
+
+ const bg=
+ localStorage.getItem("bp_bg") || "#040914";
+
+ const gold=
+ localStorage.getItem("bp_gold") || "#ffd700";
+
+ const green=
+ localStorage.getItem("bp_green") || "#08a878";
+
+ const card=
+ localStorage.getItem("bp_card") || "#0b1726";
+
+ document.documentElement.style.setProperty("--bg",bg);
+
+ document.documentElement.style.setProperty("--gold",gold);
+
+ document.documentElement.style.setProperty("--green",green);
+
+ document.documentElement.style.setProperty("--card",card);
+
+ document.getElementById("bgColor").value=bg;
+
+ document.getElementById("goldColor").value=gold;
+
+ document.getElementById("greenColor").value=green;
+
+ document.getElementById("cardColor").value=card;
+
+}
+
+
+/* ==================================================
+   FEATURE ADMIN
+================================================== */
+
+function renderFeatureAdmin(){
+
+ const box=
+ document.getElementById("featureAdminList");
+
+ const features=getFeatures();
+
+ box.innerHTML="";
+
+ features.forEach((f,index)=>{
+
+ const div=document.createElement("div");
+
+ div.className="feature-admin";
+
+ div.innerHTML=`
+
+ <div class="feature-admin-title">
+ Feature ${index+1}
+ </div>
+
+ <div class="admin-grid">
+
+ <div>
+
+ <label class="admin-label">
+ Icon
+ </label>
+
+ <input
+ class="admin-input feature-icon-input"
+ data-index="${index}"
+ value="${escapeAttr(f.icon)}">
+
+ </div>
+
+ <div>
+
+ <label class="admin-label">
+ Name
+ </label>
+
+ <input
+ class="admin-input feature-name-input"
+ data-index="${index}"
+ value="${escapeAttr(f.name)}">
+
+ </div>
+
+ </div>
+
+ <label class="admin-label">
+ Link
+ </label>
+
+ <input
+ class="admin-input feature-link-input"
+ data-index="${index}"
+ value="${escapeAttr(f.link)}">
+
+ <label class="admin-label">
+ Description
+ </label>
+
+ <input
+ class="admin-input feature-desc-input"
+ data-index="${index}"
+ value="${escapeAttr(f.desc)}">
+
+ `;
+
+ box.appendChild(div);
+
+ });
+
+}
+
+
+/* ==================================================
+   SAVE FEATURES
+================================================== */
+
+function saveFeatures(){
+
+ const features=getFeatures();
+
+ document.querySelectorAll(".feature-admin").forEach((box,index)=>{
+
+ const icon=
+ box.querySelector(".feature-icon-input").value;
+
+ const name=
+ box.querySelector(".feature-name-input").value;
+
+ const link=
+ box.querySelector(".feature-link-input").value;
+
+ const desc=
+ box.querySelector(".feature-desc-input").value;
+
+ features[index]={
+ icon,
+ name,
+ link,
+ desc
+ };
+
+ });
+
+ localStorage.setItem(
+ "bp_features",
+ JSON.stringify(features)
+ );
+
+ renderFeatures();
+
+ showStatus("All Features Saved ✓");
+
+}
+
+
+/* ==================================================
+   VIDEO ADMIN
+================================================== */
+
+function renderVideoAdmin(){
+
+ const box=
+ document.getElementById("videoAdminList");
+
+ const videos=getVideos();
+
+ box.innerHTML="";
+
+ videos.forEach((v,index)=>{
+
+ const div=document.createElement("div");
+
+ div.className="feature-admin";
+
+ div.innerHTML=`
+
+ <div class="feature-admin-title">
+ Video ${index+1}
+ </div>
+
+ <label class="admin-label">
+ YouTube Video ID
+ </label>
+
+ <input
+ class="admin-input video-id-input"
+ data-index="${index}"
+ value="${escapeAttr(v.id)}">
+
+ <label class="admin-label">
+ Video Title
+ </label>
+
+ <input
+ class="admin-input video-title-input"
+ data-index="${index}"
+ value="${escapeAttr(v.title)}">
+
+ <label
+ style="
+ display:flex;
+ align-items:center;
+ gap:8px;
+ margin-top:12px;
+ color:#cdd6e1;
+ font-size:12px;
+ ">
+
+ <input
+ type="checkbox"
+ class="video-short-input"
+ data-index="${index}"
+ ${v.short ? "checked" : ""}>
+
+ YouTube Short
+
+ </label>
+
+ `;
+
+ box.appendChild(div);
+
+ });
+
+}
+
+
+/* ==================================================
+   SAVE VIDEOS
+================================================== */
+
+function saveVideos(){
+
+ const videos=getVideos();
+
+ document.querySelectorAll(".feature-admin").forEach((box)=>{
+
+ const idInput=
+ box.querySelector(".video-id-input");
+
+ if(!idInput) return;
+
+ const index=
+ Number(idInput.dataset.index);
+
+ const title=
+ box.querySelector(".video-title-input").value;
+
+ const short=
+ box.querySelector(".video-short-input").checked;
+
+ const id=
+ idInput.value.trim();
+
+ videos[index]={
+ id,
+ title,
+ short
+ };
+
+ });
+
+ localStorage.setItem(
+ "bp_videos",
+ JSON.stringify(videos)
+ );
+
+ renderVideos();
+
+ showStatus("YouTube Videos Saved ✓");
+
+}
+
+
+/* ==================================================
+   STATUS
+================================================== */
+
+function showStatus(text){
+
+ const status=
+ document.getElementById("adminStatus");
+
+ status.textContent=text;
+
+ setTimeout(()=>{
+
+ status.textContent="";
+
+ },3000);
+
+}
+
+
+/* ==================================================
+   ESCAPE
+================================================== */
+
+function escapeHtml(value){
+
+ return String(value)
+ .replace(/&/g,"&amp;")
+ .replace(/</g,"&lt;")
+ .replace(/>/g,"&gt;")
+ .replace(/"/g,"&quot;")
+ .replace(/'/g,"&#039;");
+
+}
+
+function escapeAttr(value){
+
+ return escapeHtml(value);
+
+}
+
+
+/* ==================================================
+   INITIAL LOAD
+================================================== */
+
+function loadWebsite(){
+
+ const title=
+ localStorage.getItem("bp_title");
+
+ const subtitle=
+ localStorage.getItem("bp_subtitle");
+
+ const logo=
+ localStorage.getItem("bp_logo");
+
+ const tng=
+ localStorage.getItem("bp_tng");
+
+ const bkash=
+ localStorage.getItem("bp_bkash");
+
+
+ if(title){
+
+ document.getElementById("siteTitle").textContent=title;
+
+ document.getElementById("footerTitle").textContent=title;
+
+ }
+
+ if(subtitle){
+
+ document.getElementById("siteSubtitle").textContent=subtitle;
+
+ }
+
+ if(logo){
+
+ document.getElementById("siteLogo").src=logo;
+
+ document.getElementById("bottomLogo").src=logo;
+
+ }
+
+ if(tng){
+
+ document.getElementById("tngQrImage").src=tng;
+
+ }
+
+ if(bkash){
+
+ document.getElementById("bkashNumber").textContent=bkash;
+
+ }
+
+ loadColors();
+
+ renderFeatures();
+
+ renderVideos();
+
+}
+
+
+/* ==================================================
+   START
+================================================== */
+
+loadWebsite();
+
+
+/* ==================================================
+   LOGO PREVIEW
+================================================== */
+
+document.getElementById("logoUpload")
+.addEventListener("change",function(){
+
+ const file=this.files[0];
+
+ if(!file) return;
+
+ const reader=new FileReader();
+
+ reader.onload=function(e){
+
+ document.getElementById("adminLogoPreview").src=e.target.result;
+
+ };
+
+ reader.readAsDataURL(file);
+
+});
+
+
+/* TNG PREVIEW */
+
+document.getElementById("tngUpload")
+.addEventListener("change",function(){
+
+ const file=this.files[0];
+
+ if(!file) return;
+
+ const reader=new FileReader();
+
+ reader.onload=function(e){
+
+ document.getElementById("adminTngPreview").src=e.target.result;
+
+ };
+
+ reader.readAsDataURL(file);
+
+});
+
+
+/* ENTER PASSWORD */
+
+document.getElementById("adminPassword")
+.addEventListener("keydown",function(e){
+
+ if(e.key==="Enter"){
+
+ adminLogin();
+
+ }
+
+});
 
 </script>
 

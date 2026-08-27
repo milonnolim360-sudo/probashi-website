@@ -1,87 +1,91 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>বাংলা কমিউনিটি</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial;background:#f4f7f5}
-header{background:#0B6E4F;color:#fff;text-align:center;padding:20px}
-.box{max-width:430px;margin:20px auto;background:#fff;padding:20px;border-radius:12px}
-input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
-button{width:100%;padding:12px;background:#0B6E4F;color:#fff;border:0;border-radius:8px}
-#dash{display:none}
-.card{display:block;background:#E8F5EE;padding:12px;margin:8px 0;border-radius:8px;text-decoration:none;color:#000;font-weight:bold}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-<h2>বাংলা কমিউনিটি</h2>
-<p>প্রবাসী ও যুব কল্যাণ সমবায় সমিতি</p>
-</header>
+    <div class="container">
+        <!-- Header Banner -->
+        <header class="header">
+            <div class="top-row">
+                <div class="flag-box">
+                    <img src="https://flagcdn.com/w80/bd.png" alt="Bangladesh Flag">
+                    <p>FOR EXPATRIATES BY EXPATRIATES</p>
+                </div>
+                <div class="logo-box">
+                    <i class="fa-solid fa-handshake header-icon"></i>
+                </div>
+                <div class="flag-box">
+                    <img src="https://flagcdn.com/w80/my.png" alt="Malaysia Flag">
+                    <p>TOGETHER FOR A STRONGER FUTURE</p>
+                </div>
+            </div>
 
-<div class="box" id="auth">
-<h3>সদস্য নিবন্ধন</h3>
-<input id="bn" placeholder="বাংলা নাম">
-<input id="en" placeholder="English Name">
-<input id="ph" placeholder="মোবাইল নম্বর">
-<input id="ct" placeholder="দেশ">
-<input id="pw" type="password" placeholder="পাসওয়ার্ড">
-<input id="cp" type="password" placeholder="পাসওয়ার্ড নিশ্চিত করুন">
-<button onclick="reg()">নিবন্ধন করুন</button>
+            <h1 class="main-title">বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</h1>
+            <h2 class="sub-title">BANGLADESH PROBASHI MONCHO FOUNDATION</h2>
 
-<hr>
+            <div class="info-bar">
+                <span>📍 Location : Kuala Lumpur, Malaysia</span>
+                <span>📅 Established : 01.01.2026</span>
+            </div>
+        </header>
 
-<h3>লগইন</h3>
-<input id="lph" placeholder="মোবাইল নম্বর">
-<input id="lpw" type="password" placeholder="পাসওয়ার্ড">
-<button onclick="login()">লগইন</button>
-</div>
+        <!-- Features Grid -->
+        <section class="section">
+            <h3 class="section-title">✨ FEATURES ✨</h3>
+            <div class="grid-container" id="featuresGrid">
+                <!-- Links will be loaded dynamically from JavaScript -->
+            </div>
+        </section>
 
-<div class="box" id="dash">
-<h2 id="name"></h2>
+        <!-- Video Gallery -->
+        <section class="section">
+            <h3 class="section-title">▶ VIDEO GALLERY ▶</h3>
+            <div class="video-grid" id="videoGrid">
+                <!-- Videos will be loaded dynamically from JavaScript -->
+            </div>
+        </section>
 
-<a class="card" href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7">💬 WhatsApp Group</a>
+        <!-- Footer Contact & Admin Toggle -->
+        <footer class="footer">
+            <h3 class="section-title">📞 CONTACT US</h3>
+            <div class="contact-buttons" id="contactButtons">
+                <!-- Contact Links loaded dynamically -->
+            </div>
+            <p class="footer-tagline">TOGETHER • UNITY • PROGRESS</p>
+            
+            <button class="admin-btn" onclick="toggleAdminPanel()">🔑 Admin Panel</button>
+        </footer>
+    </div>
 
-<a class="card" href="https://www.facebook.com/share/18729CwezR/">📘 Facebook Page</a>
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleAdminPanel()">&times;</span>
+            <h2>Admin Control Panel</h2>
+            <div id="loginForm">
+                <p>পাসওয়ার্ড দিয়ে প্রবেশ করুন (ডিফল্ট: <strong>admin123</strong>):</p>
+                <input type="password" id="adminPass" placeholder="Enter Password">
+                <button onclick="checkAdminPassword()">Login</button>
+            </div>
+            
+            <div id="adminControls" style="display:none;">
+                <h3>Edit Feature Links</h3>
+                <div id="adminFeatureInputs"></div>
+                
+                <h3>Edit YouTube Videos</h3>
+                <div id="adminVideoInputs"></div>
 
-<a class="card" href="https://www.facebook.com/share/g/1NLmjQVBaN/">👥 Facebook Group</a>
+                <button class="save-btn" onclick="saveData()">💾 Save Changes</button>
+            </div>
+        </div>
+    </div>
 
-<a class="card" href="https://m.me/j/AbazuYGAWNXaKYj3/?send_source=gc%3Acopy_invite_link_c">💙 Messenger Group</a>
-
-<a class="card" href="https://www.youtube.com/@Bangladeshprobashifundclubf">▶ YouTube</a>
-
-<div class="card">💳 বিকাশ: 01961704927</div>
-
-<div class="card">📞 কল/WhatsApp: 01928807515</div>
-
-<button onclick="logout()">লগআউট</button>
-</div>
-
-<script>
-function reg(){
- if(pw.value!=cp.value){alert("পাসওয়ার্ড মিলেনি");return;}
- localStorage.user=JSON.stringify({n:bn.value,p:ph.value,s:pw.value});
- alert("নিবন্ধন সফল");
-}
-function login(){
- let u=JSON.parse(localStorage.user||"null");
- if(!u){alert("আগে নিবন্ধন করুন");return;}
- if(lph.value==u.p && lpw.value==u.s){
-  auth.style.display="none";
-  dash.style.display="block";
-  name.innerText="স্বাগতম "+u.n;
- }else{
-  alert("ভুল মোবাইল বা পাসওয়ার্ড");
- }
-}
-function logout(){
- auth.style.display="block";
- dash.style.display="none";
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>

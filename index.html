@@ -1,103 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { background: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; padding-bottom: 100px; }
-        .header { background: linear-gradient(to bottom, #d4af37, #000); padding: 20px; border-bottom: 2px solid #d4af37; }
-        .gold-text { color: #d4af37; text-shadow: 0 0 10px #d4af37; font-weight: bold; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px; }
-        .card { background: #111; border: 1px solid #d4af37; border-radius: 15px; padding: 15px; box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); transition: 0.3s; }
-        .card:hover { transform: scale(1.05); box-shadow: 0 0 20px #d4af37; }
-        .card i { font-size: 30px; color: #d4af37; margin-bottom: 10px; }
-        .card a { text-decoration: none; color: white; font-size: 10px; font-weight: bold; text-transform: uppercase; }
-
-        .video-section { padding: 20px; }
-        .video-box { background: #222; height: 150px; border: 1px solid #d4af37; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
-
-        .admin-btn { position: fixed; bottom: 20px; right: 20px; background: #d4af37; color: black; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; }
-        
-        /* Modal for Admin */
-        #adminModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); padding:20px; box-sizing: border-box; overflow-y: scroll;}
-        input { width: 90%; padding: 10px; margin: 10px 0; background: #222; border: 1px solid #d4af37; color: white; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>বাংলা কমিউনিটি</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#f4f7f5}
+header{background:#0B6E4F;color:#fff;text-align:center;padding:20px}
+.box{max-width:430px;margin:20px auto;background:#fff;padding:20px;border-radius:12px}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
+button{width:100%;padding:12px;background:#0B6E4F;color:#fff;border:0;border-radius:8px}
+#dash{display:none}
+.card{display:block;background:#E8F5EE;padding:12px;margin:8px 0;border-radius:8px;text-decoration:none;color:#000;font-weight:bold}
+</style>
 </head>
 <body>
 
-    <div class="header">
-        <h2 class="gold-text">BANGLADESH PROBASHI MONCHO FOUNDATION</h2>
-        <p style="font-size: 12px;">Location: Kalarapur, Malaysia | Estd: 01.01.2026</p>
-    </div>
+<header>
+<h2>বাংলা কমিউনিটি</h2>
+<p>প্রবাসী ও যুব কল্যাণ সমবায় সমিতি</p>
+</header>
 
-    <div class="grid-container" id="main-grid">
-        <!-- বাটনগুলো এখানে অটোমেটিক আসবে -->
-    </div>
+<div class="box" id="auth">
+<h3>সদস্য নিবন্ধন</h3>
+<input id="bn" placeholder="বাংলা নাম">
+<input id="en" placeholder="English Name">
+<input id="ph" placeholder="মোবাইল নম্বর">
+<input id="ct" placeholder="দেশ">
+<input id="pw" type="password" placeholder="পাসওয়ার্ড">
+<input id="cp" type="password" placeholder="পাসওয়ার্ড নিশ্চিত করুন">
+<button onclick="reg()">নিবন্ধন করুন</button>
 
-    <h3 class="gold-text">VIDEO GALLERY</h3>
-    <div class="video-section" id="video-grid">
-        <div class="video-box">Video 1</div>
-        <div class="video-box">Video 2</div>
-    </div>
+<hr>
 
-    <div class="admin-btn" onclick="openAdmin()">ADMIN PANEL</div>
+<h3>লগইন</h3>
+<input id="lph" placeholder="মোবাইল নম্বর">
+<input id="lpw" type="password" placeholder="পাসওয়ার্ড">
+<button onclick="login()">লগইন</button>
+</div>
 
-    <!-- Admin Panel Logic -->
-    <div id="adminModal">
-        <h2 class="gold-text">ADMIN SETTINGS</h2>
-        <p>পাসওয়ার্ড দিন (ডিফল্ট: 1234)</p>
-        <input type="password" id="pass" placeholder="Password">
-        <div id="editFields">
-           <!-- এডিট করার ঘরগুলো এখানে আসবে -->
-        </div>
-        <button onclick="saveChanges()" style="background:#d4af37; padding:15px; width:100%;">SAVE ALL CHANGES</button>
-        <button onclick="closeAdmin()" style="margin-top:10px;">CLOSE</button>
-    </div>
+<div class="box" id="dash">
+<h2 id="name"></h2>
 
-    <script>
-        let config = [
-            { name: "Facebook Page", icon: "fab fa-facebook", url: "https://facebook.com" },
-            { name: "WhatsApp Group", icon: "fab fa-whatsapp", url: "https://wa.me/123" },
-            { name: "ESKL Register", icon: "fas fa-id-card", url: "https://example.com" },
-            { name: "BKASH", icon: "fas fa-mobile-alt", url: "tel:*247#" }
-        ];
+<a class="card" href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7">💬 WhatsApp Group</a>
 
-        function render() {
-            let html = "";
-            config.forEach(item => {
-                html += `<div class="card"><a href="${item.url}" target="_blank"><i class="${item.icon}"></i><br>${item.name}</a></div>`;
-            });
-            document.getElementById('main-grid').innerHTML = html;
-        }
+<a class="card" href="https://www.facebook.com/share/18729CwezR/">📘 Facebook Page</a>
 
-        function openAdmin() {
-            let p = document.getElementById('pass').value;
-            if(p === "1234") { // সিকিউরিটি পাসওয়ার্ড
-                document.getElementById('adminModal').style.display = "block";
-                let fields = "";
-                config.forEach((item, index) => {
-                    fields += `<h3>${item.name}</h3><input id="url-${index}" value="${item.url}" placeholder="Link URL">`;
-                });
-                document.getElementById('editFields').innerHTML = fields;
-            } else {
-                alert("ভুল পাসওয়ার্ড!");
-                let ask = prompt("পাসওয়ার্ড দিন:");
-                document.getElementById('pass').value = ask;
-            }
-        }
+<a class="card" href="https://www.facebook.com/share/g/1NLmjQVBaN/">👥 Facebook Group</a>
 
-        function saveChanges() {
-            config.forEach((item, index) => {
-                item.url = document.getElementById(`url-${index}`).value;
-            });
-            render();
-            alert("সেভ হয়েছে!");
-            closeAdmin();
-        }
+<a class="card" href="https://m.me/j/AbazuYGAWNXaKYj3/?send_source=gc%3Acopy_invite_link_c">💙 Messenger Group</a>
 
-        function closeAdmin() { document.getElementById('adminModal').style.display = "none"; }
-        
-        render();
-    </script>
+<a class="card" href="https://www.youtube.com/@Bangladeshprobashifundclubf">▶ YouTube</a>
+
+<div class="card">💳 বিকাশ: 01961704927</div>
+
+<div class="card">📞 কল/WhatsApp: 01928807515</div>
+
+<button onclick="logout()">লগআউট</button>
+</div>
+
+<script>
+function reg(){
+ if(pw.value!=cp.value){alert("পাসওয়ার্ড মিলেনি");return;}
+ localStorage.user=JSON.stringify({n:bn.value,p:ph.value,s:pw.value});
+ alert("নিবন্ধন সফল");
+}
+function login(){
+ let u=JSON.parse(localStorage.user||"null");
+ if(!u){alert("আগে নিবন্ধন করুন");return;}
+ if(lph.value==u.p && lpw.value==u.s){
+  auth.style.display="none";
+  dash.style.display="block";
+  name.innerText="স্বাগতম "+u.n;
+ }else{
+  alert("ভুল মোবাইল বা পাসওয়ার্ড");
+ }
+}
+function logout(){
+ auth.style.display="block";
+ dash.style.display="none";
+}
+</script>
+
 </body>
 </html>

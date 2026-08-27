@@ -1,141 +1,699 @@
-<!-- FEATURES SECTION -->
-<section class="features">
-  <h2>আমাদের সুবিধাসমূহ</h2>
-  <p class="features-subtitle">Our Features</p>
-
-  <div class="features-grid">
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">👥</div>
-      <span>সদস্য</span>
-      <small>Members</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">📝</div>
-      <span>নিবন্ধন</span>
-      <small>Registration</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">💳</div>
-      <span>পেমেন্ট</span>
-      <small>Payment</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">💬</div>
-      <span>যোগাযোগ</span>
-      <small>Contact</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">📱</div>
-      <span>WhatsApp</span>
-      <small>WhatsApp Group</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">📘</div>
-      <span>Facebook</span>
-      <small>Facebook Page</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">▶️</div>
-      <span>YouTube</span>
-      <small>YouTube Channel</small>
-    </a>
-
-    <a href="#" class="feature-card">
-      <div class="feature-icon">💼</div>
-      <span>সেবাসমূহ</span>
-      <small>Services</small>
-    </a>
-
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
 
 <style>
-.features {
-  padding: 35px 15px;
-  text-align: center;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:#f3f7f5;color:#17231f;
+}
+header{
+background:linear-gradient(135deg,#063b2b,#07845d);
+color:#fff;text-align:center;padding:25px 15px;
+}
+.logo{
+width:78px;height:78px;border-radius:50%;
+background:#fff;color:#07845d;
+display:flex;align-items:center;justify-content:center;
+margin:auto;font-size:36px;
+}
+header h1{font-size:25px;margin:12px 0 5px}
+header p{opacity:.9}
+
+nav{
+background:#fff;padding:10px;
+display:flex;justify-content:center;gap:7px;
+position:sticky;top:0;z-index:10;
+box-shadow:0 2px 10px #0001;
+}
+nav button{
+border:0;background:#e9f6f1;color:#075d43;
+padding:9px 13px;border-radius:20px;
+font-weight:bold;cursor:pointer;
 }
 
-.features h2 {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 700;
+.container{max-width:1150px;margin:auto;padding:22px 14px}
+.section{margin-bottom:32px}
+.title{text-align:center;margin-bottom:18px}
+.title h2{font-size:25px}
+.title p{color:#718078;margin-top:4px}
+
+/* 22 ICONS */
+.icons{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+}
+.card{
+background:#fff;
+border-radius:18px;
+padding:18px 7px;
+text-align:center;
+text-decoration:none;
+color:#17231f;
+box-shadow:0 5px 18px #00000012;
+cursor:pointer;
+transition:.2s;
+}
+.card:hover{transform:translateY(-4px)}
+.ic{
+width:56px;height:56px;
+margin:auto auto 8px;
+border-radius:15px;
+background:#e4f6ef;
+display:flex;align-items:center;justify-content:center;
+font-size:29px;
+}
+.card b{display:block;font-size:14px}
+.card small{font-size:10px;color:#77827d}
+
+/* VIDEO */
+.video{
+background:#fff;padding:12px;border-radius:18px;
+box-shadow:0 5px 18px #00000012;
+}
+.video iframe{
+width:100%;aspect-ratio:16/9;
+border:0;border-radius:12px;background:#111;
 }
 
-.features-subtitle {
-  margin: 5px 0 25px;
-  font-size: 16px;
-  opacity: .7;
+/* BOX */
+.box{
+background:#fff;padding:22px;border-radius:18px;
+box-shadow:0 5px 18px #00000012;
+margin-bottom:20px;
+}
+input,select{
+width:100%;padding:12px;
+margin:6px 0 10px;
+border:1px solid #d4ddd9;
+border-radius:10px;
+font-size:15px;
+}
+.btn{
+border:0;background:#087b57;color:#fff;
+padding:11px 18px;border-radius:10px;
+font-weight:bold;cursor:pointer;
+}
+.btn.red{background:#c62828}
+.btn.gray{background:#66736e}
+.hidden{display:none!important}
+
+table{
+width:100%;border-collapse:collapse;
+margin-top:12px;font-size:13px;
+}
+th,td{
+padding:9px;border-bottom:1px solid #ddd;
+text-align:left;
 }
 
-.features-grid {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+footer{
+background:#063b2b;color:white;
+text-align:center;padding:25px 10px;
 }
 
-.feature-card {
-  text-decoration: none;
-  color: inherit;
-  background: #fff;
-  border-radius: 18px;
-  padding: 20px 10px;
-  box-shadow: 0 5px 18px rgba(0,0,0,.10);
-  transition: .25s;
+/* MOBILE */
+@media(max-width:700px){
+.icons{
+grid-template-columns:repeat(4,1fr);
+gap:6px;
 }
-
-.feature-card:hover {
-  transform: translateY(-5px);
+.card{
+padding:10px 2px;
+border-radius:12px;
 }
-
-.feature-icon {
-  font-size: 38px;
-  margin-bottom: 8px;
+.ic{
+width:40px;height:40px;
+font-size:21px;border-radius:10px;
 }
-
-.feature-card span {
-  display: block;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.feature-card small {
-  display: block;
-  margin-top: 4px;
-  font-size: 12px;
-  opacity: .65;
-}
-
-/* মোবাইল */
-@media (max-width: 600px) {
-  .features-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
-
-  .feature-card {
-    padding: 12px 4px;
-    border-radius: 12px;
-  }
-
-  .feature-icon {
-    font-size: 25px;
-  }
-
-  .feature-card span {
-    font-size: 11px;
-  }
-
-  .feature-card small {
-    font-size: 8px;
-  }
+.card b{font-size:9px}
+.card small{font-size:6px}
+header h1{font-size:20px}
+nav{overflow-x:auto;justify-content:flex-start}
+nav button{white-space:nowrap;font-size:11px}
+.box{padding:15px}
+table{font-size:10px}
 }
 </style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🌍</div>
+<h1>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</h1>
+<p>Bangladesh Probashi Moncho Foundation</p>
+</header>
+
+<nav>
+<button onclick="show('home')">🏠 Home</button>
+<button onclick="show('register')">📝 Registration</button>
+<button onclick="show('login')">🔐 Login</button>
+<button onclick="show('admin')">⚙️ Admin</button>
+</nav>
+
+<main class="container">
+
+<!-- HOME -->
+<section id="home">
+
+<div class="section">
+<div class="title">
+<h2>আমাদের সুবিধাসমূহ</h2>
+<p>Our Features</p>
+</div>
+
+<div class="icons">
+
+<div class="card" onclick="show('register')">
+<div class="ic">📝</div><b>সদস্য নিবন্ধন</b><small>Registration</small>
+</div>
+
+<div class="card" onclick="show('login')">
+<div class="ic">🔐</div><b>লগইন</b><small>Member Login</small>
+</div>
+
+<div class="card"><div class="ic">👥</div><b>সদস্য</b><small>Members</small></div>
+
+<div class="card"><div class="ic">💳</div><b>বিকাশ</b><small>Bkash</small></div>
+
+<div class="card" onclick="openLink('whatsapp')">
+<div class="ic">📱</div><b>WhatsApp</b><small>Group</small>
+</div>
+
+<div class="card" onclick="openLink('facebook')">
+<div class="ic">📘</div><b>Facebook</b><small>Page</small>
+</div>
+
+<div class="card" onclick="openLink('fbgroup')">
+<div class="ic">👥</div><b>Facebook Group</b><small>Group</small>
+</div>
+
+<div class="card" onclick="openLink('messenger')">
+<div class="ic">💬</div><b>Messenger</b><small>Group</small>
+</div>
+
+<div class="card" onclick="openLink('youtube')">
+<div class="ic">▶️</div><b>YouTube</b><small>Channel</small>
+</div>
+
+<div class="card" onclick="show('video')">
+<div class="ic">📺</div><b>ভিডিও</b><small>Video</small>
+</div>
+
+<div class="card"><div class="ic">🏠</div><b>আমাদের সম্পর্কে</b><small>About Us</small></div>
+
+<div class="card"><div class="ic">🎯</div><b>আমাদের লক্ষ্য</b><small>Mission</small></div>
+
+<div class="card"><div class="ic">🤝</div><b>সহযোগিতা</b><small>Support</small></div>
+
+<div class="card"><div class="ic">🌐</div><b>প্রবাসী সেবা</b><small>Services</small></div>
+
+<div class="card"><div class="ic">📢</div><b>নোটিশ</b><small>Notice</small></div>
+
+<div class="card"><div class="ic">📰</div><b>সংবাদ</b><small>News</small></div>
+
+<div class="card"><div class="ic">📸</div><b>ছবির গ্যালারি</b><small>Gallery</small></div>
+
+<div class="card"><div class="ic">🎁</div><b>কল্যাণ</b><small>Welfare</small></div>
+
+<div class="card" onclick="show('contact')">
+<div class="ic">📞</div><b>যোগাযোগ</b><small>Contact</small>
+</div>
+
+<div class="card"><div class="ic">📍</div><b>ঠিকানা</b><small>Location</small></div>
+
+<div class="card"><div class="ic">⭐</div><b>সদস্য সুবিধা</b><small>Benefits</small></div>
+
+<div class="card" onclick="show('admin')">
+<div class="ic">⚙️</div><b>এডমিন</b><small>Admin Panel</small>
+</div>
+
+</div>
+</div>
+
+<!-- VIDEO DISPLAY -->
+<div class="section">
+<div class="title">
+<h2>ভিডিও</h2>
+<p>Video Display</p>
+</div>
+
+<div class="video">
+<iframe id="videoFrame"
+src="https://www.youtube.com/embed/VIDEO_ID"
+allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="box">
+<div class="title">
+<h2>আমাদের সম্পর্কে</h2>
+<p>About Us</p>
+</div>
+<p style="line-height:1.9">
+বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন একটি সামাজিক ও কল্যাণমূলক
+প্ল্যাটফর্ম। প্রবাসী ও সাধারণ মানুষের মধ্যে সহযোগিতা,
+যোগাযোগ ও কল্যাণমূলক কার্যক্রমকে সহজ করার উদ্দেশ্যে
+এই প্ল্যাটফর্ম তৈরি করা হয়েছে।
+</p>
+</div>
+
+</section>
+
+
+<!-- REGISTRATION -->
+<section id="register" class="hidden">
+<div class="title">
+<h2>সদস্য নিবন্ধন</h2>
+<p>Member Registration</p>
+</div>
+
+<div class="box">
+<input id="rFirst" placeholder="First Name">
+<input id="rLast" placeholder="Last Name">
+<input id="rFather" placeholder="বাবার নাম">
+<input id="rMother" placeholder="মায়ের নাম">
+<input id="rMobile" placeholder="মোবাইল নম্বর">
+<input id="rVillage" placeholder="গ্রাম">
+<input id="rDistrict" placeholder="জেলা">
+<input id="rPost" placeholder="পোস্ট অফিস">
+<input id="rPass" type="password" placeholder="Password">
+<input id="rConfirm" type="password" placeholder="Confirm Password">
+
+<button class="btn" onclick="register()">নিবন্ধন করুন</button>
+</div>
+</section>
+
+
+<!-- LOGIN -->
+<section id="login" class="hidden">
+<div class="title">
+<h2>সদস্য লগইন</h2>
+<p>Member Login</p>
+</div>
+
+<div class="box">
+<input id="lMobile" placeholder="মোবাইল নম্বর">
+<input id="lPass" type="password" placeholder="Password">
+<button class="btn" onclick="login()">Login</button>
+<p id="loginMsg" style="margin-top:12px"></p>
+</div>
+</section>
+
+
+<!-- MEMBER DASHBOARD -->
+<section id="dashboard" class="hidden">
+<div class="title">
+<h2>Member Dashboard</h2>
+</div>
+
+<div class="box">
+<div id="profile"></div>
+<br>
+<button class="btn red" onclick="logout()">Logout</button>
+</div>
+</section>
+
+
+<!-- VIDEO -->
+<section id="video" class="hidden">
+<div class="title">
+<h2>ভিডিও গ্যালারি</h2>
+<p>Video Gallery</p>
+</div>
+
+<div class="video">
+<iframe
+src="https://www.youtube.com/embed/VIDEO_ID"
+allowfullscreen></iframe>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="hidden">
+<div class="title">
+<h2>যোগাযোগ</h2>
+<p>Contact Us</p>
+</div>
+
+<div class="box">
+<p>📞 মোবাইল: আপনার নম্বর এখানে</p>
+<p style="margin-top:10px">📍 ঠিকানা: আপনার ঠিকানা এখানে</p>
+</div>
+</section>
+
+
+<!-- ADMIN -->
+<section id="admin" class="hidden">
+<div class="title">
+<h2>⚙️ Admin Panel</h2>
+<p>Administrator Dashboard</p>
+</div>
+
+<div id="adminLogin" class="box">
+<input id="adminUser" placeholder="Admin Username">
+<input id="adminPass" type="password" placeholder="Admin Password">
+<button class="btn" onclick="adminLogin()">Admin Login</button>
+<p id="adminMsg" style="margin-top:10px"></p>
+</div>
+
+<div id="adminPanel" class="hidden">
+
+<div class="box">
+<h3>🎬 ভিডিও লিংক</h3>
+<input id="videoInput" placeholder="YouTube Video ID">
+<button class="btn" onclick="saveVideo()">Save Video</button>
+</div>
+
+<div class="box">
+<h3>🔗 Social Links</h3>
+
+<input id="whatsappInput" placeholder="WhatsApp Link">
+<input id="facebookInput" placeholder="Facebook Page Link">
+<input id="fbgroupInput" placeholder="Facebook Group Link">
+<input id="messengerInput" placeholder="Messenger Link">
+<input id="youtubeInput" placeholder="YouTube Link">
+
+<button class="btn" onclick="saveLinks()">Save Links</button>
+</div>
+
+<div class="box">
+<h3>👥 Registered Members</h3>
+<div id="memberList"></div>
+</div>
+
+<button class="btn red" onclick="adminLogout()">Admin Logout</button>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Bangladesh Probashi Moncho Foundation</p>
+<p style="margin-top:7px">All Rights Reserved</p>
+</footer>
+
+
+<script>
+
+/* =========================
+   BASIC PAGE SYSTEM
+========================= */
+
+const sections=[
+"home","register","login",
+"dashboard","video","contact","admin"
+];
+
+function show(id){
+sections.forEach(x=>{
+document.getElementById(x).classList.add("hidden");
+});
+document.getElementById(id).classList.remove("hidden");
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+
+/* =========================
+   MEMBER REGISTRATION
+========================= */
+
+function register(){
+
+let first=rFirst.value.trim();
+let last=rLast.value.trim();
+let father=rFather.value.trim();
+let mother=rMother.value.trim();
+let mobile=rMobile.value.trim();
+let village=rVillage.value.trim();
+let district=rDistrict.value.trim();
+let post=rPost.value.trim();
+let pass=rPass.value;
+let confirm=rConfirm.value;
+
+if(!first||!last||!mobile||!pass){
+alert("প্রয়োজনীয় তথ্য পূরণ করুন।");
+return;
+}
+
+if(pass!==confirm){
+alert("Password এবং Confirm Password একই নয়।");
+return;
+}
+
+let members=JSON.parse(localStorage.getItem("members")||"[]");
+
+if(members.some(x=>x.mobile===mobile)){
+alert("এই মোবাইল নম্বর দিয়ে ইতিমধ্যে নিবন্ধন করা হয়েছে।");
+return;
+}
+
+let member={
+id:"PMF-"+Date.now(),
+first,last,father,mother,mobile,
+village,district,post,pass,
+date:new Date().toLocaleDateString()
+};
+
+members.push(member);
+localStorage.setItem("members",JSON.stringify(members));
+
+alert("সদস্য নিবন্ধন সফল হয়েছে। আপনার Member ID: "+member.id);
+
+document.querySelectorAll("#register input").forEach(x=>x.value="");
+show("login");
+}
+
+
+/* =========================
+   MEMBER LOGIN
+========================= */
+
+function login(){
+
+let mobile=lMobile.value.trim();
+let pass=lPass.value;
+
+let members=JSON.parse(localStorage.getItem("members")||"[]");
+
+let member=members.find(x=>x.mobile===mobile&&x.pass===pass);
+
+if(!member){
+loginMsg.innerHTML="❌ মোবাইল নম্বর অথবা Password ভুল।";
+return;
+}
+
+localStorage.setItem("currentMember",JSON.stringify(member));
+
+profile.innerHTML=`
+<h3>স্বাগতম, ${member.first} ${member.last}</h3>
+<hr style="margin:12px 0">
+<p><b>Member ID:</b> ${member.id}</p>
+<p><b>নাম:</b> ${member.first} ${member.last}</p>
+<p><b>বাবার নাম:</b> ${member.father}</p>
+<p><b>মায়ের নাম:</b> ${member.mother}</p>
+<p><b>মোবাইল:</b> ${member.mobile}</p>
+<p><b>গ্রাম:</b> ${member.village}</p>
+<p><b>জেলা:</b> ${member.district}</p>
+<p><b>পোস্ট অফিস:</b> ${member.post}</p>
+`;
+
+show("dashboard");
+}
+
+
+/* =========================
+   MEMBER LOGOUT
+========================= */
+
+function logout(){
+localStorage.removeItem("currentMember");
+show("home");
+}
+
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+/*
+   DEMO ADMIN LOGIN
+   Username: admin
+   Password: 123456
+*/
+
+function adminLogin(){
+
+let u=adminUser.value;
+let p=adminPass.value;
+
+if(u==="admin"&&p==="123456"){
+
+adminLogin.classList.add("hidden");
+adminPanel.classList.remove("hidden");
+
+loadAdmin();
+
+}else{
+adminMsg.innerHTML="❌ Admin Username অথবা Password ভুল।";
+}
+}
+
+function adminLogout(){
+adminPanel.classList.add("hidden");
+adminLogin.classList.remove("hidden");
+adminUser.value="";
+adminPass.value="";
+}
+
+
+/* =========================
+   ADMIN VIDEO
+========================= */
+
+function saveVideo(){
+
+let id=videoInput.value.trim();
+
+if(!id){
+alert("YouTube Video ID দিন।");
+return;
+}
+
+localStorage.setItem("videoID",id);
+
+document.getElementById("videoFrame").src=
+"https://www.youtube.com/embed/"+id;
+
+alert("ভিডিও লিংক Save হয়েছে।");
+}
+
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+function saveLinks(){
+
+localStorage.setItem("whatsapp",whatsappInput.value);
+localStorage.setItem("facebook",facebookInput.value);
+localStorage.setItem("fbgroup",fbgroupInput.value);
+localStorage.setItem("messenger",messengerInput.value);
+localStorage.setItem("youtube",youtubeInput.value);
+
+alert("সব Social Link Save হয়েছে।");
+}
+
+function openLink(name){
+
+let link=localStorage.getItem(name);
+
+if(!link){
+alert("Admin Panel থেকে এই লিংকটি আগে বসাতে হবে।");
+return;
+}
+
+window.open(link,"_blank");
+}
+
+
+/* =========================
+   ADMIN MEMBER LIST
+========================= */
+
+function loadMembers(){
+
+let members=JSON.parse(localStorage.getItem("members")||"[]");
+
+if(!members.length){
+memberList.innerHTML="<p>এখনও কোনো সদস্য নিবন্ধন করেনি।</p>";
+return;
+}
+
+let html=`
+<table>
+<tr>
+<th>ID</th>
+<th>নাম</th>
+<th>মোবাইল</th>
+<th>জেলা</th>
+<th>Action</th>
+</tr>
+`;
+
+members.forEach((m,i)=>{
+html+=`
+<tr>
+<td>${m.id}</td>
+<td>${m.first} ${m.last}</td>
+<td>${m.mobile}</td>
+<td>${m.district}</td>
+<td>
+<button class="btn red" onclick="deleteMember(${i})">
+Delete
+</button>
+</td>
+</tr>
+`;
+});
+
+html+="</table>";
+
+memberList.innerHTML=html;
+}
+
+function deleteMember(i){
+
+if(!confirm("এই সদস্যকে Delete করতে চান?"))return;
+
+let members=JSON.parse(localStorage.getItem("members")||"[]");
+
+members.splice(i,1);
+
+localStorage.setItem("members",JSON.stringify(members));
+
+loadMembers();
+}
+
+
+/* =========================
+   LOAD ADMIN DATA
+========================= */
+
+function loadAdmin(){
+
+videoInput.value=localStorage.getItem("videoID")||"";
+
+whatsappInput.value=localStorage.getItem("whatsapp")||"";
+facebookInput.value=localStorage.getItem("facebook")||"";
+fbgroupInput.value=localStorage.getItem("fbgroup")||"";
+messengerInput.value=localStorage.getItem("messenger")||"";
+youtubeInput.value=localStorage.getItem("youtube")||"";
+
+loadMembers();
+}
+
+
+/* =========================
+   STARTUP
+========================= */
+
+let savedVideo=localStorage.getItem("videoID");
+
+if(savedVideo){
+document.getElementById("videoFrame").src=
+"https://www.youtube.com/embed/"+savedVideo;
+}
+
+</script>
+
+</body>
+</html>

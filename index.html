@@ -1,91 +1,95 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+<!-- 🎬 আমাদের ভিডিও সেকশন -->
+<section class="video-section">
+  <h2>🎬 আমাদের ভিডিও</h2>
+  <p>বাংলাদেশ প্রবাসী ফান্ড ক্লাবের সর্বশেষ ভিডিও</p>
 
-    <div class="container">
-        <!-- Header Banner -->
-        <header class="header">
-            <div class="top-row">
-                <div class="flag-box">
-                    <img src="https://flagcdn.com/w80/bd.png" alt="Bangladesh Flag">
-                    <p>FOR EXPATRIATES BY EXPATRIATES</p>
-                </div>
-                <div class="logo-box">
-                    <i class="fa-solid fa-handshake header-icon"></i>
-                </div>
-                <div class="flag-box">
-                    <img src="https://flagcdn.com/w80/my.png" alt="Malaysia Flag">
-                    <p>TOGETHER FOR A STRONGER FUTURE</p>
-                </div>
-            </div>
+  <div class="video-grid">
 
-            <h1 class="main-title">বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</h1>
-            <h2 class="sub-title">BANGLADESH PROBASHI MONCHO FOUNDATION</h2>
-
-            <div class="info-bar">
-                <span>📍 Location : Kuala Lumpur, Malaysia</span>
-                <span>📅 Established : 01.01.2026</span>
-            </div>
-        </header>
-
-        <!-- Features Grid -->
-        <section class="section">
-            <h3 class="section-title">✨ FEATURES ✨</h3>
-            <div class="grid-container" id="featuresGrid">
-                <!-- Links will be loaded dynamically from JavaScript -->
-            </div>
-        </section>
-
-        <!-- Video Gallery -->
-        <section class="section">
-            <h3 class="section-title">▶ VIDEO GALLERY ▶</h3>
-            <div class="video-grid" id="videoGrid">
-                <!-- Videos will be loaded dynamically from JavaScript -->
-            </div>
-        </section>
-
-        <!-- Footer Contact & Admin Toggle -->
-        <footer class="footer">
-            <h3 class="section-title">📞 CONTACT US</h3>
-            <div class="contact-buttons" id="contactButtons">
-                <!-- Contact Links loaded dynamically -->
-            </div>
-            <p class="footer-tagline">TOGETHER • UNITY • PROGRESS</p>
-            
-            <button class="admin-btn" onclick="toggleAdminPanel()">🔑 Admin Panel</button>
-        </footer>
+    <div class="video-card">
+      <iframe
+        src="https://www.youtube.com/embed/I2mc2RXCEIA"
+        title="বাংলাদেশ প্রবাসী ফান্ড ক্লাব ভিডিও ১"
+        allowfullscreen>
+      </iframe>
     </div>
 
-    <!-- Admin Panel Modal -->
-    <div id="adminModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="toggleAdminPanel()">&times;</span>
-            <h2>Admin Control Panel</h2>
-            <div id="loginForm">
-                <p>পাসওয়ার্ড দিয়ে প্রবেশ করুন (ডিফল্ট: <strong>admin123</strong>):</p>
-                <input type="password" id="adminPass" placeholder="Enter Password">
-                <button onclick="checkAdminPassword()">Login</button>
-            </div>
-            
-            <div id="adminControls" style="display:none;">
-                <h3>Edit Feature Links</h3>
-                <div id="adminFeatureInputs"></div>
-                
-                <h3>Edit YouTube Videos</h3>
-                <div id="adminVideoInputs"></div>
-
-                <button class="save-btn" onclick="saveData()">💾 Save Changes</button>
-            </div>
-        </div>
+    <div class="video-card">
+      <iframe
+        src="https://www.youtube.com/embed/DXB7gdJUlMw"
+        title="বাংলাদেশ প্রবাসী ফান্ড ক্লাব ভিডিও ২"
+        allowfullscreen>
+      </iframe>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="video-card">
+      <iframe
+        src="https://www.youtube.com/embed/KumLOhgtgsM"
+        title="বাংলাদেশ প্রবাসী ফান্ড ক্লাব ভিডিও ৩"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+
+  <a
+    href="https://www.youtube.com/@Bangladeshprobashifundclubf"
+    target="_blank"
+    class="youtube-button">
+    ▶️ আমাদের YouTube চ্যানেল দেখুন
+  </a>
+</section>
+
+<style>
+.video-section {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.video-section p {
+  margin-bottom: 25px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+.youtube-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 22px;
+  background: #e60000;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

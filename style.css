@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #030303;
+    background-color: #000000;
     color: #ffd700;
     display: flex;
     justify-content: center;
@@ -18,20 +18,19 @@ body {
 .container {
     max-width: 900px;
     width: 100%;
-    background: radial-gradient(circle at center, #1a1505 0%, #050505 100%);
-    border: 3px solid #ffd700;
+    background: radial-gradient(circle at top, #1c1800 0%, #050505 100%);
+    border: 3px solid #d4af37;
     border-radius: 20px;
     padding: 20px 15px;
-    box-shadow: 0 0 35px rgba(255, 215, 0, 0.35), inset 0 0 15px rgba(255, 215, 0, 0.2);
-    position: relative;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
 }
 
-/* Header UI */
+/* Header */
 .header {
     text-align: center;
-    border-bottom: 2px solid #ffd700;
+    border-bottom: 2px dashed #d4af37;
     padding-bottom: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .top-row {
@@ -41,39 +40,54 @@ body {
     margin-bottom: 15px;
 }
 
+.flag-box {
+    text-align: center;
+}
+
 .flag-box img {
-    width: 55px;
-    border-radius: 5px;
+    width: 50px;
+    border-radius: 4px;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .flag-box p {
-    font-size: 9px;
+    font-size: 8px;
     color: #fff;
     font-weight: bold;
     margin-top: 4px;
-    text-shadow: 0 0 5px #d4af37;
 }
 
-.header-icon {
-    font-size: 45px;
+/* Main Logo Circle */
+.main-logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffe600 0%, #000 80%);
+    border: 3px solid #ffd700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px #ffd700;
+}
+
+.logo-icon {
+    font-size: 40px;
     color: #ffd700;
-    filter: drop-shadow(0 0 10px #ffd700);
 }
 
 .main-title {
-    font-size: 28px;
-    color: #fff6a5;
-    text-shadow: 0 0 12px #ffd700, 0 0 25px #ffaa00;
+    font-size: 26px;
+    color: #ffe600;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9900;
     font-weight: 800;
+    margin-top: 10px;
 }
 
 .sub-title {
     font-size: 13px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     color: #ffffff;
     margin-bottom: 12px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 .info-bar {
@@ -81,135 +95,208 @@ body {
     justify-content: center;
     gap: 15px;
     font-size: 12px;
-    background: linear-gradient(90deg, rgba(212,175,55,0.1), rgba(255,215,0,0.3), rgba(212,175,55,0.1));
+    background: rgba(212, 175, 55, 0.15);
     padding: 8px 15px;
-    border-radius: 30px;
+    border-radius: 25px;
     border: 1px solid #ffd700;
     color: #fff;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
 /* Sections */
 .section-title {
     text-align: center;
-    font-size: 20px;
-    color: #fff;
+    font-size: 18px;
+    color: #ffd700;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px #ffd700;
-    background: -webkit-linear-gradient(#fff, #ffd700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px #ffd700;
 }
 
-/* Dynamic Glowing Cards */
+/* Features Grid - 1:1 Aspect Ratio Box */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 25px;
 }
 
 .card {
-    background: linear-gradient(145deg, #151515, #080808);
-    border: 2px solid #ffd700;
+    position: relative;
+    aspect-ratio: 1 / 1; /* Square 1:1 format */
+    background: radial-gradient(circle at center, #222 0%, #080808 100%);
+    border: 2px solid #d4af37;
     border-radius: 16px;
-    padding: 15px 8px;
+    padding: 10px;
     text-align: center;
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 0 8px rgba(255, 215, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8), inset 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
 .card:hover {
-    transform: translateY(-6px) scale(1.03);
+    transform: translateY(-5px);
     box-shadow: 0 0 20px #ffd700;
     border-color: #fff;
 }
 
-.card i {
-    font-size: 38px;
-    margin-bottom: 10px;
-    background: -webkit-linear-gradient(#fff, #ffd700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+/* Badge Number Top-Left */
+.badge-num {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+/* Icon 3D Bubble Container */
+.icon-holder {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #333 0%, #000 90%);
+    border: 2px solid #ffd700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.icon-holder i {
+    font-size: 24px;
+    color: #ffd700;
 }
 
 .card span {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
     color: #eee;
+    line-height: 1.2;
 }
 
-/* Videos UI */
+/* Video Section (6 items grid) */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .video-card iframe {
     width: 100%;
     height: 150px;
-    border: 2px solid #ffd700;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+}
+
+.video-title {
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+    margin-top: 4px;
 }
 
 /* Footer & Buttons */
 .footer {
     text-align: center;
-    border-top: 2px solid #ffd700;
+    border-top: 2px dashed #d4af37;
     padding-top: 20px;
 }
 
 .contact-buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
 
 .btn-whatsapp {
-    background: linear-gradient(145deg, #107c41, #25D366);
+    background: #25D366;
     color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
+    padding: 10px 18px;
+    border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 13px;
-    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
-    border: 1px solid #7effad;
-    transition: 0.3s;
-}
-
-.btn-whatsapp:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+    font-size: 12px;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
 }
 
 .footer-tagline {
     font-size: 11px;
-    color: #bbb;
-    letter-spacing: 1px;
+    color: #aaa;
 }
 
 .admin-btn {
-    margin-top: 20px;
+    margin-top: 15px;
     background: #000;
     color: #ffd700;
     border: 1px solid #ffd700;
-    padding: 6px 18px;
-    border-radius: 20px;
+    padding: 6px 15px;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 12px;
+}
+
+/* Modal UI */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center; align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #111;
+    border: 2px solid #d4af37;
+    padding: 20px;
+    width: 90%; max-width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute; right: 15px; top: 10px;
+    font-size: 24px; cursor: pointer; color: #ffd700;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0 12px 0;
+    background: #222;
+    border: 1px solid #d4af37;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.action-btn, .save-btn {
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }

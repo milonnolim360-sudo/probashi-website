@@ -2,195 +2,177 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন | ডিজিটাল পোর্টাল</title>
-    
-    <!-- External Libraries (প্রোফেশনাল লুকের জন্য) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন - প্রিমিয়াম পোর্টাল</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- প্রফেশনাল থিম ও ভেরিয়েবল --- */
-        :root {
-            --primary: #00a859;
-            --primary-dark: #007d42;
-            --accent: #ffd700;
-            --bg-deep: #020617;
-            --bg-card: #0f172a;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border-clr: rgba(255, 255, 255, 0.1);
-            --neon-shadow: 0 0 15px rgba(0, 168, 89, 0.4);
-        }
+        :root { --primary: #00a859; --accent: #ffd700; --bg: #030712; --card: #111827; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial; }
+        body { background-color: var(--bg); color: white; padding-bottom: 50px; }
+        
+        /* Banner */
+        .banner img { width: 100%; border-bottom: 4px solid var(--primary); display: block; }
 
-        /* --- গ্লোবাল স্টাইল --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { 
-            background-color: var(--bg-deep); 
-            color: var(--text-main); 
-            font-family: 'Segoe UI', 'SolaimanLipi', Arial, sans-serif; 
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at top right, rgba(0, 168, 89, 0.1), transparent);
-        }
+        .container { padding: 15px; }
 
-        /* --- লোডিং অ্যানিমেশন --- */
-        #loader {
-            position: fixed; top:0; left:0; width:100%; height:100%; background: var(--bg-deep);
-            display: flex; justify-content: center; align-items: center; z-index: 9999;
-        }
-        .spinner { width: 50px; height: 50px; border: 5px solid var(--border-clr); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        /* Stats Card */
+        .stats-box { background: linear-gradient(145deg, #1e293b, #0f172a); padding: 15px; border-radius: 20px; border: 1px solid #334155; margin-bottom: 20px; }
+        .stat-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f2937; font-size: 14px; }
 
-        /* --- হেডার ও ব্যানার --- */
-        header { width: 100%; position: relative; border-bottom: 4px solid var(--primary); overflow: hidden; }
-        .banner-img { width: 100%; display: block; filter: brightness(0.9); transition: 0.5s; }
-        .banner-img:hover { filter: brightness(1.1); transform: scale(1.02); }
+        /* ১৬টি ফিচার আইকন গ্রিড */
+        .grid-16 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+        .icon-item { background: var(--card); border: 1px solid #1f2937; padding: 15px 5px; border-radius: 15px; text-align: center; text-decoration: none; color: white; transition: 0.3s; }
+        .icon-item i { font-size: 24px; margin-bottom: 5px; display: block; }
+        .icon-item span { font-size: 9px; font-weight: bold; }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; position: relative; }
+        /* ফটো ও ভিডিও গ্যালারি ডিজাইন */
+        .gallery-container { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; }
+        .gallery-item { min-width: 150px; height: 100px; background: #000; border-radius: 10px; overflow: hidden; border: 1px solid #334155; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .video-item { min-width: 250px; height: 140px; background: #000; border-radius: 10px; }
 
-        /* --- স্ট্যাটাস কার্ড (ডিজিটাল লুক) --- */
-        .stats-wrapper {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-clr);
-            border-radius: 25px;
-            padding: 25px;
-            margin-top: -50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-            animation: slideUp 1s ease;
-        }
-        .stat-box { text-align: center; border-right: 1px solid var(--border-clr); }
-        .stat-box:last-child { border-right: none; }
-        .stat-box h3 { font-size: 24px; color: var(--accent); text-shadow: var(--neon-shadow); }
-        .stat-box p { font-size: 12px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px; }
-
-        /* --- টাইটেল স্টাইল --- */
-        .section-header { 
-            margin: 35px 0 20px; display: flex; align-items: center; gap: 15px; 
-            font-size: 16px; font-weight: bold; color: var(--primary);
-        }
-        .section-header::after { content: ""; flex: 1; height: 1px; background: var(--border-clr); }
-
-        /* --- প্রিমিয়াম গ্রিড আইকন --- */
-        .portal-grid { 
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; 
-        }
-        .portal-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-clr);
-            border-radius: 20px;
-            padding: 18px 5px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex; flex-direction: column; align-items: center; gap: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .portal-item:hover { 
-            border-color: var(--primary); transform: translateY(-10px); 
-            background: linear-gradient(145deg, #1e293b, #0f172a);
-            box-shadow: 0 10px 20px rgba(0, 168, 89, 0.2);
-        }
-        .portal-item i { font-size: 28px; }
-        .portal-item span { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; }
-
-        /* আইকন কালারস */
-        .c-fb { color: #1877f2; } .c-yt { color: #ff0000; } .c-wa { color: #25d366; } 
-        .c-tk { color: #ffffff; } .c-msg { color: #0084ff; } .c-eskl { color: #3b82f6; }
-        .c-passport { color: #4ade80; } .c-tng { color: #ffd700; }
-
-        /* --- ভিডিও গ্যালারি --- */
-        .video-scroller { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; }
-        .video-card { 
-            min-width: 250px; background: var(--bg-card); border-radius: 15px; overflow: hidden; border: 1px solid var(--border-clr); 
-            scroll-snap-align: start;
-        }
-        .video-card img { width: 100%; height: 140px; object-fit: cover; }
-        .video-card h4 { padding: 10px; font-size: 12px; font-weight: 500; }
-
-        /* --- কন্টাক্ট ইনফো --- */
-        .footer-card {
-            background: var(--bg-card); padding: 20px; border-radius: 20px; margin-top: 30px;
-            border-top: 3px solid var(--primary);
-        }
-        .footer-card p { font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; color: var(--text-dim); }
-        .footer-card p i { color: var(--primary); font-size: 18px; }
-
-        /* --- সিকিউর অ্যাডমিন প্যানেল --- */
-        .admin-trigger {
-            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
-            background: var(--primary); color: white; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 24px; cursor: pointer; z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0, 168, 89, 0.5);
-            transition: 0.3s;
-        }
-        .admin-trigger:hover { transform: rotate(90deg) scale(1.1); }
-
-        #admin-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); z-index: 9999; backdrop-filter: blur(10px);
-            align-items: center; justify-content: center;
-        }
-        .login-form {
-            background: var(--bg-card); padding: 40px; border-radius: 30px; width: 90%; max-width: 400px;
-            border: 1px solid var(--primary); text-align: center;
-        }
-        .login-form input {
-            width: 100%; padding: 15px; margin: 15px 0; border-radius: 12px; border: 1px solid var(--border-clr);
-            background: var(--bg-deep); color: white; font-size: 16px;
-        }
-        .btn-main {
-            width: 100%; padding: 15px; border-radius: 12px; border: none;
-            background: var(--primary); color: white; font-weight: bold; cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-main:hover { background: var(--primary-dark); box-shadow: var(--neon-shadow); }
-
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        /* মোবাইল অপ্টিমাইজেশন */
-        @media (max-width: 480px) {
-            .portal-grid { grid-template-columns: repeat(3, 1fr); }
-            .stat-box h3 { font-size: 20px; }
-        }
+        /* অ্যাডমিন প্যানেল স্টাইল */
+        #admin-ui { display: none; background: #0f172a; padding: 20px; border-top: 5px solid var(--primary); position: fixed; bottom: 0; left: 0; width: 100%; height: 80%; overflow-y: auto; z-index: 2000; }
+        input, select { width: 100%; padding: 12px; margin: 8px 0; background: #1e293b; color: white; border: 1px solid #334155; border-radius: 10px; }
+        .btn { width: 100%; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .btn-save { background: var(--primary); color: white; }
+        
+        .admin-trigger { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: black; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 1001; }
     </style>
 </head>
-<body onload="hideLoader()">
+<body>
 
-    <!-- প্রি-লোডার -->
-    <div id="loader">
-        <div class="spinner"></div>
+    <div class="banner">
+        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Banner">
     </div>
 
-    <!-- হেডার ও ব্যানার -->
-    <header>
-        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Banner" class="banner-img">
-    </header>
-
     <div class="container">
-        
         <!-- পরিসংখ্যান -->
-        <div class="stats-wrapper">
-            <div class="stat-box">
-                <h3 id="total-val">১২,৫৬৮</h3>
-                <p>মোট সদস্য</p>
-            </div>
-            <div class="stat-box">
-                <h3 id="online-val" style="color: #4ade80;">১,২৫৬</h3>
-                <p>অনলাইন সদস্য</p>
-            </div>
+        <div class="stats-box">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">সার্বিক পরিসংখ্যান</h4>
+            <div class="stat-line"><span>মোট সদস্য:</span> <b id="stat-total">লোড হচ্ছে...</b></div>
+            <div class="stat-line"><span>অনলাইন সদস্য:</span> <b id="stat-online" style="color:#25d366;">লোড হচ্ছে...</b></div>
         </div>
 
-        <!-- অনলাইন প্ল্যাটফর্ম -->
-        <div class="section-header">
-            <i class="fas fa-network-wired"></i> আমাদের অনলাইন প্ল্যাটফর্ম
+        <!-- ১৬টি আইকন সেকশন -->
+        <h5 style="color: var(--accent); border-left: 4px solid var(--primary); padding-left: 10px;">অনলাইন প্ল্যাটফর্ম ও সেবা (১৬)</h5>
+        <div class="grid-16">
+            <a href="https://facebook.com" class="icon-item"><i class="fab fa-facebook" style="color:#1877f2;"></i><span>ফেসবুক</span></a>
+            <a href="https://youtube.com" class="icon-item"><i class="fab fa-youtube" style="color:#ff0000;"></i><span>ইউটিউব</span></a>
+            <a href="https://tiktok.com" class="icon-item"><i class="fab fa-tiktok"></i><span>টিকটক</span></a>
+            <a href="https://wa.me/8801928807515" class="icon-item"><i class="fab fa-whatsapp" style="color:#25d366;"></i><span>হোয়াটসঅ্যাপ</span></a>
+            <a href="#" class="icon-item"><i class="fab fa-facebook-messenger" style="color:#0084ff;"></i><span>মেসেঞ্জার</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-id-card" style="color:#4ade80;"></i><span>পাসপোর্ট</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-file-contract" style="color:#3b82f6;"></i><span>ESKL</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-qrcode" style="color:#ffd700;"></i><span>TNG Digital</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-university"></i><span>BAKS</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-bullhorn" style="color:#f97316;"></i><span>নোটিশ</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-users-gear"></i><span>কমিটি</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-hand-holding-dollar" style="color:#fbbf24;"></i><span>সাহায্য</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-address-book"></i><span>যোগাযোগ</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-download" style="color:#10b981;"></i><span>APK ফাইল</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-images" style="color:#ec4899;"></i><span>গ্যালারি</span></a>
+            <a href="#" class="icon-item"><i class="fas fa-info-circle"></i><span>সম্পর্কে</span></a>
         </div>
-        <div class="portal-grid">
-            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="portal-item animate__animated animate__fadeInUp">
-                <i class="fab fa-facebook c-fb"></i><span>Page</span>
-            </a>
-            <a href="https://www.facebook.com/share/g/192DRWMbcQ/" class="portal-item animate__animated animate__fadeInUp">
-                <i class="fas fa-users c-fb"></i><span>G
+
+        <!-- ফটো গ্যালারি -->
+        <h5 style="margin-top:25px; color: var(--accent);">ফটো গ্যালারি</h5>
+        <div class="gallery-container" id="photo-list">
+            <!-- অ্যাডমিন থেকে ছবি এখানে আসবে -->
+        </div>
+
+        <!-- ভিডিও গ্যালারি -->
+        <h5 style="margin-top:20px; color: var(--accent);">ভিডিও গ্যালারি</h5>
+        <div class="gallery-container" id="video-list">
+            <!-- অ্যাডমিন থেকে ভিডিও এখানে আসবে -->
+        </div>
+    </div>
+
+    <!-- অ্যাডমিন বাটন -->
+    <div class="admin-trigger" onclick="adminAuth()"><i class="fas fa-user-lock"></i></div>
+
+    <!-- অ্যাডমিন কন্ট্রোল প্যানেল -->
+    <div id="admin-ui">
+        <h2 style="text-align:center; color:var(--accent);">এডমিন কন্ট্রোল প্যানেল</h2>
+        <hr style="margin:15px 0; border-color:#334155;">
+        
+        <h3>পরিসংখ্যান আপডেট</h3>
+        <input type="number" id="new-total" placeholder="মোট সদস্য সংখ্যা">
+        <input type="number" id="new-online" placeholder="অনলাইন সদস্য সংখ্যা">
+        <button class="btn btn-save" onclick="updateStats()">পরিসংখ্যান সেভ করুন</button>
+
+        <h3 style="margin-top:30px;">নতুন ফটো যোগ করুন</h3>
+        <input type="text" id="photo-url" placeholder="ছবির ডিরেক্ট লিংক (Image Link)">
+        <button class="btn btn-save" style="background:#3b82f6;" onclick="addPhoto()">ফটো যোগ করুন</button>
+
+        <h3 style="margin-top:30px;">নতুন ভিডিও যোগ করুন</h3>
+        <input type="text" id="video-id" placeholder="ইউটিউব ভিডিও আইডি (যেমন: dQw4w9WgXcQ)">
+        <button class="btn btn-save" style="background:#ff0000;" onclick="addVideo()">ভিডিও যোগ করুন</button>
+
+        <button class="btn" style="background:#444;" onclick="document.getElementById('admin-ui').style.display='none'">বন্ধ করুন</button>
+    </div>
+
+    <!-- Firebase SDKs (রিয়েল এডমিনের জন্য এটি জরুরি) -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // আপনার ফায়ারবেস কনফিগ এখানে বসান
+        const firebaseConfig = {
+            apiKey: "AIzaSy...", 
+            authDomain: "your-app.firebaseapp.com",
+            projectId: "your-app",
+            storageBucket: "your-app.appspot.com",
+            messagingSenderId: "123456",
+            appId: "1:123:web:abc"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // ১. ডাটা লোড করা
+        db.collection("data").doc("stats").onSnapshot((doc) => {
+            if(doc.exists){
+                document.getElementById('stat-total').innerText = doc.data().total;
+                document.getElementById('stat-online').innerText = doc.data().online;
+            }
+        });
+
+        // ফটো ও ভিডিও লোড করা
+        db.collection("photos").onSnapshot(qs => {
+            let h = "";
+            qs.forEach(d => h += `<div class="gallery-item"><img src="${d.data().url}"></div>`);
+            document.getElementById('photo-list').innerHTML = h;
+        });
+
+        db.collection("videos").onSnapshot(qs => {
+            let h = "";
+            qs.forEach(d => h += `<div class="video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/${d.data().id}" frameborder="0" allowfullscreen></iframe></div>`);
+            document.getElementById('video-list').innerHTML = h;
+        });
+
+        // ২. অ্যাডমিন ফাংশন
+        function adminAuth() {
+            let u = prompt("User:"); let p = prompt("Pass:");
+            if(u === "MDRAFIK1987" && p === "MDRAFIK@1987") {
+                document.getElementById('admin-ui').style.display = 'block';
+            } else { alert("ভুল তথ্য!"); }
+        }
+
+        function updateStats() {
+            let t = document.getElementById('new-total').value;
+            let o = document.getElementById('new-online').value;
+            db.collection("data").doc("stats").set({ total: t, online: o }).then(() => alert("আপডেট হয়েছে!"));
+        }
+
+        function addPhoto() {
+            let url = document.getElementById('photo-url').value;
+            db.collection("photos").add({ url: url }).then(() => alert("ফটো যোগ হয়েছে!"));
+        }
+
+        function addVideo() {
+            let id = document.getElementById('video-id').value;
+            db.collection("videos").add({ id: id }).then(() => alert("ভিডিও যোগ হয়েছে!"));
+        }
+    </script>
+</body>
+</html>

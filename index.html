@@ -6,82 +6,129 @@
     <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #00a859; --accent: #ffd700; --bg: #0b1120; --card: #1e293b; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial; }
-        body { background-color: var(--bg); color: white; padding-bottom: 50px; }
+        /* Premium Dark UI CSS */
+        :root { --primary: #00a859; --accent: #ffd700; --bg: #030712; --card: #111827; --blue: #3b82f6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: var(--bg); color: white; padding-bottom: 20px; }
 
-        /* Banner */
-        .banner img { width: 100%; display: block; border-bottom: 3px solid var(--primary); }
+        /* Banner Section */
+        .banner { width: 100%; position: relative; border-bottom: 4px solid var(--primary); }
+        .banner img { width: 100%; height: auto; display: block; }
 
         .container { padding: 15px; }
 
-        /* Stats Card */
-        .stats-box { 
-            background: linear-gradient(145deg, #1e293b, #0f172a); 
-            padding: 15px; border-radius: 15px; margin: 10px 0; border: 1px solid #334155;
+        /* Section Styling */
+        .section-title { 
+            font-size: 15px; font-weight: bold; margin: 25px 0 15px; 
+            border-left: 5px solid var(--accent); padding-left: 12px; display: flex; align-items: center; gap: 10px;
         }
-        .stat-line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #334155; font-size: 14px; }
 
-        /* Grid Icons */
-        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
-        .icon-card { 
-            background: var(--card); padding: 12px 5px; border-radius: 12px; text-align: center; 
-            border: 1px solid #334155; text-decoration: none; color: white; transition: 0.2s;
+        /* Stats Card - Premium Style */
+        .stats-container {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid #334155; border-radius: 20px; padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-bottom: 20px;
         }
-        .icon-card i { font-size: 22px; margin-bottom: 5px; display: block; }
-        .icon-card span { font-size: 9px; font-weight: bold; }
-        .icon-card:active { transform: scale(0.9); }
+        .stat-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f2937; }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label { color: #94a3b8; font-size: 14px; }
+        .stat-value { color: var(--accent); font-weight: bold; font-size: 18px; }
 
-        /* Admin Section */
-        #admin-panel { display: none; background: #111827; padding: 20px; border-top: 2px solid var(--accent); margin-top: 30px; }
-        input { width: 100%; padding: 12px; margin: 8px 0; background: #1f2937; color: white; border: 1px solid #374151; border-radius: 8px; }
-        .btn { width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
-        .btn-update { background: var(--primary); color: white; margin-top: 10px; }
+        /* Icon Grid - Premium Icons */
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .grid-item {
+            background: var(--card); border: 1px solid #1f2937; border-radius: 16px;
+            padding: 15px 5px; text-align: center; text-decoration: none; color: white;
+            transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;
+        }
+        .grid-item:active { transform: scale(0.92); background: #1f2937; }
+        .grid-item i { font-size: 26px; }
+        .grid-item span { font-size: 10px; font-weight: 600; opacity: 0.9; }
+
+        /* Unique Icon Colors */
+        .c-fb { color: #1877f2; } .c-yt { color: #ff0000; } .c-wa { color: #25d366; } 
+        .c-tk { color: #fff; } .c-msg { color: #0084ff; } .c-qr { color: #facc15; }
+        .c-sky { color: #0ea5e9; } .c-rose { color: #f43f5e; }
+
+        /* Admin Controls */
+        .admin-trigger { position: fixed; bottom: 25px; right: 25px; background: var(--accent); color: #000; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.6); z-index: 1000; }
         
-        .login-btn { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: black; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        #admin-panel { 
+            display: none; background: #0f172a; border-radius: 25px 25px 0 0; 
+            padding: 25px; position: fixed; bottom: 0; left: 0; width: 100%; 
+            border-top: 4px solid var(--primary); box-shadow: 0 -10px 30px rgba(0,0,0,0.8); z-index: 1001;
+        }
+        input { width: 100%; padding: 14px; margin: 10px 0; border-radius: 10px; border: 1px solid #334155; background: #1e293b; color: white; font-size: 16px; }
+        .btn { width: 100%; padding: 15px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 16px; }
+        .btn-save { background: var(--primary); color: white; }
     </style>
 </head>
 <body>
 
-    <!-- ব্যানার -->
+    <!-- ১. টপ ব্যানার (আপনার ছবি এখানে লোড হবে) -->
     <div class="banner">
-        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Banner">
+        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" onerror="this.src='https://via.placeholder.com/1200x500/00a859/ffffff?text=Bangladesh+Probashi+Moncho+Foundation'" alt="Banner">
     </div>
 
     <div class="container">
-        <!-- সার্বিক পরিসংখ্যান (Real-time from Firebase) -->
-        <div class="stats-box">
-            <h4 style="color: var(--accent); margin-bottom: 10px; border-left: 4px solid var(--primary); padding-left: 10px;">সার্বিক পরিসংখ্যান</h4>
-            <div class="stat-line"><span>মোট সদস্য:</span> <b id="total-val">লোড হচ্ছে...</b></div>
-            <div class="stat-line"><span>অনলাইন সদস্য:</span> <b id="online-val" style="color:#4ade80;">লোড হচ্ছে...</b></div>
+        
+        <!-- ২. পরিসংখ্যান সেকশন -->
+        <div class="stats-container">
+            <h4 style="color: var(--accent); margin-bottom: 12px; font-size: 14px;">সার্বিক পরিসংখ্যান</h4>
+            <div class="stat-row">
+                <span class="stat-label">মোট সদস্য:</span>
+                <span class="stat-value" id="total-val">১২,৫৬৮</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">অনলাইন সদস্য:</span>
+                <span class="stat-value" id="online-val" style="color: #4ade80;">১,২৫৬</span>
+            </div>
         </div>
 
-        <h5 style="margin: 15px 0 10px; font-size: 14px; color: #94a3b8;">অনলাইন প্ল্যাটফর্ম</h5>
-        <div class="grid-container">
-            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="icon-card"><i class="fab fa-facebook" style="color:#1877f2;"></i><span>Page</span></a>
-            <a href="https://www.youtube.com/@Bangladeshprobashifundclubf" class="icon-card"><i class="fab fa-youtube" style="color:#ff0000;"></i><span>YouTube</span></a>
-            <a href="https://tiktok.com/@md.rafik7854" class="icon-card"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
-            <a href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7" class="icon-card"><i class="fab fa-whatsapp" style="color:#25d366;"></i><span>WhatsApp</span></a>
+        <!-- ৩. অনলাইন প্ল্যাটফর্ম আইকনস -->
+        <div class="section-title"><i class="fas fa-globe"></i> আমাদের অনলাইন প্ল্যাটফর্ম</div>
+        <div class="grid">
+            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="grid-item"><i class="fab fa-facebook c-fb"></i><span>ফেসবুক পেজ</span></a>
+            <a href="https://www.facebook.com/share/g/192DRWMbcQ/" class="grid-item"><i class="fas fa-users c-fb"></i><span>ফেসবুক গ্রুপ</span></a>
+            <a href="https://www.youtube.com/@Bangladeshprobashifundclubf" class="grid-item"><i class="fab fa-youtube c-yt"></i><span>ইউটিউব</span></a>
+            <a href="https://tiktok.com/@md.rafik7854" class="grid-item"><i class="fab fa-tiktok c-tk"></i><span>টিকটক</span></a>
+            <a href="https://m.me/j/AbazuYGAWNXaKYj3/" class="grid-item"><i class="fab fa-facebook-messenger c-msg"></i><span>মেসেঞ্জার</span></a>
+            <a href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7" class="grid-item"><i class="fab fa-whatsapp c-wa"></i><span>হোয়াটসঅ্যাপ</span></a>
+            <a href="https://freeder.com.bd/pages/banglades-prbasee-mnc-faundesn" class="grid-item"><i class="fas fa-shopping-bag c-sky"></i><span>Freeder</span></a>
+            <a href="https://hopenity.com/page/voice.probashi.001" class="grid-item"><i class="fas fa-heart c-rose"></i><span>Hopenity</span></a>
         </div>
 
-        <!-- এডমিন লগইন বাটন -->
-        <div class="login-btn" onclick="adminLogin()"><i class="fas fa-user-shield"></i></div>
-
-        <!-- এডমিন প্যানেল (Hidden) -->
-        <div id="admin-panel">
-            <h3 style="color: var(--accent); text-align: center;">এডমিন কন্ট্রোল</h3>
-            <p style="font-size: 12px; text-align: center; color: #94a3b8;">এখান থেকে ডাটা আপডেট করলে সবার অ্যাপে পরিবর্তন হবে</p>
-            <hr style="margin: 15px 0; border-color: #374151;">
-            
-            <label>মোট সদস্য সংখ্যা আপডেট:</label>
-            <input type="number" id="inp-total" placeholder="উদাহরণ: 12568">
-            
-            <label>অনলাইন সদস্য সংখ্যা আপডেট:</label>
-            <input type="number" id="inp-online" placeholder="উদাহরণ: 1256">
-            
-            <button class="btn btn-update" onclick="updateFirebaseData()">ডাটাবেস আপডেট করুন</button>
-            <button class="btn" style="background:#4b5563; color:white; margin-top:5px;" onclick="location.reload()">লগআউট</button>
+        <!-- ৪. ফিউচার এবং সেবা আইকনস (আপনার স্পেশাল রিকোয়েস্ট) -->
+        <div class="section-title"><i class="fas fa-star"></i> বিশেষ সেবা ও ফিউচার</div>
+        <div class="grid">
+            <a href="https://share.google/jon5xwTlWY0J97cOV" class="grid-item"><i class="fas fa-file-contract c-qr"></i><span>ESKL</span></a>
+            <a href="https://share.google/yvTohMtiDEbxh3D7j" class="grid-item"><i class="fas fa-passport c-wa"></i><span>পাসপোর্ট চেক</span></a>
+            <div class="grid-item" onclick="alert('TNG QR Coming Soon')"><i class="fas fa-qrcode c-qr"></i><span>TNG QR</span></div>
+            <div class="grid-item" onclick="alert('BAKS Contact: +8801961704927')"><i class="fas fa-university c-tk"></i><span>BAKS</span></div>
         </div>
+
+        <!-- ৫. যোগাযোগ সেকশন -->
+        <div class="section-title"><i class="fas fa-headset"></i> সরাসরি যোগাযোগ</div>
+        <div style="background: var(--card); padding: 15px; border-radius: 15px; border: 1px solid #1f2937;">
+            <p style="font-size: 14px; margin-bottom: 8px;"><i class="fab fa-whatsapp c-wa"></i> +880 1928-807515</p>
+            <p style="font-size: 14px; margin-bottom: 8px;"><i class="fab fa-whatsapp c-wa"></i> +60 11-6767 2535</p>
+            <p style="font-size: 14px;"><i class="fas fa-phone c-qr"></i> +880 1961-704927 (BAKS)</p>
+        </div>
+    </div>
+
+    <!-- এডমিন বাটন -->
+    <div class="admin-trigger" onclick="openAdmin()"><i class="fas fa-user-shield"></i></div>
+
+    <!-- এডমিন প্যানেল (লগইন করার পর আসবে) -->
+    <div id="admin-panel">
+        <h2 style="color: var(--accent); text-align: center; margin-bottom: 10px;">এডমিন কন্ট্রোল প্যানেল</h2>
+        <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-bottom: 15px;">এখান থেকে ডাটাবেস আপডেট করুন</p>
+        
+        <input type="number" id="inp-total" placeholder="মোট সদস্য সংখ্যা">
+        <input type="number" id="inp-online" placeholder="অনলাইন সদস্য সংখ্যা">
+        
+        <button class="btn btn-save" onclick="saveToFirebase()">ডাটাবেস আপডেট করুন</button>
+        <button class="btn" style="background: #ef4444; color: white;" onclick="location.reload()">লগআউট</button>
     </div>
 
     <!-- Firebase SDKs -->
@@ -89,66 +136,13 @@
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
 
     <script>
-        // ১. আপনার Firebase Config এখানে বসান
+        // আপনার Firebase তথ্য এখানে বসাবেন
         const firebaseConfig = {
             apiKey: "AIzaSy...", 
-            authDomain: "your-project.firebaseapp.com",
-            projectId: "your-project-id",
-            storageBucket: "your-project.appspot.com",
-            messagingSenderId: "123456789",
-            appId: "1:12345:web:abcde"
+            authDomain: "your-app.firebaseapp.com",
+            projectId: "your-app-id",
+            storageBucket: "your-app.appspot.com",
+            messagingSenderId: "12345678",
+            appId: "1:12345678:web:abcde"
         };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // ২. ডাটাবেস থেকে রিয়েল-টাইম ডাটা পড়া
-        db.collection("portal_data").doc("stats").onSnapshot((doc) => {
-            if (doc.exists) {
-                document.getElementById('total-val').innerText = doc.data().total;
-                document.getElementById('online-val').innerText = doc.data().online;
-            } else {
-                // প্রথমবার ডাটাবেস খালি থাকলে ডিফল্ট ডাটা সেট করা
-                db.collection("portal_data").doc("stats").set({ total: "12,568", online: "1,256" });
-            }
-        });
-
-        // ৩. এডমিন লগইন ফাংশন
-        function adminLogin() {
-            const user = prompt("ইউজারনেম দিন:");
-            const pass = prompt("পাসওয়ার্ড দিন:");
-
-            if(user === "MDRAFIK1987" && pass === "MDRAFIK@1987") {
-                alert("স্বাগতম এডমিন!");
-                document.getElementById('admin-panel').style.display = 'block';
-                window.scrollTo(0, document.body.scrollHeight);
-            } else {
-                alert("ভুল ইউজারনেম বা পাসওয়ার্ড!");
-            }
-        }
-
-        // ৪. ডাটাবেসে নতুন তথ্য সেভ করা
-        function updateFirebaseData() {
-            const newTotal = document.getElementById('inp-total').value;
-            const newOnline = document.getElementById('inp-online').value;
-
-            if(!newTotal || !newOnline) {
-                alert("অনুগ্রহ করে দুটি ঘরই পূরণ করুন!");
-                return;
-            }
-
-            db.collection("portal_data").doc("stats").update({
-                total: newTotal,
-                online: newOnline
-            }).then(() => {
-                alert("ডাটাবেস সফলভাবে আপডেট হয়েছে!");
-                document.getElementById('inp-total').value = "";
-                document.getElementById('inp-online').value = "";
-            }).catch((error) => {
-                alert("এরর: " + error.message);
-            });
-        }
-    </script>
-</body>
-</html>
+        firebase.initializeApp(firebaseC

@@ -1,13 +1,214 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>প্রবাসী ও যুব কল্যাণ সমবায় সমিতি</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- ২. সিএসএস (ডিজাইন) এখানে --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: #0b1120; color: white; padding-bottom: 50px; }
+
+        /* Header Design */
+        .header {
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            padding: 15px;
+            border-bottom: 2px solid #3b82f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .user-info { display: flex; align-items: center; gap: 10px; }
+        .user-info img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #10b981; }
+        .user-text { text-align: right; }
+        .user-text p { font-size: 10px; color: #cbd5e1; }
+        .user-text b { font-size: 12px; color: #3b82f6; }
+
+        /* Main Container */
+        .container { padding: 15px; }
+
+        .section-title {
+            font-size: 14px;
+            margin: 20px 0 15px 0;
+            border-left: 4px solid #f97316;
+            padding-left: 10px;
+            color: #f1f5f9;
+        }
+
+        /* Grid Icons */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .icon-card {
+            background: #1e293b;
+            padding: 15px 5px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #334155;
+            cursor: pointer;
+        }
+
+        .icon-card i { font-size: 24px; margin-bottom: 8px; display: block; }
+        .icon-card span { font-size: 9px; font-weight: 600; display: block; }
+
+        /* Colors for Icons */
+        .fb { color: #1877f2; }
+        .yt { color: #ff0000; }
+        .wa { color: #25d366; }
+        .msg { color: #0084ff; }
+        .tk { color: #ffffff; }
+
+        /* Stats Card */
+        .stats-card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 1px solid #334155;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #334155;
+            font-size: 13px;
+        }
+
+        /* Admin Panel Section */
+        .admin-box {
+            background: #0f172a;
+            border: 2px dashed #3b82f6;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-blue { background: linear-gradient(to right, #3b82f6, #8b5cf6); }
+        .btn-green { background: #10b981; }
+    </style>
 </head>
 <body>
+
+    <!-- ১. হেডার সেকশন -->
     <div class="header">
         <div>
-            <h4 style="margin:0
+            <h3 style="font-size: 14px; color: #3b82f6;">PJKSS ডিজিটাল পোর্টাল</h3>
+        </div>
+        <div class="user-info" id="login-section">
+            <button onclick="googleLogin()" class="btn btn-blue" style="padding: 5px 15px; font-size: 10px;">জিমেইল লগইন</button>
+        </div>
+        <div class="user-info" id="user-display" style="display: none;">
+            <div class="user-text">
+                <p>স্বাগতম,</p>
+                <b id="user-name">ব্যবহারকারী</b>
+            </div>
+            <img id="user-img" src="" alt="Profile">
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- ২. ড্যাশবোর্ড আইকনস -->
+        <h5 class="section-title">আমাদের অনলাইন প্ল্যাটফর্ম</h5>
+        <div class="grid-container" id="features-list">
+            <!-- বাটনগুলো এখানে অটোমেটিক আসবে -->
+            <div class="icon-card"><i class="fab fa-facebook fb"></i><span>Facebook</span></div>
+            <div class="icon-card"><i class="fab fa-youtube yt"></i><span>YouTube</span></div>
+            <div class="icon-card"><i class="fab fa-whatsapp wa"></i><span>WhatsApp</span></div>
+            <div class="icon-card"><i class="fab fa-tiktok tk"></i><span>TikTok</span></div>
+        </div>
+
+        <!-- ৩. পরিসংখ্যান -->
+        <div class="stats-card">
+            <h5 style="color: #f97316; margin-bottom: 10px;">সার্বিক পরিসংখ্যান</h5>
+            <div class="stat-item"><span>মোট সদস্য:</span> <b id="total-m">১২,৫৬৮</b></div>
+            <div class="stat-item"><span>অনলাইন সদস্য:</span> <b id="online-m" style="color:#10b981;">১,২৫৬</b></div>
+        </div>
+
+        <!-- ৪. এডমিন প্যানেল (শুধুমাত্র আপনার জন্য) -->
+        <div class="admin-box">
+            <h5 style="color: #3b82f6; text-align: center;">এডমিন কন্ট্রোল (Hidden for users)</h5>
+            <input type="number" id="new-total" placeholder="মোট সদস্য সংখ্যা পরিবর্তন">
+            <input type="number" id="new-online" placeholder="অনলাইন সদস্য সংখ্যা পরিবর্তন">
+            <button class="btn btn-green" onclick="updateData()">ডাটা আপডেট করুন</button>
+        </div>
+    </div>
+
+    <!-- ৫. জাভাস্ক্রিপ্ট এবং ফায়ারবেস লজিক -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // ফায়ারবেস কনফিগারেশন (আপনার নিজেরটা এখানে বসাবেন)
+        const firebaseConfig = {
+            apiKey: "AIzaSy...", 
+            authDomain: "your-app.firebaseapp.com",
+            projectId: "your-app",
+            storageBucket: "your-app.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:abcdef"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // গুগল লগইন ফাংশন
+        function googleLogin() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider).then((result) => {
+                const user = result.user;
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('user-display').style.display = 'flex';
+                document.getElementById('user-name').innerText = user.displayName;
+                document.getElementById('user-img').src = user.photoURL;
+            }).catch((error) => {
+                alert("লগইন হয়নি: " + error.message);
+            });
+        }
+
+        // ডাটা আপডেট ফাংশন
+        function updateData() {
+            const t = document.getElementById('new-total').value;
+            const o = document.getElementById('new-online').value;
+            
+            if(t) document.getElementById('total-m').innerText = t;
+            if(o) document.getElementById('online-m').innerText = o;
+            
+            alert("সফলভাবে আপডেট হয়েছে!");
+        }
+    </script>
+</body>
+</html>

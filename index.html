@@ -2,190 +2,195 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন | ডিজিটাল পোর্টাল</title>
     
-    <!-- Google Fonts & Icons -->
+    <!-- External Libraries (প্রোফেশনাল লুকের জন্য) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <style>
-        /* --- প্রিমিয়াম ডার্ক ডিজাইন --- */
+        /* --- প্রফেশনাল থিম ও ভেরিয়েবল --- */
         :root {
             --primary: #00a859;
+            --primary-dark: #007d42;
             --accent: #ffd700;
-            --bg: #030712;
-            --card: #111827;
-            --border: #1f2937;
-            --text-gray: #94a3b8;
+            --bg-deep: #020617;
+            --bg-card: #0f172a;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border-clr: rgba(255, 255, 255, 0.1);
+            --neon-shadow: 0 0 15px rgba(0, 168, 89, 0.4);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background-color: var(--bg); color: white; padding-bottom: 30px; overflow-x: hidden; }
+        /* --- গ্লোবাল স্টাইল --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { 
+            background-color: var(--bg-deep); 
+            color: var(--text-main); 
+            font-family: 'Segoe UI', 'SolaimanLipi', Arial, sans-serif; 
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at top right, rgba(0, 168, 89, 0.1), transparent);
+        }
 
-        /* ব্যানার সেকশন */
-        .banner { width: 100%; border-bottom: 4px solid var(--primary); box-shadow: 0 4px 20px rgba(0, 168, 89, 0.4); }
-        .banner img { width: 100%; height: auto; display: block; }
+        /* --- লোডিং অ্যানিমেশন --- */
+        #loader {
+            position: fixed; top:0; left:0; width:100%; height:100%; background: var(--bg-deep);
+            display: flex; justify-content: center; align-items: center; z-index: 9999;
+        }
+        .spinner { width: 50px; height: 50px; border: 5px solid var(--border-clr); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        .container { padding: 15px; max-width: 600px; margin: auto; }
+        /* --- হেডার ও ব্যানার --- */
+        header { width: 100%; position: relative; border-bottom: 4px solid var(--primary); overflow: hidden; }
+        .banner-img { width: 100%; display: block; filter: brightness(0.9); transition: 0.5s; }
+        .banner-img:hover { filter: brightness(1.1); transform: scale(1.02); }
 
-        /* পরিসংখ্যান কার্ড */
-        .stats-container {
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; position: relative; }
+
+        /* --- স্ট্যাটাস কার্ড (ডিজিটাল লুক) --- */
+        .stats-wrapper {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-clr);
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: -50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+            animation: slideUp 1s ease;
+        }
+        .stat-box { text-align: center; border-right: 1px solid var(--border-clr); }
+        .stat-box:last-child { border-right: none; }
+        .stat-box h3 { font-size: 24px; color: var(--accent); text-shadow: var(--neon-shadow); }
+        .stat-box p { font-size: 12px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px; }
+
+        /* --- টাইটেল স্টাইল --- */
+        .section-header { 
+            margin: 35px 0 20px; display: flex; align-items: center; gap: 15px; 
+            font-size: 16px; font-weight: bold; color: var(--primary);
+        }
+        .section-header::after { content: ""; flex: 1; height: 1px; background: var(--border-clr); }
+
+        /* --- প্রিমিয়াম গ্রিড আইকন --- */
+        .portal-grid { 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; 
+        }
+        .portal-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-clr);
+            border-radius: 20px;
+            padding: 18px 5px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .portal-item:hover { 
+            border-color: var(--primary); transform: translateY(-10px); 
             background: linear-gradient(145deg, #1e293b, #0f172a);
-            border: 1px solid var(--border); border-radius: 20px;
-            padding: 20px; margin-top: -30px; position: relative; z-index: 10;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 20px rgba(0, 168, 89, 0.2);
         }
-        .stat-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #1f2937; }
-        .stat-item:last-child { border-bottom: none; }
-        .stat-label { color: var(--text-gray); font-size: 14px; display: flex; align-items: center; gap: 8px; }
-        .stat-value { color: var(--accent); font-weight: bold; font-size: 18px; }
+        .portal-item i { font-size: 28px; }
+        .portal-item span { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; }
 
-        /* শিরোনাম */
-        .section-title { 
-            font-size: 15px; font-weight: bold; color: var(--accent);
-            margin: 25px 0 15px; border-left: 5px solid var(--primary);
-            padding-left: 12px; display: flex; align-items: center; gap: 10px;
-        }
-
-        /* গ্রিড আইকন ডিজাইন */
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-        .grid-item {
-            background: var(--card); border: 1px solid var(--border); border-radius: 18px;
-            padding: 15px 5px; text-align: center; text-decoration: none; color: white;
-            transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .grid-item:active { transform: scale(0.9); background: #1f2937; }
-        .grid-item i { font-size: 26px; }
-        .grid-item span { font-size: 9px; font-weight: bold; }
-
-        /* আইকন কালার */
+        /* আইকন কালারস */
         .c-fb { color: #1877f2; } .c-yt { color: #ff0000; } .c-wa { color: #25d366; } 
-        .c-tk { color: #ffffff; } .c-msg { color: #0084ff; } .c-sky { color: #0ea5e9; }
-        .c-qr { color: #facc15; } .c-rose { color: #f43f5e; }
+        .c-tk { color: #ffffff; } .c-msg { color: #0084ff; } .c-eskl { color: #3b82f6; }
+        .c-passport { color: #4ade80; } .c-tng { color: #ffd700; }
 
-        /* অ্যাডমিন বাটন ও প্যানেল */
-        .admin-trigger { 
-            position: fixed; bottom: 25px; right: 25px; background: var(--accent); 
-            color: #000; width: 55px; height: 55px; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; 
-            font-size: 24px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.6); z-index: 1000; 
+        /* --- ভিডিও গ্যালারি --- */
+        .video-scroller { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; }
+        .video-card { 
+            min-width: 250px; background: var(--bg-card); border-radius: 15px; overflow: hidden; border: 1px solid var(--border-clr); 
+            scroll-snap-align: start;
         }
-        
-        #admin-panel { 
-            display: none; background: #0f172a; border-radius: 25px 25px 0 0; 
-            padding: 25px; position: fixed; bottom: 0; left: 0; width: 100%; 
-            border-top: 5px solid var(--primary); box-shadow: 0 -10px 40px rgba(0,0,0,0.9); z-index: 1001;
-        }
-        input { width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; border: 1px solid #334155; background: #1e293b; color: white; font-size: 16px; }
-        .btn { width: 100%; padding: 15px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px; }
-        .btn-update { background: var(--primary); color: white; }
-        .btn-close { background: #374151; color: white; }
+        .video-card img { width: 100%; height: 140px; object-fit: cover; }
+        .video-card h4 { padding: 10px; font-size: 12px; font-weight: 500; }
 
-        /* কন্টাক্ট কার্ড */
-        .contact-card { background: var(--card); border: 1px solid var(--border); padding: 15px; border-radius: 15px; }
-        .contact-card p { font-size: 13px; margin: 8px 0; display: flex; align-items: center; gap: 10px; }
+        /* --- কন্টাক্ট ইনফো --- */
+        .footer-card {
+            background: var(--bg-card); padding: 20px; border-radius: 20px; margin-top: 30px;
+            border-top: 3px solid var(--primary);
+        }
+        .footer-card p { font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; color: var(--text-dim); }
+        .footer-card p i { color: var(--primary); font-size: 18px; }
+
+        /* --- সিকিউর অ্যাডমিন প্যানেল --- */
+        .admin-trigger {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background: var(--primary); color: white; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 24px; cursor: pointer; z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 168, 89, 0.5);
+            transition: 0.3s;
+        }
+        .admin-trigger:hover { transform: rotate(90deg) scale(1.1); }
+
+        #admin-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 9999; backdrop-filter: blur(10px);
+            align-items: center; justify-content: center;
+        }
+        .login-form {
+            background: var(--bg-card); padding: 40px; border-radius: 30px; width: 90%; max-width: 400px;
+            border: 1px solid var(--primary); text-align: center;
+        }
+        .login-form input {
+            width: 100%; padding: 15px; margin: 15px 0; border-radius: 12px; border: 1px solid var(--border-clr);
+            background: var(--bg-deep); color: white; font-size: 16px;
+        }
+        .btn-main {
+            width: 100%; padding: 15px; border-radius: 12px; border: none;
+            background: var(--primary); color: white; font-weight: bold; cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-main:hover { background: var(--primary-dark); box-shadow: var(--neon-shadow); }
+
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* মোবাইল অপ্টিমাইজেশন */
+        @media (max-width: 480px) {
+            .portal-grid { grid-template-columns: repeat(3, 1fr); }
+            .stat-box h3 { font-size: 20px; }
+        }
     </style>
 </head>
-<body>
+<body onload="hideLoader()">
 
-    <!-- ১. টপ ব্যানার -->
-    <div class="banner">
-        <!-- আপনার দেওয়া ছবিটির সরাসরি লিংক -->
-        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Foundation Banner">
+    <!-- প্রি-লোডার -->
+    <div id="loader">
+        <div class="spinner"></div>
     </div>
+
+    <!-- হেডার ও ব্যানার -->
+    <header>
+        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Banner" class="banner-img">
+    </header>
 
     <div class="container">
         
-        <!-- ২. রিয়েল-টাইম পরিসংখ্যান -->
-        <div class="stats-container">
-            <h4 style="color: var(--accent); margin-bottom: 12px; font-size: 14px; text-align: center;">সার্বিক পরিসংখ্যান</h4>
-            <div class="stat-item">
-                <span class="stat-label"><i class="fas fa-users"></i> মোট সদস্য:</span>
-                <span class="stat-value" id="total-val">১২,৫৬৮</span>
+        <!-- পরিসংখ্যান -->
+        <div class="stats-wrapper">
+            <div class="stat-box">
+                <h3 id="total-val">১২,৫৬৮</h3>
+                <p>মোট সদস্য</p>
             </div>
-            <div class="stat-item">
-                <span class="stat-label"><i class="fas fa-signal"></i> অনলাইন সদস্য:</span>
-                <span class="stat-value" id="online-val" style="color: #4ade80;">১,২৫৬</span>
+            <div class="stat-box">
+                <h3 id="online-val" style="color: #4ade80;">১,২৫৬</h3>
+                <p>অনলাইন সদস্য</p>
             </div>
         </div>
 
-        <!-- ৩. অনলাইন প্ল্যাটফর্ম লিংক -->
-        <div class="section-title"><i class="fas fa-share-nodes"></i> অনলাইন প্ল্যাটফর্ম</div>
-        <div class="grid">
-            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="grid-item"><i class="fab fa-facebook c-fb"></i><span>Page</span></a>
-            <a href="https://www.facebook.com/share/g/192DRWMbcQ/" class="grid-item"><i class="fas fa-users c-fb"></i><span>Group</span></a>
-            <a href="https://www.youtube.com/@Bangladeshprobashifundclubf" class="grid-item"><i class="fab fa-youtube c-yt"></i><span>YouTube</span></a>
-            <a href="https://tiktok.com/@md.rafik7854" class="grid-item"><i class="fab fa-tiktok c-tk"></i><span>TikTok</span></a>
-            <a href="https://m.me/j/AbazuYGAWNXaKYj3/" class="grid-item"><i class="fab fa-facebook-messenger c-msg"></i><span>Messenger</span></a>
-            <a href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7" class="grid-item"><i class="fab fa-whatsapp c-wa"></i><span>WhatsApp</span></a>
-            <a href="https://freeder.com.bd/pages/banglades-prbasee-mnc-faundesn" class="grid-item"><i class="fas fa-shopping-bag c-sky"></i><span>Freeder</span></a>
-            <a href="https://hopenity.com/page/voice.probashi.001" class="grid-item"><i class="fas fa-heart c-rose"></i><span>Hopenity</span></a>
+        <!-- অনলাইন প্ল্যাটফর্ম -->
+        <div class="section-header">
+            <i class="fas fa-network-wired"></i> আমাদের অনলাইন প্ল্যাটফর্ম
         </div>
-
-        <!-- ৪. ফিউচার সার্ভিস আইকন (আপনার রিকোয়েস্ট অনুযায়ী) -->
-        <div class="section-title"><i class="fas fa-star"></i> বিশেষ সেবা ও ফিউচার</div>
-        <div class="grid">
-            <a href="https://share.google/jon5xwTlWY0J97cOV" class="grid-item"><i class="fas fa-file-contract c-qr"></i><span>ESKL</span></a>
-            <a href="https://share.google/yvTohMtiDEbxh3D7j" class="grid-item"><i class="fas fa-passport c-wa"></i><span>পাসপোর্ট চেক</span></a>
-            <div class="grid-item" onclick="alert('TNG Digital QR শীঘ্রই আসছে...')"><i class="fas fa-qrcode c-qr"></i><span>TNG Digital</span></div>
-            <div class="grid-item" onclick="alert('BAKS: +8801961704927')"><i class="fas fa-university c-tk"></i><span>BAKS</span></div>
-        </div>
-
-        <!-- ৫. যোগাযোগ -->
-        <div class="section-title"><i class="fas fa-headset"></i> সরাসরি যোগাযোগ</div>
-        <div class="contact-card">
-            <p><i class="fab fa-whatsapp c-wa"></i> +880 1928-807515</p>
-            <p><i class="fab fa-whatsapp c-wa"></i> +60 11-6767 2535</p>
-            <p><i class="fas fa-phone-alt c-qr"></i> +880 1961-704927 (BAKS)</p>
-        </div>
-    </div>
-
-    <!-- অ্যাডমিন লগইন আইকন -->
-    <div class="admin-trigger" onclick="login()"><i class="fas fa-user-shield"></i></div>
-
-    <!-- অ্যাডমিন প্যানেল -->
-    <div id="admin-panel">
-        <h2 style="color: var(--accent); text-align: center; margin-bottom: 20px;">অ্যাডমিন কন্ট্রোল</h2>
-        
-        <label>মোট সদস্য সংখ্যা আপডেট করুন:</label>
-        <input type="number" id="inp-total" placeholder="সদস্য সংখ্যা">
-        
-        <label>অনলাইন সদস্য সংখ্যা আপডেট করুন:</label>
-        <input type="number" id="inp-online" placeholder="অনলাইন সংখ্যা">
-        
-        <button class="btn btn-update" onclick="saveData()">ডাটাবেস আপডেট করুন</button>
-        <button class="btn btn-close" onclick="logout()">লগআউট</button>
-    </div>
-
-    <!-- JavaScript লজিক -->
-    <script>
-        function login() {
-            const user = prompt("ইউজারনেম (Username) দিন:");
-            const pass = prompt("পাসওয়ার্ড (Password) দিন:");
-            
-            if(user === "MDRAFIK1987" && pass === "MDRAFIK@1987") {
-                alert("স্বাগতম রাফিক ভাই!");
-                document.getElementById('admin-panel').style.display = 'block';
-                window.scrollTo(0, document.body.scrollHeight);
-            } else {
-                alert("ভুল ইউজারনেম বা পাসওয়ার্ড!");
-            }
-        }
-
-        function saveData() {
-            const t = document.getElementById('inp-total').value;
-            const o = document.getElementById('inp-online').value;
-            
-            if(t) document.getElementById('total-val').innerText = t;
-            if(o) document.getElementById('online-val').innerText = o;
-            
-            alert("তথ্য সফলভাবে আপডেট হয়েছে!");
-            document.getElementById('admin-panel').style.display = 'none';
-        }
-
-        function logout() { location.reload(); }
-    </script>
-
-</body>
-</html>
+        <div class="portal-grid">
+            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="portal-item animate__animated animate__fadeInUp">
+                <i class="fab fa-facebook c-fb"></i><span>Page</span>
+            </a>
+            <a href="https://www.facebook.com/share/g/192DRWMbcQ/" class="portal-item animate__animated animate__fadeInUp">
+                <i class="fas fa-users c-fb"></i><span>G

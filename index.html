@@ -1,178 +1,30 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন - প্রিমিয়াম পোর্টাল</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { --primary: #00a859; --accent: #ffd700; --bg: #030712; --card: #111827; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial; }
-        body { background-color: var(--bg); color: white; padding-bottom: 50px; }
-        
-        /* Banner */
-        .banner img { width: 100%; border-bottom: 4px solid var(--primary); display: block; }
+package com.probashi.app;
 
-        .container { padding: 15px; }
+import android.os.Bundle;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import androidx.appcompat.app.AppCompatActivity;
 
-        /* Stats Card */
-        .stats-box { background: linear-gradient(145deg, #1e293b, #0f172a); padding: 15px; border-radius: 20px; border: 1px solid #334155; margin-bottom: 20px; }
-        .stat-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f2937; font-size: 14px; }
+public class MainActivity extends AppCompatActivity {
 
-        /* ১৬টি ফিচার আইকন গ্রিড */
-        .grid-16 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
-        .icon-item { background: var(--card); border: 1px solid #1f2937; padding: 15px 5px; border-radius: 15px; text-align: center; text-decoration: none; color: white; transition: 0.3s; }
-        .icon-item i { font-size: 24px; margin-bottom: 5px; display: block; }
-        .icon-item span { font-size: 9px; font-weight: bold; }
+    WebView webView;
 
-        /* ফটো ও ভিডিও গ্যালারি ডিজাইন */
-        .gallery-container { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; }
-        .gallery-item { min-width: 150px; height: 100px; background: #000; border-radius: 10px; overflow: hidden; border: 1px solid #334155; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        .video-item { min-width: 250px; height: 140px; background: #000; border-radius: 10px; }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        /* অ্যাডমিন প্যানেল স্টাইল */
-        #admin-ui { display: none; background: #0f172a; padding: 20px; border-top: 5px solid var(--primary); position: fixed; bottom: 0; left: 0; width: 100%; height: 80%; overflow-y: auto; z-index: 2000; }
-        input, select { width: 100%; padding: 12px; margin: 8px 0; background: #1e293b; color: white; border: 1px solid #334155; border-radius: 10px; }
-        .btn { width: 100%; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .btn-save { background: var(--primary); color: white; }
-        
-        .admin-trigger { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: black; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 1001; }
-    </style>
-</head>
-<body>
+        webView = new WebView(this);
+        setContentView(webView);
 
-    <div class="banner">
-        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Banner">
-    </div>
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
 
-    <div class="container">
-        <!-- পরিসংখ্যান -->
-        <div class="stats-box">
-            <h4 style="color: var(--accent); margin-bottom: 10px;">সার্বিক পরিসংখ্যান</h4>
-            <div class="stat-line"><span>মোট সদস্য:</span> <b id="stat-total">লোড হচ্ছে...</b></div>
-            <div class="stat-line"><span>অনলাইন সদস্য:</span> <b id="stat-online" style="color:#25d366;">লোড হচ্ছে...</b></div>
-        </div>
+        webView.loadUrl("https://ais-dev-7xoqo6uajieeotstpwj7x5-676948741486.asia-southeast1.run.app/");
+    }
 
-        <!-- ১৬টি আইকন সেকশন -->
-        <h5 style="color: var(--accent); border-left: 4px solid var(--primary); padding-left: 10px;">অনলাইন প্ল্যাটফর্ম ও সেবা (১৬)</h5>
-        <div class="grid-16">
-            <a href="https://facebook.com" class="icon-item"><i class="fab fa-facebook" style="color:#1877f2;"></i><span>ফেসবুক</span></a>
-            <a href="https://youtube.com" class="icon-item"><i class="fab fa-youtube" style="color:#ff0000;"></i><span>ইউটিউব</span></a>
-            <a href="https://tiktok.com" class="icon-item"><i class="fab fa-tiktok"></i><span>টিকটক</span></a>
-            <a href="https://wa.me/8801928807515" class="icon-item"><i class="fab fa-whatsapp" style="color:#25d366;"></i><span>হোয়াটসঅ্যাপ</span></a>
-            <a href="#" class="icon-item"><i class="fab fa-facebook-messenger" style="color:#0084ff;"></i><span>মেসেঞ্জার</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-id-card" style="color:#4ade80;"></i><span>পাসপোর্ট</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-file-contract" style="color:#3b82f6;"></i><span>ESKL</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-qrcode" style="color:#ffd700;"></i><span>TNG Digital</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-university"></i><span>BAKS</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-bullhorn" style="color:#f97316;"></i><span>নোটিশ</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-users-gear"></i><span>কমিটি</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-hand-holding-dollar" style="color:#fbbf24;"></i><span>সাহায্য</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-address-book"></i><span>যোগাযোগ</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-download" style="color:#10b981;"></i><span>APK ফাইল</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-images" style="color:#ec4899;"></i><span>গ্যালারি</span></a>
-            <a href="#" class="icon-item"><i class="fas fa-info-circle"></i><span>সম্পর্কে</span></a>
-        </div>
-
-        <!-- ফটো গ্যালারি -->
-        <h5 style="margin-top:25px; color: var(--accent);">ফটো গ্যালারি</h5>
-        <div class="gallery-container" id="photo-list">
-            <!-- অ্যাডমিন থেকে ছবি এখানে আসবে -->
-        </div>
-
-        <!-- ভিডিও গ্যালারি -->
-        <h5 style="margin-top:20px; color: var(--accent);">ভিডিও গ্যালারি</h5>
-        <div class="gallery-container" id="video-list">
-            <!-- অ্যাডমিন থেকে ভিডিও এখানে আসবে -->
-        </div>
-    </div>
-
-    <!-- অ্যাডমিন বাটন -->
-    <div class="admin-trigger" onclick="adminAuth()"><i class="fas fa-user-lock"></i></div>
-
-    <!-- অ্যাডমিন কন্ট্রোল প্যানেল -->
-    <div id="admin-ui">
-        <h2 style="text-align:center; color:var(--accent);">এডমিন কন্ট্রোল প্যানেল</h2>
-        <hr style="margin:15px 0; border-color:#334155;">
-        
-        <h3>পরিসংখ্যান আপডেট</h3>
-        <input type="number" id="new-total" placeholder="মোট সদস্য সংখ্যা">
-        <input type="number" id="new-online" placeholder="অনলাইন সদস্য সংখ্যা">
-        <button class="btn btn-save" onclick="updateStats()">পরিসংখ্যান সেভ করুন</button>
-
-        <h3 style="margin-top:30px;">নতুন ফটো যোগ করুন</h3>
-        <input type="text" id="photo-url" placeholder="ছবির ডিরেক্ট লিংক (Image Link)">
-        <button class="btn btn-save" style="background:#3b82f6;" onclick="addPhoto()">ফটো যোগ করুন</button>
-
-        <h3 style="margin-top:30px;">নতুন ভিডিও যোগ করুন</h3>
-        <input type="text" id="video-id" placeholder="ইউটিউব ভিডিও আইডি (যেমন: dQw4w9WgXcQ)">
-        <button class="btn btn-save" style="background:#ff0000;" onclick="addVideo()">ভিডিও যোগ করুন</button>
-
-        <button class="btn" style="background:#444;" onclick="document.getElementById('admin-ui').style.display='none'">বন্ধ করুন</button>
-    </div>
-
-    <!-- Firebase SDKs (রিয়েল এডমিনের জন্য এটি জরুরি) -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
-
-    <script>
-        // আপনার ফায়ারবেস কনফিগ এখানে বসান
-        const firebaseConfig = {
-            apiKey: "AIzaSy...", 
-            authDomain: "your-app.firebaseapp.com",
-            projectId: "your-app",
-            storageBucket: "your-app.appspot.com",
-            messagingSenderId: "123456",
-            appId: "1:123:web:abc"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // ১. ডাটা লোড করা
-        db.collection("data").doc("stats").onSnapshot((doc) => {
-            if(doc.exists){
-                document.getElementById('stat-total').innerText = doc.data().total;
-                document.getElementById('stat-online').innerText = doc.data().online;
-            }
-        });
-
-        // ফটো ও ভিডিও লোড করা
-        db.collection("photos").onSnapshot(qs => {
-            let h = "";
-            qs.forEach(d => h += `<div class="gallery-item"><img src="${d.data().url}"></div>`);
-            document.getElementById('photo-list').innerHTML = h;
-        });
-
-        db.collection("videos").onSnapshot(qs => {
-            let h = "";
-            qs.forEach(d => h += `<div class="video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/${d.data().id}" frameborder="0" allowfullscreen></iframe></div>`);
-            document.getElementById('video-list').innerHTML = h;
-        });
-
-        // ২. অ্যাডমিন ফাংশন
-        function adminAuth() {
-            let u = prompt("User:"); let p = prompt("Pass:");
-            if(u === "MDRAFIK1987" && p === "MDRAFIK@1987") {
-                document.getElementById('admin-ui').style.display = 'block';
-            } else { alert("ভুল তথ্য!"); }
-        }
-
-        function updateStats() {
-            let t = document.getElementById('new-total').value;
-            let o = document.getElementById('new-online').value;
-            db.collection("data").doc("stats").set({ total: t, online: o }).then(() => alert("আপডেট হয়েছে!"));
-        }
-
-        function addPhoto() {
-            let url = document.getElementById('photo-url').value;
-            db.collection("photos").add({ url: url }).then(() => alert("ফটো যোগ হয়েছে!"));
-        }
-
-        function addVideo() {
-            let id = document.getElementById('video-id').value;
-            db.collection("videos").add({ id: id }).then(() => alert("ভিডিও যোগ হয়েছে!"));
-        }
-    </script>
-</body>
-</html>
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) webView.goBack();
+        else super.onBackPressed();
+    }
+}

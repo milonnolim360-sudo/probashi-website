@@ -1,109 +1,265 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>প্রবাসী ও যুব কল্যাণ সমবায় সমিতি — Demo</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:#fff;background:radial-gradient(circle at 10% 10%,#00d9ff44,transparent 28%),radial-gradient(circle at 90% 15%,#ff00d444,transparent 28%),linear-gradient(135deg,#03132d,#111b50,#270638);min-height:100vh}
-.wrap{max-width:1150px;margin:auto;padding:18px}.top{text-align:center;padding:18px 8px}.brand{width:88px;height:88px;border-radius:25px;margin:auto;display:grid;place-items:center;font-size:45px;background:linear-gradient(145deg,#00d9ff,#704cff,#ff00c8);box-shadow:0 15px 35px #0008;animation:float 3s ease-in-out infinite}.top h1{font-size:28px;margin:14px 0 5px}.top p{opacity:.8;margin:0}.glass{background:#ffffff10;border:1px solid #ffffff24;border-radius:24px;padding:22px;margin:16px 0;backdrop-filter:blur(14px);box-shadow:0 18px 45px #0005}
-@keyframes float{50%{transform:translateY(-8px) rotateY(8deg)}}h2{text-align:center;margin:4px 0 18px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%;padding:14px;border-radius:13px;border:1px solid #ffffff22;background:#ffffff0d;color:#fff;outline:none}input::placeholder{color:#d7e1ee}button{border:0;border-radius:14px;padding:14px 18px;color:#fff;font-weight:700;background:linear-gradient(90deg,#00bfff,#704cff,#df00ff);cursor:pointer;box-shadow:0 10px 24px #0005}button.full{width:100%;margin-top:15px}.switch{text-align:center;margin-top:15px;color:#75eaff;cursor:pointer}.hidden{display:none!important}.dashboard{display:grid;grid-template-columns:210px 1fr;gap:15px}.side{padding:12px;background:#ffffff0b;border:1px solid #ffffff20;border-radius:20px;height:max-content}.side button{width:100%;margin:4px 0;background:#ffffff0c;text-align:left}.side button.active{background:linear-gradient(90deg,#00bfff66,#9d35ff66)}.side .out{background:linear-gradient(90deg,#ff3155,#ff008c)}.welcome{display:flex;justify-content:space-between;align-items:center}.badge{display:inline-block;padding:6px 11px;border-radius:20px;background:#00ff9d22;color:#70ffd4;font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.tile{min-height:120px;text-decoration:none;color:#fff;border-radius:20px;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;background:linear-gradient(145deg,#ffffff20,#ffffff08);border:1px solid #ffffff20;box-shadow:0 10px 22px #0005;transition:.3s}.tile:hover{transform:translateY(-7px) scale(1.03)}.ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:31px;background:linear-gradient(145deg,#ffffff30,#ffffff08);box-shadow:inset 0 2px 6px #fff4,0 8px 16px #0005}.fb{background:linear-gradient(145deg,#1877f2,#0756bd)}.yt{background:linear-gradient(145deg,#ff3030,#b00000)}.wa{background:linear-gradient(145deg,#25d366,#078b3d)}.ms{background:linear-gradient(145deg,#00b2ff,#7b35ff)}.tt{background:#222}.service{background:linear-gradient(145deg,#00a9d9,#5b25bb)}.orange{background:linear-gradient(145deg,#ffb000,#e86d00)}.purple{background:linear-gradient(145deg,#a855f7,#5420a0)}.green{background:linear-gradient(145deg,#35d34a,#098f25)}.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.video{display:block;text-decoration:none;color:#fff;background:#ffffff0b;border:1px solid #ffffff20;border-radius:18px;padding:18px;text-align:center}.play{font-size:42px}.info{display:grid;grid-template-columns:1fr 1fr;gap:10px}.item{padding:12px;border-radius:12px;background:#ffffff09}.item small{display:block;color:#9feaff;margin-bottom:5px}footer{text-align:center;padding:24px;opacity:.7}
-@media(max-width:800px){.dashboard{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.videos{grid-template-columns:1fr}.form,.info{grid-template-columns:1fr}.top h1{font-size:23px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nescafe VIP Earning App</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding-bottom: 60px; }
+        
+        /* Page Hiding Logic */
+        .page { display: none; }
+        .active-page { display: block; }
+        
+        /* Common Styles */
+        .header { background-color: #d12027; padding: 15px; text-align: center; color: white; font-size: 18px; font-weight: bold; position: sticky; top: 0; z-index: 100;}
+        .card { background: white; margin: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 13px; margin-bottom: 5px; font-weight: bold; color: #444;}
+        .input-group input, .input-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .btn { width: 100%; padding: 12px; background: #d12027; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .btn:hover { background: #b01a20; }
+        
+        /* Bottom Nav */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 12px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); display: none; }
+        .bottom-nav div { text-align: center; font-size: 14px; color: #555; cursor: pointer; }
+        
+        /* Package Cards */
+        .pkg-card { background: white; border-radius: 10px; padding: 15px; margin: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .pkg-info { width: 65%; }
+        .pkg-info h3 { margin: 0 0 5px 0; font-size: 16px; color: #d12027; }
+        .pkg-info p { margin: 3px 0; font-size: 13px; color: #555; }
+        .pkg-image { width: 30%; text-align: center; }
+        .pkg-image img { width: 100%; border-radius: 8px; }
+        .buy-btn { background: #28a745; color: white; border: none; padding: 6px 10px; border-radius: 5px; margin-top: 8px; width: 100%; cursor: pointer;}
+        
+        /* QR Container */
+        .qr-box { background: white; margin: 15px; padding: 20px; border-radius: 10px; text-align: center; }
+        .qr-box img { width: 150px; background: #e62460; padding: 10px; border-radius: 10px;}
+        
+        /* Admin specific */
+        .admin-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .admin-table th, .admin-table td { border: 1px solid #ccc; padding: 8px; text-align: left; font-size: 13px; }
+        .admin-btn { padding: 5px; color: white; border: none; cursor: pointer; border-radius: 3px; }
+    </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top"><div class="brand">🤝</div><h1>প্রবাসী ও যুব কল্যাণ সমবায় সমিতি</h1><p>ঐক্য • সহযোগিতা • কল্যাণ • উন্নয়ন</p></header>
 
-<section id="register" class="glass">
-<h2>📝 নতুন সদস্য রেজিস্ট্রেশন</h2>
-<div class="form">
-<input id="fn" placeholder="ফার্স্ট নাম">
-<input id="ln" placeholder="লাস্ট নাম">
-<input id="father" placeholder="বাবার নাম">
-<input id="mother" placeholder="মায়ের নাম">
-<input id="mobile" placeholder="মোবাইল নম্বর">
-<input id="village" placeholder="গ্রাম">
-<input id="district" placeholder="জেলা">
-<input id="post" placeholder="পোস্ট অফিস">
-<input id="pass" type="password" placeholder="পাসওয়ার্ড">
-<input id="cpass" type="password" placeholder="কনফার্ম পাসওয়ার্ড">
-<input id="tiktok" placeholder="TikTok Link">
-</div>
-<button class="full" onclick="verify()">📱 মোবাইল নম্বর অটো ভেরিফাই</button>
-<div id="vmsg" class="badge hidden" style="margin-top:10px;text-align:center;width:100%">✅ মোবাইল নম্বর ভেরিফাই হয়েছে</div>
-<button class="full" onclick="register()">🚀 রেজিস্ট্রেশন সম্পন্ন করুন</button>
-<div class="switch" onclick="showLogin()">আগে সদস্য হয়েছেন? Login করুন</div>
-</section>
+    <!-- 1. LOGIN PAGE -->
+    <div id="loginPage" class="page active-page">
+        <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <div class="card" style="width: 90%; max-width: 350px; text-align: center;">
+                <h2 style="color: #d12027;">NESCAFE VIP</h2>
+                <div class="input-group"><input type="tel" placeholder="মোবাইল নাম্বার"></div>
+                <div class="input-group"><input type="password" placeholder="পাসওয়ার্ড"></div>
+                <button class="btn" onclick="login()">লগইন করুন</button>
+                <p style="font-size: 14px; margin-top: 15px;">একাউন্ট নেই? <a href="#" onclick="showPage('registerPage')" style="color: blue;">রেজিস্ট্রেশন করুন</a></p>
+                <hr>
+                <button class="btn" style="background: #333;" onclick="showPage('adminPage')">এডমিন প্যানেলে যান</button>
+            </div>
+        </div>
+    </div>
 
-<section id="login" class="glass hidden">
-<h2>🔐 সদস্য Login</h2>
-<input id="lm" placeholder="মোবাইল নম্বর">
-<br><br><input id="lp" type="password" placeholder="পাসওয়ার্ড">
-<button class="full" onclick="login()">🔓 Login করুন</button>
-<div class="switch" onclick="showRegister()">নতুন সদস্য? Registration করুন</div>
-</section>
+    <!-- 2. REGISTER PAGE -->
+    <div id="registerPage" class="page">
+        <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <div class="card" style="width: 90%; max-width: 350px;">
+                <h3 style="text-align: center;">নতুন একাউন্ট খুলুন</h3>
+                <div class="input-group"><input type="text" placeholder="আপনার নাম"></div>
+                <div class="input-group"><input type="tel" placeholder="মোবাইল নাম্বার"></div>
+                <div class="input-group"><input type="password" placeholder="পাসওয়ার্ড"></div>
+                <div class="input-group" style="display:flex; gap:10px;">
+                    <input type="text" placeholder="পাশের কোড লিখুন" style="width: 60%;">
+                    <div style="width: 40%; background: #eee; text-align: center; font-weight: bold; line-height: 40px; letter-spacing: 2px;">8492</div>
+                </div>
+                <button class="btn" onclick="showPage('loginPage')">রেজিস্ট্রেশন সম্পূর্ণ করুন</button>
+                <p style="text-align: center; font-size: 14px;"><a href="#" onclick="showPage('loginPage')">লগইন পেজে ফিরে যান</a></p>
+            </div>
+        </div>
+    </div>
 
-<section id="member" class="hidden">
-<div class="dashboard">
-<aside class="side">
-<button class="active" onclick="tab('home',this)">🏠 হোম</button>
-<button onclick="tab('profile',this)">👤 প্রোফাইল</button>
-<button onclick="tab('links',this)">🌐 অনলাইন লিংক</button>
-<button onclick="tab('videos',this)">🎬 YouTube ভিডিও</button>
-<button onclick="tab('notice',this)">📢 নোটিশ</button>
-<button class="out" onclick="logout()">🚪 Logout</button>
-</aside>
-<main>
-<div id="home" class="tab glass">
-<div class="welcome"><div><h2 style="text-align:left">👋 স্বাগতম, <span id="name"></span></h2><span class="badge">✓ সক্রিয় সদস্য</span></div><div style="font-size:50px">👤</div></div>
-</div>
+    <!-- 3. HOME PAGE -->
+    <div id="homePage" class="page">
+        <div class="header" style="display: flex; justify-content: space-between;">
+            <div>NESCAFE VIP</div>
+            <div>
+                <button style="padding: 5px; border-radius: 5px; border:none; color: #d12027; font-weight: bold;" onclick="showPage('withdrawPage')">উত্তোলন</button>
+                <button style="padding: 5px; border-radius: 5px; border:none; color: #d12027; font-weight: bold;" onclick="showPage('depositPage')">ডিপোজিট</button>
+            </div>
+        </div>
+        
+        <!-- Package 1 -->
+        <div class="pkg-card">
+            <div class="pkg-info">
+                <h3>১. নেসক্যাফে ক্লাসিক</h3>
+                <p>মেয়াদ: ৩৬ দিন</p>
+                <p>প্রতিদিন আয়: <b>২.২২ ৳</b></p>
+                <p>মূল্য: <b>৮০ ৳</b></p>
+            </div>
+            <div class="pkg-image">
+                <img src="https://via.placeholder.com/80?text=Classic" alt="Coffee 1">
+                <button class="buy-btn" onclick="alert('প্যাকেজ কেনা সফল হয়েছে!')">কিনুন</button>
+            </div>
+        </div>
 
-<div id="links" class="tab glass hidden"><h2>⚡ আমাদের অনলাইন প্ল্যাটফর্ম</h2><div class="grid">
-<a class="tile" href="https://www.facebook.com/share/1DPBjB3ePJ/" target="_blank"><div class="ico fb">f</div><b>Facebook Page</b></a>
-<a class="tile" href="https://www.youtube.com/@Bangladeshprobashifundclubf" target="_blank"><div class="ico yt">▶</div><b>YouTube Channel</b></a>
-<a class="tile" href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7?s=cl&p=a&ilr=4" target="_blank"><div class="ico wa">☎</div><b>WhatsApp Group</b></a>
-<a class="tile" href="https://m.me/j/AbazuYGAWNXaKYj3/?send_source=gc%3Acopy_invite_link_c" target="_blank"><div class="ico ms">⚡</div><b>Messenger Group</b></a>
-<a class="tile" href="https://s.imoim.net/nLU12X" target="_blank"><div class="ico service">i</div><b>IMO Group</b></a>
-<a class="tile" href="https://wa.me/qr/5SBSJ55KMO7CB1" target="_blank"><div class="ico wa">☎</div><b>WhatsApp Contact</b></a>
-<a class="tile" href="https://wa.me/message/6ZU4EZJFBGAFM1" target="_blank"><div class="ico wa">💬</div><b>WhatsApp Message</b></a>
-<a class="tile" href="https://www.tiktok.com/" target="_blank"><div class="ico tt">♪</div><b>TikTok</b></a>
-<a class="tile" href="https://www.expatservicesmy.com/ESKLPublicportal/Appointment/BookAppointment" target="_blank"><div class="ico service">🌐</div><b>ESKL</b></a>
-<a class="tile" href="https://chat.whatsapp.com/HcEMStEP3un4uYDBBfH5b0?s=cl&p=a&ilr=4" target="_blank"><div class="ico orange">🚗</div><b>Driver Group</b></a>
-<a class="tile" href="https://chat.whatsapp.com/Jl7W0RXQjEI7Mhgj5riBhu?s=qt&p=a&ilr=0" target="_blank"><div class="ico purple">🚶</div><b>Walker Group</b></a>
-<a class="tile" href="#" onclick="alert('APK Download Link পরে বসানো হবে')"><div class="ico green">📲</div><b>Member APK</b></a>
-</div></div>
+        <!-- Package 2 -->
+        <div class="pkg-card">
+            <div class="pkg-info">
+                <h3>২. নেসক্যাফে সানরাইজ</h3>
+                <p>মেয়াদ: ৩৬ দিন</p>
+                <p>প্রতিদিন আয়: <b>৭.২২ ৳</b></p>
+                <p>মূল্য: <b>২৬০ ৳</b></p>
+            </div>
+            <div class="pkg-image">
+                <img src="https://via.placeholder.com/80?text=Sunrise" alt="Coffee 2">
+                <button class="buy-btn" onclick="alert('প্যাকেজ কেনা সফল হয়েছে!')">কিনুন</button>
+            </div>
+        </div>
 
-<div id="homeLinks" class="tab glass"><h2>🎬 আমাদের YouTube ভিডিও</h2><div class="videos">
-<a class="video" href="https://youtu.be/DXB7gdJUlMw?si=IxsVw1rgzQEGmI-j" target="_blank"><div class="play">▶️</div><b>ভিডিও ০১</b><p>ভিডিও দেখতে ক্লিক করুন</p></a>
-<a class="video" href="https://youtu.be/I2mc2RXCEIA?si=f_NPlgC-n0RFVkyq" target="_blank"><div class="play">▶️</div><b>ভিডিও ০২</b><p>ভিডিও দেখতে ক্লিক করুন</p></a>
-<a class="video" href="https://youtu.be/KumLOhgtgsM?si=gdZm9oyZQiC2g-N0" target="_blank"><div class="play">▶️</div><b>ভিডিও ০৩</b><p>ভিডিও দেখতে ক্লিক করুন</p></a>
-</div></div>
+        <!-- Package 3 -->
+        <div class="pkg-card">
+            <div class="pkg-info">
+                <h3>৩. নেসক্যাফে ৩-ইন-১</h3>
+                <p>মেয়াদ: ৩৬ দিন</p>
+                <p>প্রতিদিন আয়: <b>১০.২৫ ৳</b></p>
+                <p>মূল্য: <b>৩৬৯ ৳</b></p>
+            </div>
+            <div class="pkg-image">
+                <img src="https://via.placeholder.com/80?text=3in1" alt="Coffee 3">
+                <button class="buy-btn" onclick="alert('প্যাকেজ কেনা সফল হয়েছে!')">কিনুন</button>
+            </div>
+        </div>
 
-<div id="profile" class="tab glass hidden"><h2>👤 আমার প্রোফাইল</h2><div class="info" id="info"></div></div>
-<div id="videos" class="tab glass hidden"><h2>🎬 YouTube ভিডিও</h2><div class="videos" id="videoCopy"></div></div>
-<div id="notice" class="tab glass hidden"><h2>📢 নোটিশ বোর্ড</h2><p class="item">🔔 নতুন সদস্যদের স্বাগতম।</p><p class="item">🤝 ঐক্য ও সহযোগিতার মাধ্যমে সংগঠনকে এগিয়ে নিয়ে যাই।</p></div>
-</main></div>
-</section>
-<footer>© 2026 প্রবাসী ও যুব কল্যাণ সমবায় সমিতি</footer>
-</div>
+        <div style="background: #25D366; color: white; text-align: center; padding: 15px; margin: 15px; border-radius: 8px; font-weight: bold;">
+            WhatsApp গ্রুপে যুক্ত হোন
+        </div>
+    </div>
 
-<script>
-let verified=false, member=null;
-function verify(){if(!document.getElementById('mobile').value.trim()) return alert('আগে মোবাইল নম্বর লিখুন।');verified=true;document.getElementById('vmsg').classList.remove('hidden')}
-function register(){
-let g=id=>document.getElementById(id).value.trim();
-if(!verified)return alert('আগে মোবাইল নম্বর ভেরিফাই করুন।');
-if(g('pass')!==g('cpass'))return alert('পাসওয়ার্ড মিলছে না।');
-member={fn:g('fn'),ln:g('ln'),father:g('father'),mother:g('mother'),mobile:g('mobile'),village:g('village'),district:g('district'),post:g('post'),pass:g('pass'),tiktok:g('tiktok')};
-localStorage.setItem('demoMember',JSON.stringify(member));openMember();
-}
-function login(){let m=JSON.parse(localStorage.getItem('demoMember')||'null');if(!m)return alert('আগে Registration করুন।');if(document.getElementById('lm').value.trim()===m.mobile&&document.getElementById('lp').value===m.pass){member=m;openMember()}else alert('মোবাইল নম্বর অথবা পাসওয়ার্ড ভুল।')}
-function openMember(){document.getElementById('register').classList.add('hidden');document.getElementById('login').classList.add('hidden');document.getElementById('member').classList.remove('hidden');document.getElementById('name').textContent=member.fn+' '+member.ln;document.getElementById('info').innerHTML=[['ফার্স্ট নাম',member.fn],['লাস্ট নাম',member.ln],['বাবার নাম',member.father],['মায়ের নাম',member.mother],['মোবাইল',member.mobile],['গ্রাম',member.village],['জেলা',member.district],['পোস্ট অফিস',member.post],['TikTok',member.tiktok||'দেওয়া হয়নি']].map(x=>`<div class="item"><small>${x[0]}</small><b>${x[1]}</b></div>`).join('');document.getElementById('videoCopy').innerHTML=document.querySelector('#homeLinks .videos').innerHTML}
-function showLogin(){document.getElementById('register').classList.add('hidden');document.getElementById('login').classList.remove('hidden')}
-function showRegister(){document.getElementById('login').classList.add('hidden');document.getElementById('register').classList.remove('hidden')}
-function logout(){document.getElementById('member').classList.add('hidden');showLogin()}
-function tab(id,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.add('hidden'));if(id==='home'){document.getElementById('home').classList.remove('hidden');document.getElementById('homeLinks').classList.remove('hidden')}else document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.side button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active')}
-</script>
+    <!-- 4. DEPOSIT PAGE -->
+    <div id="depositPage" class="page">
+        <div class="header">ডিপোজিট করুন</div>
+        <div class="qr-box">
+            <h3 style="color: #00529b;">Touch 'n Go eWallet</h3>
+            <p style="font-size: 13px;">নিচের QR Code স্ক্যান করে পেমেন্ট করুন</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=NescafeDeposit" alt="QR Code">
+        </div>
+        <div class="card">
+            <div class="input-group">
+                <label>টাকার পরিমাণ</label><input type="number" placeholder="কত টাকা?">
+            </div>
+            <div class="input-group">
+                <label>আপনার একাউন্ট নাম্বার</label><input type="text" placeholder="যে নাম্বার থেকে পাঠিয়েছেন">
+            </div>
+            <div class="input-group">
+                <label>Transaction ID</label><input type="text" placeholder="ট্রানজেকশন আইডি">
+            </div>
+            <button class="btn" style="background: #28a745;" onclick="alert('ডিপোজিট রিকোয়েস্ট পাঠানো হয়েছে!'); showPage('homePage');">রিকোয়েস্ট পাঠান</button>
+        </div>
+    </div>
+
+    <!-- 5. WITHDRAW PAGE -->
+    <div id="withdrawPage" class="page">
+        <div class="header">টাকা উত্তোলন</div>
+        <div class="card" style="text-align: center;">
+            <p style="margin:0;">বর্তমান ব্যালেন্স</p>
+            <h1 style="color: #28a745; margin: 5px 0;">৫০০ ৳</h1>
+        </div>
+        <div class="card">
+            <div class="input-group">
+                <label>মেথড</label>
+                <select><option>বিকাশ</option><option>নগদ</option><option>Touch 'n Go</option></select>
+            </div>
+            <div class="input-group">
+                <label>একাউন্ট নাম্বার</label><input type="text" placeholder="যে নাম্বারে টাকা নিবেন">
+            </div>
+            <div class="input-group">
+                <label>টাকার পরিমাণ</label><input type="number" placeholder="কত টাকা তুলতে চান?">
+            </div>
+            <button class="btn" onclick="alert('উত্তোলন রিকোয়েস্ট সফল হয়েছে!'); showPage('homePage');">রিকোয়েস্ট পাঠান</button>
+        </div>
+    </div>
+
+    <!-- 6. PROFILE PAGE -->
+    <div id="profilePage" class="page">
+        <div style="background: #d12027; color: white; text-align: center; padding: 30px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+            <h2>Md Rafik</h2>
+            <p>+60 12-345-6789</p>
+        </div>
+        <div class="card" style="text-align: center; margin-top: -20px;">
+            <p style="margin:0;">মোট আয়</p>
+            <h2 style="color: #28a745; margin: 5px 0;">১,২০০ ৳</h2>
+        </div>
+        <div class="card">
+            <div style="padding: 15px; border-bottom: 1px solid #eee; font-weight: bold;">🛍️ আমার প্যাকেজ</div>
+            <div style="padding: 15px; border-bottom: 1px solid #eee; font-weight: bold;">💳 ট্রানজেকশন হিস্ট্রি</div>
+            <div style="padding: 15px; font-weight: bold; color: red;" onclick="logout()">🚪 লগ আউট</div>
+        </div>
+    </div>
+
+    <!-- 7. ADMIN PANEL -->
+    <div id="adminPage" class="page">
+        <div class="header" style="background: #1e293b; display: flex; justify-content: space-between;">
+            <div>এডমিন প্যানেল</div>
+            <button style="background: red; color: white; border: none; padding: 5px; border-radius: 4px;" onclick="logout()">লগ আউট</button>
+        </div>
+        <div style="display: flex; gap: 10px; padding: 15px;">
+            <div class="card" style="margin: 0; width: 50%; text-align: center;">মোট ইউজার<br><b>১৫০</b></div>
+            <div class="card" style="margin: 0; width: 50%; text-align: center;">পেন্ডিং ডিপোজিট<br><b style="color:red;">৫ টি</b></div>
+        </div>
+        <div class="card">
+            <h3>পেন্ডিং ডিপোজিট রিকোয়েস্ট</h3>
+            <table class="admin-table">
+                <tr><th>নাম</th><th>টাকা</th><th>অ্যাকশন</th></tr>
+                <tr>
+                    <td>Rafik</td><td>260 ৳</td>
+                    <td>
+                        <button class="admin-btn" style="background: green;" onclick="alert('Approve করা হলো')">Approve</button>
+                        <button class="admin-btn" style="background: red;" onclick="alert('Reject করা হলো')">Reject</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION (Only visible when logged in) -->
+    <div id="bottomNav" class="bottom-nav">
+        <div onclick="showPage('homePage')">🏠<br>হোম</div>
+        <div onclick="showPage('depositPage')">💵<br>ডিপোজিট</div>
+        <div onclick="showPage('withdrawPage')">💳<br>উত্তোলন</div>
+        <div onclick="showPage('profilePage')">👤<br>প্রোফাইল</div>
+    </div>
+
+    <!-- JavaScript for Page Navigation -->
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            var pages = document.getElementsByClassName('page');
+            for(var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active-page');
+            }
+            // Show target page
+            document.getElementById(pageId).classList.add('active-page');
+
+            // Bottom Nav visibility logic
+            var nav = document.getElementById('bottomNav');
+            if(pageId === 'loginPage' || pageId === 'registerPage' || pageId === 'adminPage') {
+                nav.style.display = 'none'; // Hide bottom nav on login/register/admin
+            } else {
+                nav.style.display = 'flex'; // Show bottom nav inside the app
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function login() {
+            // Simple mock login
+            showPage('homePage');
+        }
+
+        function logout() {
+            showPage('loginPage');
+        }
+    </script>
 </body>
 </html>

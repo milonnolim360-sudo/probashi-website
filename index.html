@@ -3,272 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
+    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন | ডিজিটাল পোর্টাল</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* Basic Setup & Dark Theme */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121826; /* Deep dark blue background */
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* 3D Glassmorphism & Neumorphism Mix Styles */
-        .card-3d {
-            background: linear-gradient(145deg, #1a2235, #161d2d);
-            box-shadow: 6px 6px 12px #0b0f17, -6px -6px 12px #1d273f;
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .card-3d:hover {
-            transform: translateY(-5px);
-            box-shadow: 8px 8px 15px #0b0f17, -8px -8px 15px #24304d;
-        }
-        .card-3d:active {
-            box-shadow: inset 4px 4px 10px #0b0f17, inset -4px -4px 10px #1d273f;
+        /* --- Golden & Luxury Theme CSS --- */
+        :root {
+            --gold: linear-gradient(135deg, #ffd700, #b8860b);
+            --gold-border: #ffd700;
+            --bg-dark: #000000;
+            --card-bg: rgba(20, 20, 20, 0.9);
         }
 
-        /* Container & Headers */
-        .container { padding: 15px; max-width: 1200px; margin: 0 auto; }
-        
-        .header {
-            text-align: center;
-            padding: 20px 10px;
-            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 22px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            color: #f1c40f; /* Golden color for logo text */
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: white; padding-bottom: 50px; overflow-x: hidden; }
 
-        .section-title {
-            font-size: 16px;
-            color: #00d2ff;
-            border-left: 4px solid #00d2ff;
-            padding-left: 10px;
-            margin: 25px 0 15px 0;
-        }
+        /* Banner */
+        .header-banner { width: 100%; border-bottom: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+        .header-banner img { width: 100%; display: block; }
 
-        /* Grids - 4 in a row */
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
+        .container { padding: 15px; max-width: 800px; margin: auto; }
 
-        /* Icons */
-        .icon-box { font-size: 24px; margin-bottom: 8px; }
-        .icon-text { font-size: 10px; font-weight: bold; color: #a0aec0; }
-
-        /* Media (Videos & Photos) */
-        .media-box {
-            width: 100%;
-            height: 80px;
-            background: #2a354d;
-            border-radius: 8px;
-            object-fit: cover;
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+        /* Section Titles */
+        .title-gold {
+            text-align: center; color: #ffd700; font-size: 18px; font-weight: bold;
+            margin: 20px 0; text-transform: uppercase; letter-spacing: 2px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
         }
+        .title-gold::before, .title-gold::after { content: ""; width: 50px; height: 2px; background: var(--gold); }
 
-        /* WhatsApp Footer */
-        .wa-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 30px;
-            margin-bottom: 40px;
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .feature-card {
+            background: var(--card-bg); border: 1.5px solid var(--gold-border);
+            border-radius: 12px; padding: 12px 5px; text-align: center;
+            text-decoration: none; color: white; transition: 0.3s;
+            box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.1);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
         }
+        .feature-card:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+        .feature-card i { font-size: 28px; background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .feature-card h4 { font-size: 10px; font-weight: 600; }
+        .feature-card p { font-size: 8px; color: #ccc; }
+
+        /* Video Gallery */
+        .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .video-item { 
+            background: #111; border-radius: 10px; border: 1px solid var(--gold-border);
+            overflow: hidden; position: relative;
+        }
+        .video-item iframe { width: 100%; height: 100px; }
+        .video-item p { font-size: 9px; padding: 5px; text-align: center; background: rgba(0,0,0,0.7); }
+
+        /* WhatsApp Section */
+        .wa-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
         .wa-btn {
-            background: linear-gradient(145deg, #25D366, #1da851);
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
-            color: white;
-            font-weight: bold;
-            font-size: 12px;
-            padding: 15px 5px;
+            background: linear-gradient(135deg, #00a859, #004d2c);
+            border: 1px solid #ffd700; border-radius: 30px; padding: 10px;
+            text-align: center; text-decoration: none; color: white; font-size: 10px;
+            font-weight: bold; display: flex; flex-direction: column; align-items: center;
         }
 
-        /* Page Toggle Logic */
-        .page { display: none; }
-        .active-page { display: block; }
+        /* Footer */
+        .footer { text-align: center; margin-top: 30px; padding: 20px; border-top: 1px solid #333; }
+        .footer p { font-size: 12px; color: #ffd700; font-weight: bold; }
 
-        /* Admin Button */
-        .admin-float-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #e74c3c;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        /* Admin Forms */
-        .admin-form input, .admin-form select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            background: #1a2235;
-            border: 1px solid #2a354d;
-            color: white;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .admin-form button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- FRONTEND APP -->
-    <div id="homePage" class="page active-page">
-        
-        <!-- Header / Logo -->
-        <div class="header">
-            <h1>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</h1>
-            <p style="margin: 5px 0 0 0; font-size: 12px; color: #ddd;">প্রবাসীদের সেবায় সর্বদা নিয়োজিত</p>
-        </div>
-
-        <div class="container">
-            
-            <!-- 16 Features (4x4 Grid) -->
-            <div class="section-title">অনলাইন প্ল্যাটফর্ম ও সেবা</div>
-            <div class="grid-4" id="featureGrid">
-                <div class="card-3d"><div class="icon-box">📘</div><div class="icon-text">ফেসবুক পেজ</div></div>
-                <div class="card-3d"><div class="icon-box">💬</div><div class="icon-text">মেসেঞ্জার</div></div>
-                <div class="card-3d"><div class="icon-box">▶️</div><div class="icon-text">ইউটিউব</div></div>
-                <div class="card-3d"><div class="icon-box">🎵</div><div class="icon-text">টিকটক</div></div>
-                
-                <div class="card-3d"><div class="icon-box">📱</div><div class="icon-text">হোয়াটসঅ্যাপ</div></div>
-                <div class="card-3d"><div class="icon-box">🛂</div><div class="icon-text">পাসপোর্ট চেক</div></div>
-                <div class="card-3d"><div class="icon-box">📢</div><div class="icon-text">নোটিশ বোর্ড</div></div>
-                <div class="card-3d"><div class="icon-box">🏦</div><div class="icon-text">ব্যাংক সেবা</div></div>
-                
-                <div class="card-3d"><div class="icon-box">💳</div><div class="icon-text">TNG Digital</div></div>
-                <div class="card-3d"><div class="icon-box">✈️</div><div class="icon-text">টিকেট বুকিং</div></div>
-                <div class="card-3d"><div class="icon-box">⬇️</div><div class="icon-text">APK ডাউনলোড</div></div>
-                <div class="card-3d"><div class="icon-box">🎧</div><div class="icon-text">যোগাযোগ</div></div>
-                
-                <div class="card-3d"><div class="icon-box">📰</div><div class="icon-text">নিউজ পোর্টাল</div></div>
-                <div class="card-3d"><div class="icon-box">🏥</div><div class="icon-text">মেডিকেল</div></div>
-                <div class="card-3d"><div class="icon-box">⚖️</div><div class="icon-text">আইনি সহায়তা</div></div>
-                <div class="card-3d"><div class="icon-box">🌐</div><div class="icon-text">অন্যান্য লিংক</div></div>
-            </div>
-
-            <!-- Video Gallery (4 Videos) -->
-            <div class="section-title">ভিডিও গ্যালারি</div>
-            <div class="grid-4" id="videoGrid">
-                <div class="card-3d" style="padding: 5px;">
-                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+1') center/cover;"></div>
-                </div>
-                <div class="card-3d" style="padding: 5px;">
-                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+2') center/cover;"></div>
-                </div>
-                <div class="card-3d" style="padding: 5px;">
-                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+3') center/cover;"></div>
-                </div>
-                <div class="card-3d" style="padding: 5px;">
-                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+4') center/cover;"></div>
-                </div>
-            </div>
-
-            <!-- Photo Gallery (4 Photos) -->
-            <div class="section-title">ফটো গ্যালারি</div>
-            <div class="grid-4" id="photoGrid">
-                <div class="card-3d" style="padding: 5px;">
-                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+1" class="media-box">
-                </div>
-                <div class="card-3d" style="padding: 5px;">
-                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+2" class="media-box">
-                </div>
-                <div class="card-3d" style="padding: 5px;">
-                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+3" class="media-box">
-                </div>
-                <div class="card-3d" style="padding: 5px;">
-                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+4" class="media-box">
-                </div>
-            </div>
-
-            <!-- 3 WhatsApp Buttons -->
-            <div class="wa-grid">
-                <div class="card-3d wa-btn">📞 হেল্পলাইন ১</div>
-                <div class="card-3d wa-btn">📞 হেল্পলাইন ২</div>
-                <div class="card-3d wa-btn">📞 এডমিন</div>
-            </div>
-
-        </div>
-        
-        <!-- Button to switch to admin panel -->
-        <div class="admin-float-btn" onclick="showPage('adminPage')">⚙️ এডমিন</div>
-    </div>
-
-
-    <!-- ADMIN PANEL -->
-    <div id="adminPage" class="page">
-        <div class="header" style="background: #e74c3c;">
-            <h1>এডমিন প্যানেল</h1>
-        </div>
-        
-        <div class="container admin-form">
-            <div class="card-3d" style="text-align: left; margin-bottom: 20px;">
-                <h3 style="color: #00d2ff; margin-top: 0;">নতুন লিংক/আইকন যোগ করুন</h3>
-                <input type="text" placeholder="আইকনের নাম (যেমন: Facebook)">
-                <input type="text" placeholder="লিংক (URL)">
-                <button onclick="alert('সিস্টেমে লিংক যোগ করা হয়েছে!')">সেভ করুন</button>
-            </div>
-
-            <div class="card-3d" style="text-align: left; margin-bottom: 20px;">
-                <h3 style="color: #f1c40f; margin-top: 0;">ভিডিও বা ছবি যোগ করুন</h3>
-                <select>
-                    <option>কোথায় যোগ করবেন?</option>
-                    <option>ভিডিও গ্যালারিতে</option>
-                    <option>ফটো গ্যালারিতে</option>
-                </select>
-                <input type="text" placeholder="ভিডিও বা ছবির লিংক (URL) দিন">
-                <button style="background: #f39c12;" onclick="alert('গ্যালারিতে যুক্ত করা হয়েছে!')">গ্যালারি আপডেট করুন</button>
-            </div>
-            
-            <div class="card-3d" style="text-align: left; margin-bottom: 20px;">
-                <h3 style="color: #2ecc71; margin-top: 0;">WhatsApp নাম্বার পরিবর্তন</h3>
-                <input type="text" placeholder="নতুন WhatsApp নাম্বার দিন">
-                <button style="background: #27ae60;" onclick="alert('নাম্বার আপডেট হয়েছে!')">আপডেট করুন</button>
-            </div>
-
-            <button style="background: #95a5a6; margin-top: 20px;" onclick="showPage('homePage')">ফিরে যান (হোম পেজ)</button>
-        </div>
-    </div>
-
-    <script>
-        // Page Navigation Logic
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active-page');
-            });
-            document.getElementById(pageId).classList.add('active-page');
-            window.scrollTo(0, 0);
-        }
-    </script>
-</body>
-</html>
+        /* Admin UI */
+        .admin-icon { position: fixed; bottom: 20px; right: 20px; background: #ffd700; color: #000; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 1000; }
+        #admin-panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; padding: 20px; overflow-y: auto; }
+        input { width: 100%; padding: 12px; margin: 8px 0; background: #222; border: 1px solid #ffd700; color: white; border-radius:

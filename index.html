@@ -3,174 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন | ডিজিটাল পোর্টাল</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</title>
     <style>
-        :root { --primary: #00a859; --accent: #ffd700; --bg: #030712; --card: #111827; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial; }
-        body { background-color: var(--bg); color: white; padding-bottom: 80px; }
+        /* Basic Setup & Dark Theme */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121826; /* Deep dark blue background */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 3D Glassmorphism & Neumorphism Mix Styles */
+        .card-3d {
+            background: linear-gradient(145deg, #1a2235, #161d2d);
+            box-shadow: 6px 6px 12px #0b0f17, -6px -6px 12px #1d273f;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-3d:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 15px #0b0f17, -8px -8px 15px #24304d;
+        }
+        .card-3d:active {
+            box-shadow: inset 4px 4px 10px #0b0f17, inset -4px -4px 10px #1d273f;
+        }
 
-        /* ব্যানার */
-        .banner img { width: 100%; border-bottom: 4px solid var(--primary); display: block; box-shadow: 0 4px 15px rgba(0, 168, 89, 0.4); }
+        /* Container & Headers */
+        .container { padding: 15px; max-width: 1200px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            padding: 20px 10px;
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #f1c40f; /* Golden color for logo text */
+        }
 
-        .container { padding: 15px; }
+        .section-title {
+            font-size: 16px;
+            color: #00d2ff;
+            border-left: 4px solid #00d2ff;
+            padding-left: 10px;
+            margin: 25px 0 15px 0;
+        }
 
-        /* পরিসংখ্যান */
-        .stats-box { background: linear-gradient(145deg, #1e293b, #0f172a); padding: 20px; border-radius: 20px; border: 1px solid #334155; margin-top: -30px; position: relative; z-index: 10; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
-        .stat-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f2937; font-size: 14px; }
-        .stat-line:last-child { border-bottom: none; }
+        /* Grids - 4 in a row */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
 
-        /* ১৬টি আইকন গ্রিড */
-        .grid-16 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 25px 0; }
-        .grid-item { background: var(--card); border: 1px solid #1f2937; padding: 15px 5px; border-radius: 18px; text-align: center; text-decoration: none; color: white; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .grid-item:active { transform: scale(0.9); }
-        .grid-item i { font-size: 26px; }
-        .grid-item span { font-size: 10px; font-weight: bold; }
+        /* Icons */
+        .icon-box { font-size: 24px; margin-bottom: 8px; }
+        .icon-text { font-size: 10px; font-weight: bold; color: #a0aec0; }
 
-        /* আইকন কালারস */
-        .c-fb { color: #1877f2; } .c-yt { color: #ff0000; } .c-wa { color: #25d366; } 
-        .c-tk { color: #fff; } .c-msg { color: #0084ff; } .c-qr { color: #facc15; }
-        .c-sky { color: #0ea5e9; } .c-rose { color: #f43f5e; }
+        /* Media (Videos & Photos) */
+        .media-box {
+            width: 100%;
+            height: 80px;
+            background: #2a354d;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+        }
 
-        /* ফটো ও ভিডিও গ্যালারি */
-        .section-title { font-size: 15px; color: var(--accent); margin: 20px 0 10px; border-left: 5px solid var(--primary); padding-left: 12px; }
-        .scroller { display: flex; gap: 12px; overflow-x: auto; padding: 5px 0; scrollbar-width: none; }
-        .scroller::-webkit-scrollbar { display: none; }
-        .photo-card { min-width: 160px; height: 110px; background: #000; border-radius: 12px; overflow: hidden; border: 1px solid #334155; }
-        .photo-card img { width: 100%; height: 100%; object-fit: cover; }
-        .video-card { min-width: 260px; height: 150px; background: #000; border-radius: 15px; border: 1px solid #334155; }
+        /* WhatsApp Footer */
+        .wa-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .wa-btn {
+            background: linear-gradient(145deg, #25D366, #1da851);
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 15px 5px;
+        }
 
-        /* কন্টাক্ট সেকশন */
-        .footer-card { background: var(--card); padding: 15px; border-radius: 15px; border-top: 3px solid var(--primary); margin-top: 20px; }
-        .footer-card p { font-size: 13px; margin: 8px 0; display: flex; align-items: center; gap: 10px; color: #cbd5e1; }
+        /* Page Toggle Logic */
+        .page { display: none; }
+        .active-page { display: block; }
 
-        /* এডমিন প্যানেল */
-        .admin-trigger { position: fixed; bottom: 25px; right: 25px; background: var(--accent); color: #000; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.6); z-index: 1000; }
-        #admin-panel { display: none; background: #0f172a; position: fixed; bottom: 0; width: 100%; height: 85%; border-top: 5px solid var(--primary); border-radius: 30px 30px 0 0; padding: 25px; z-index: 2000; overflow-y: auto; box-shadow: 0 -10px 40px rgba(0,0,0,0.9); }
-        input { width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; border: 1px solid #334155; background: #1e293b; color: white; font-size: 16px; }
-        .btn { width: 100%; padding: 15px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px; }
-        .btn-update { background: var(--primary); color: white; }
+        /* Admin Button */
+        .admin-float-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Admin Forms */
+        .admin-form input, .admin-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #1a2235;
+            border: 1px solid #2a354d;
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .admin-form button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <!-- ব্যানার ছবি -->
-    <div class="banner">
-        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" alt="Foundation Banner">
+    <!-- FRONTEND APP -->
+    <div id="homePage" class="page active-page">
+        
+        <!-- Header / Logo -->
+        <div class="header">
+            <h1>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</h1>
+            <p style="margin: 5px 0 0 0; font-size: 12px; color: #ddd;">প্রবাসীদের সেবায় সর্বদা নিয়োজিত</p>
+        </div>
+
+        <div class="container">
+            
+            <!-- 16 Features (4x4 Grid) -->
+            <div class="section-title">অনলাইন প্ল্যাটফর্ম ও সেবা</div>
+            <div class="grid-4" id="featureGrid">
+                <div class="card-3d"><div class="icon-box">📘</div><div class="icon-text">ফেসবুক পেজ</div></div>
+                <div class="card-3d"><div class="icon-box">💬</div><div class="icon-text">মেসেঞ্জার</div></div>
+                <div class="card-3d"><div class="icon-box">▶️</div><div class="icon-text">ইউটিউব</div></div>
+                <div class="card-3d"><div class="icon-box">🎵</div><div class="icon-text">টিকটক</div></div>
+                
+                <div class="card-3d"><div class="icon-box">📱</div><div class="icon-text">হোয়াটসঅ্যাপ</div></div>
+                <div class="card-3d"><div class="icon-box">🛂</div><div class="icon-text">পাসপোর্ট চেক</div></div>
+                <div class="card-3d"><div class="icon-box">📢</div><div class="icon-text">নোটিশ বোর্ড</div></div>
+                <div class="card-3d"><div class="icon-box">🏦</div><div class="icon-text">ব্যাংক সেবা</div></div>
+                
+                <div class="card-3d"><div class="icon-box">💳</div><div class="icon-text">TNG Digital</div></div>
+                <div class="card-3d"><div class="icon-box">✈️</div><div class="icon-text">টিকেট বুকিং</div></div>
+                <div class="card-3d"><div class="icon-box">⬇️</div><div class="icon-text">APK ডাউনলোড</div></div>
+                <div class="card-3d"><div class="icon-box">🎧</div><div class="icon-text">যোগাযোগ</div></div>
+                
+                <div class="card-3d"><div class="icon-box">📰</div><div class="icon-text">নিউজ পোর্টাল</div></div>
+                <div class="card-3d"><div class="icon-box">🏥</div><div class="icon-text">মেডিকেল</div></div>
+                <div class="card-3d"><div class="icon-box">⚖️</div><div class="icon-text">আইনি সহায়তা</div></div>
+                <div class="card-3d"><div class="icon-box">🌐</div><div class="icon-text">অন্যান্য লিংক</div></div>
+            </div>
+
+            <!-- Video Gallery (4 Videos) -->
+            <div class="section-title">ভিডিও গ্যালারি</div>
+            <div class="grid-4" id="videoGrid">
+                <div class="card-3d" style="padding: 5px;">
+                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+1') center/cover;"></div>
+                </div>
+                <div class="card-3d" style="padding: 5px;">
+                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+2') center/cover;"></div>
+                </div>
+                <div class="card-3d" style="padding: 5px;">
+                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+3') center/cover;"></div>
+                </div>
+                <div class="card-3d" style="padding: 5px;">
+                    <div class="media-box" style="background: url('https://via.placeholder.com/150/000000/FFFFFF/?text=Video+4') center/cover;"></div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery (4 Photos) -->
+            <div class="section-title">ফটো গ্যালারি</div>
+            <div class="grid-4" id="photoGrid">
+                <div class="card-3d" style="padding: 5px;">
+                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+1" class="media-box">
+                </div>
+                <div class="card-3d" style="padding: 5px;">
+                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+2" class="media-box">
+                </div>
+                <div class="card-3d" style="padding: 5px;">
+                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+3" class="media-box">
+                </div>
+                <div class="card-3d" style="padding: 5px;">
+                    <img src="https://via.placeholder.com/150/1e3c72/FFFFFF/?text=Photo+4" class="media-box">
+                </div>
+            </div>
+
+            <!-- 3 WhatsApp Buttons -->
+            <div class="wa-grid">
+                <div class="card-3d wa-btn">📞 হেল্পলাইন ১</div>
+                <div class="card-3d wa-btn">📞 হেল্পলাইন ২</div>
+                <div class="card-3d wa-btn">📞 এডমিন</div>
+            </div>
+
+        </div>
+        
+        <!-- Button to switch to admin panel -->
+        <div class="admin-float-btn" onclick="showPage('adminPage')">⚙️ এডমিন</div>
     </div>
 
-    <div class="container">
-        <!-- পরিসংখ্যান -->
-        <div class="stats-box">
-            <h4 style="text-align: center; color: var(--accent); margin-bottom: 10px; font-size: 14px;">সার্বিক পরিসংখ্যান</h4>
-            <div class="stat-line"><span><i class="fas fa-users"></i> মোট সদস্য:</span> <b id="t-val">১২,৫৬৮</b></div>
-            <div class="stat-line"><span><i class="fas fa-signal"></i> অনলাইন সদস্য:</span> <b id="o-val" style="color: #4ade80;">১,২৫৬</b></div>
+
+    <!-- ADMIN PANEL -->
+    <div id="adminPage" class="page">
+        <div class="header" style="background: #e74c3c;">
+            <h1>এডমিন প্যানেল</h1>
         </div>
-
-        <!-- ১৬টি আইকন গ্রিড -->
-        <div class="section-title">অনলাইন প্ল্যাটফর্ম ও সেবা</div>
-        <div class="grid-16">
-            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="grid-item"><i class="fab fa-facebook c-fb"></i><span>ফেসবুক পেজ</span></a>
-            <a href="https://www.facebook.com/share/g/192DRWMbcQ/" class="grid-item"><i class="fas fa-users-rectangle c-fb"></i><span>ফেসবুক গ্রুপ</span></a>
-            <a href="https://www.youtube.com/@Bangladeshprobashifundclubf" class="grid-item"><i class="fab fa-youtube c-yt"></i><span>ইউটিউব</span></a>
-            <a href="https://tiktok.com/@md.rafik7854" class="grid-item"><i class="fab fa-tiktok c-tk"></i><span>টিকটক</span></a>
-            <a href="https://m.me/j/AbazuYGAWNXaKYj3/" class="grid-item"><i class="fab fa-facebook-messenger c-msg"></i><span>মেসেঞ্জার</span></a>
-            <a href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7" class="grid-item"><i class="fab fa-whatsapp c-wa"></i><span>হোয়াটসঅ্যাপ</span></a>
-            <a href="https://freeder.com.bd/pages/banglades-prbasee-mnc-faundesn" class="grid-item"><i class="fas fa-shopping-bag c-sky"></i><span>Freeder</span></a>
-            <a href="https://hopenity.com/page/voice.probashi.001" class="grid-item"><i class="fas fa-heart c-rose"></i><span>Hopenity</span></a>
-            <a href="https://share.google/jon5xwTlWY0J97cOV" class="grid-item"><i class="fas fa-file-contract c-qr"></i><span>ESKL</span></a>
-            <a href="https://share.google/yvTohMtiDEbxh3D7j" class="grid-item"><i class="fas fa-id-card c-wa"></i><span>পাসপোর্ট চেক</span></a>
-            <div class="grid-item"><i class="fas fa-qrcode c-qr"></i><span>TNG Digital</span></div>
-            <div class="grid-item"><i class="fas fa-building-columns" style="color:white;"></i><span>BAKS</span></div>
-            <div class="grid-item"><i class="fas fa-bullhorn" style="color: #f97316;"></i><span>নোটিশ বোর্ড</span></div>
-            <div class="grid-item"><i class="fas fa-user-tie" style="color: #6366f1;"></i><span>কমিটি</span></a>
-            <div class="grid-item"><i class="fas fa-download" style="color: #10b981;"></i><span>APK ডাউনলোড</span></div>
-            <div class="grid-item"><i class="fas fa-headset" style="color: #a855f7;"></i><span>যোগাযোগ</span></div>
-        </div>
-
-        <!-- ফটো গ্যালারি -->
-        <div class="section-title">ফটো গ্যালারি</div>
-        <div class="scroller" id="photo-display">
-            <div class="photo-card"><img src="https://i.ibb.co/XrnZzQk/Banner.jpg"></div>
-            <div class="photo-card"><img src="https://via.placeholder.com/300x200/00a859/ffffff?text=Image+2"></div>
-            <div class="photo-card"><img src="https://via.placeholder.com/300x200/ffd700/000000?text=Image+3"></div>
-        </div>
-
-        <!-- ভিডিও গ্যালারি -->
-        <div class="section-title">ভিডিও গ্যালারি</div>
-        <div class="scroller" id="video-display">
-            <div class="video-card"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe></div>
-            <div class="video-card"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe></div>
-        </div>
-
-        <!-- যোগাযোগ -->
-        <div class="footer-card">
-            <p><i class="fab fa-whatsapp c-wa"></i> +880 1928-807515</p>
-            <p><i class="fab fa-whatsapp c-wa"></i> +60 11-6767 2535</p>
-            <p><i class="fas fa-phone-alt c-qr"></i> +880 1961-704927 (BAKS)</p>
-        </div>
-    </div>
-
-    <!-- এডমিন বাটন -->
-    <div class="admin-trigger" onclick="openAdmin()"><i class="fas fa-user-shield"></i></div>
-
-    <!-- এডমিন কন্ট্রোল প্যানেল -->
-    <div id="admin-panel">
-        <h2 style="text-align: center; color: var(--accent); margin-bottom: 20px;">অ্যাডমিন কন্ট্রোল</h2>
         
-        <label>মোট সদস্য আপডেট করুন:</label>
-        <input type="number" id="inp-total" placeholder="12568">
-        
-        <label>অনলাইন সদস্য আপডেট করুন:</label>
-        <input type="number" id="inp-online" placeholder="1256">
+        <div class="container admin-form">
+            <div class="card-3d" style="text-align: left; margin-bottom: 20px;">
+                <h3 style="color: #00d2ff; margin-top: 0;">নতুন লিংক/আইকন যোগ করুন</h3>
+                <input type="text" placeholder="আইকনের নাম (যেমন: Facebook)">
+                <input type="text" placeholder="লিংক (URL)">
+                <button onclick="alert('সিস্টেমে লিংক যোগ করা হয়েছে!')">সেভ করুন</button>
+            </div>
 
-        <h3 style="margin-top: 20px; font-size: 16px; color: var(--accent);">গ্যালারি ম্যানেজমেন্ট (লিংক দিন)</h3>
-        <input type="text" id="inp-photo" placeholder="নতুন ছবির লিংক (Image URL)">
-        <input type="text" id="inp-video" placeholder="নতুন ভিডিও আইডি (YouTube ID)">
-        
-        <button class="btn btn-update" onclick="updateDashboard()">সব তথ্য আপডেট করুন</button>
-        <button class="btn" style="background: #374151; color: white;" onclick="closeAdmin()">বন্ধ করুন</button>
+            <div class="card-3d" style="text-align: left; margin-bottom: 20px;">
+                <h3 style="color: #f1c40f; margin-top: 0;">ভিডিও বা ছবি যোগ করুন</h3>
+                <select>
+                    <option>কোথায় যোগ করবেন?</option>
+                    <option>ভিডিও গ্যালারিতে</option>
+                    <option>ফটো গ্যালারিতে</option>
+                </select>
+                <input type="text" placeholder="ভিডিও বা ছবির লিংক (URL) দিন">
+                <button style="background: #f39c12;" onclick="alert('গ্যালারিতে যুক্ত করা হয়েছে!')">গ্যালারি আপডেট করুন</button>
+            </div>
+            
+            <div class="card-3d" style="text-align: left; margin-bottom: 20px;">
+                <h3 style="color: #2ecc71; margin-top: 0;">WhatsApp নাম্বার পরিবর্তন</h3>
+                <input type="text" placeholder="নতুন WhatsApp নাম্বার দিন">
+                <button style="background: #27ae60;" onclick="alert('নাম্বার আপডেট হয়েছে!')">আপডেট করুন</button>
+            </div>
+
+            <button style="background: #95a5a6; margin-top: 20px;" onclick="showPage('homePage')">ফিরে যান (হোম পেজ)</button>
+        </div>
     </div>
 
     <script>
-        // এডমিন লগইন
-        function openAdmin() {
-            let user = prompt("ইউজারনেম:");
-            let pass = prompt("পাসওয়ার্ড:");
-            if(user === "MDRAFIK1987" && pass === "MDRAFIK@1987") {
-                alert("স্বাগতম রাফিক ভাই!");
-                document.getElementById('admin-panel').style.display = 'block';
-            } else { alert("ভুল তথ্য!"); }
-        }
-
-        function closeAdmin() { document.getElementById('admin-panel').style.display = 'none'; }
-
-        // তথ্য আপডেট করা
-        function updateDashboard() {
-            let t = document.getElementById('inp-total').value;
-            let o = document.getElementById('inp-online').value;
-            let img = document.getElementById('inp-photo').value;
-            let vid = document.getElementById('inp-video').value;
-
-            if(t) document.getElementById('t-val').innerText = Number(t).toLocaleString();
-            if(o) document.getElementById('o-val').innerText = Number(o).toLocaleString();
-            
-            if(img) {
-                let div = document.createElement('div');
-                div.className = 'photo-card';
-                div.innerHTML = `<img src="${img}">`;
-                document.getElementById('photo-display').prepend(div);
-            }
-
-            if(vid) {
-                let div = document.createElement('div');
-                div.className = 'video-card';
-                div.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vid}" frameborder="0" allowfullscreen></iframe>`;
-                document.getElementById('video-display').prepend(div);
-            }
-
-            alert("সফলভাবে আপডেট হয়েছে!");
-            closeAdmin();
+        // Page Navigation Logic
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            document.getElementById(pageId).classList.add('active-page');
+            window.scrollTo(0, 0);
         }
     </script>
 </body>

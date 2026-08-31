@@ -4,75 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন | ডিজিটাল পোর্টাল</title>
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* --- গোল্ডেন প্রিমিয়াম থিম CSS --- */
+        /* --- PREMIUM GOLDEN THEME CSS --- */
         :root {
-            --gold: linear-gradient(135deg, #ffd700, #b8860b);
-            --gold-border: #ffd700;
+            --gold: #ffd700;
+            --gold-glow: 0 0 15px rgba(255, 214, 0, 0.5);
             --bg-dark: #000000;
-            --card-bg: rgba(20, 20, 20, 0.95);
+            --card-bg: rgba(15, 15, 15, 0.95);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: var(--bg-dark); color: white; padding-bottom: 50px; overflow-x: hidden; }
 
-        /* টপ ব্যানার */
-        .banner { width: 100%; border-bottom: 3px solid var(--gold-border); box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
-        .banner img { width: 100%; display: block; }
+        /* Banner */
+        .banner-top { width: 100%; border-bottom: 3px solid var(--gold); box-shadow: var(--gold-glow); }
+        .banner-top img { width: 100%; display: block; }
 
-        .container { padding: 15px; max-width: 800px; margin: auto; }
+        .container { padding: 15px; max-width: 600px; margin: auto; }
 
-        /* টাইটেল ডিজাইন */
-        .title-gold {
-            text-align: center; color: #ffd700; font-size: 18px; font-weight: bold;
+        /* Section Titles */
+        .golden-title {
+            text-align: center; color: var(--gold); font-size: 18px; font-weight: bold;
             margin: 25px 0; text-transform: uppercase; letter-spacing: 2px;
             display: flex; align-items: center; justify-content: center; gap: 15px;
         }
-        .title-gold::before, .title-gold::after { content: ""; width: 50px; height: 2px; background: var(--gold); }
+        .golden-title::before, .golden-title::after { content: ""; width: 40px; height: 2px; background: var(--gold); }
 
-        /* ফিচাস গ্রিড (১৬ বাটন) */
-        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-        .feature-card {
-            background: var(--card-bg); border: 1.5px solid var(--gold-border);
+        /* Features Grid (16 Buttons) */
+        .grid-portal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .grid-card {
+            background: var(--card-bg); border: 1.5px solid var(--gold);
             border-radius: 12px; padding: 15px 5px; text-align: center;
             text-decoration: none; color: white; transition: 0.3s;
-            display: flex; flex-direction: column; align-items: center; gap: 8px;
-            box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.1);
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+            box-shadow: inset 0 0 10px rgba(255, 214, 0, 0.1);
         }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-        .feature-card i { font-size: 26px; color: #ffd700; text-shadow: 0 0 10px #ffd700; }
-        .feature-card h4 { font-size: 10px; font-weight: bold; text-transform: uppercase; color: #fff; }
-        .feature-card p { font-size: 8px; color: #ffd700; opacity: 0.8; }
+        .grid-card:active { transform: scale(0.9); box-shadow: 0 0 20px var(--gold); }
+        .grid-card i { font-size: 24px; color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+        .grid-card span { font-size: 9px; font-weight: bold; text-transform: uppercase; }
+        .grid-card small { font-size: 7px; color: #ccc; }
 
-        /* ভিডিও গ্যালারি */
-        .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .video-item { 
-            background: #111; border-radius: 10px; border: 1.5px solid var(--gold-border);
+        /* Video Gallery */
+        .video-scroller { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .video-box { 
+            background: #111; border-radius: 10px; border: 1.5px solid var(--gold);
             overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-        .video-item iframe { width: 100%; height: 110px; border: none; }
-        .video-item p { font-size: 10px; padding: 8px; text-align: center; color: #ffd700; background: rgba(0,0,0,0.8); }
+        .video-box iframe { width: 100%; height: 100px; border: none; }
+        .video-box p { font-size: 9px; padding: 5px; text-align: center; color: var(--gold); }
 
-        /* হোয়াটসঅ্যাপ কন্টাক্ট সেকশন */
-        .wa-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
-        .wa-btn {
+        /* WhatsApp Contact Section */
+        .wa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; }
+        .wa-link {
             background: linear-gradient(135deg, #00a859, #004d2c);
-            border: 1.5px solid #ffd700; border-radius: 40px; padding: 10px;
+            border: 1.5px solid var(--gold); border-radius: 50px; padding: 8px;
             text-align: center; text-decoration: none; color: white;
-            display: flex; flex-direction: column; align-items: center; gap: 2px;
-            box-shadow: 0 5px 15px rgba(0, 168, 89, 0.3);
+            display: flex; flex-direction: column; align-items: center;
         }
-        .wa-btn i { font-size: 18px; }
-        .wa-btn span { font-size: 10px; font-weight: bold; }
-        .wa-btn small { font-size: 8px; opacity: 0.9; }
+        .wa-link i { font-size: 16px; margin-bottom: 2px; }
+        .wa-link b { font-size: 9px; }
 
-        /* ফুটার */
-        .footer { text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #333; }
-        .footer p { color: #ffd700; font-size: 12px; font-weight: bold; letter-spacing: 1px; }
+        /* Footer */
+        .footer-info { text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #333; }
+        .footer-info h2 { color: var(--gold); font-size: 14px; margin-bottom: 5px; }
 
-        /* এডমিন প্যানেল UI */
-        .admin-icon { position: fixed; bottom: 25px; right: 25px; background: #ffd700; color: #000; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 0 20px #ffd700; }
-        
-        #admin-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; padding: 20px; overflow-y: auto; }
-        .login-box { max-width: 400px; margin: 50px auto; background: #111; padding: 30px;
+        /* Admin UI */
+        .admin-lock { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: black; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 1000; box-shadow: 0 0 15px var(--gold); }
+        #admin-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; padding:20px; }
+        .login-card { max-width: 350px; margin: 100px auto; background: #111; padding: 25px; border: 2px solid var(--gold); border-radius: 20px; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; background: #222; border: 1px solid var(--gold); color: white; border-radius: 10px; }
+        .btn-gold { width: 100%; padding: 12px; background: var(--gold); border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- ১. মেইন ব্যানার -->
+    <div class="banner-top">
+        <img src="https://i.ibb.co/XrnZzQk/Banner.jpg" onerror="this.src='https://via.placeholder.com/800x400/000/ffd700?text=Bangladesh+Probashi+Moncho+Foundation'" alt="Banner">
+    </div>
+
+    <div class="container">
+        <!-- ২. ফিচাস আইকনস (১৬ বাটন) -->
+        <div class="golden-title">FEATURES</div>
+        <div class="grid-portal">
+            <!-- বাটন ১-৪ -->
+            <a href="https://www.facebook.com/share/19Q6T6t2Zm/" class="grid-card"><i class="fab fa-facebook"></i><span>Facebook Page</span><small>ফেসবুক পেজ</small></a>
+            <a href="https://www.youtube.com/@Bangladeshprobashifundclubf" class="grid-card"><i class="fab fa-youtube"></i><span>YouTube</span><small>ইউটিউব</small></a>
+            <a href="tiktok.com/@md.rafik7854" class="grid-card"><i class="fab fa-tiktok"></i><span>TikTok</span><small>টিকটক</small></a>
+            <a href="https://www.facebook.com/share/g/192DRWMbcQ/" class="grid-card"><i class="fas fa-users"></i><span>Facebook Group</span><small>ফেসবুক গ্রুপ</small></a>
+            
+            <!-- বাটন ৫-৮ -->
+            <a href="https://m.me/j/AbazuYGAWNXaKYj3/" class="grid-card"><i class="fab fa-facebook-messenger"></i><span>Messenger</span><small>মেসেঞ্জার গ্রুপ</small></a>
+            <a href="https://chat.whatsapp.com/D09urUItfkdEjiVtqgIbY7" class="grid-card"><i class="fab fa-whatsapp"></i><span>WhatsApp Group</span><small>ওয়াটসঅ্যাপ গ্রুপ</small></a>
+            <a href="https://share.google/jon5xwTlWY0J97cOV" class="grid-card"><i class="fas fa-shield-halved"></i><span>BDRIS Verify</span><small>বিভিআইএস ভেরিফাই</small></a>
+            <a href="https://share.google/yvTohMtiDEbxh3D7j" class="grid-card"><i class="fas fa-globe-asia"></i><span>Expat Services</span><small>এক্সপ্যাট সার্ভিস</small></a>
+            
+            <!-- বাটন ৯-১২ -->
+            <a href="https://wa.me/8801928807515" class="grid-card"><i class="fab fa-whatsapp"></i><span>WA Contact</span><small>হোয়াটসঅ্যাপ যোগাযোগ</small></a>
+            <a href="tel:+8801961704927" class="grid-card"><i class="fas fa-envelope"></i><span>Contact</span><small>যোগাযোগ</small></a>
+            <a href="#" class="grid-card"><i class="fas fa-handshake-angle"></i><span>Support</span><small>সদস্য সহযোগিতা</small></a>
+            <a href="#" class="grid-card"><i class="fas fa-user-graduate"></i><span>Training</span><small>প্রশিক্ষণ</small></a>
+            
+            <!-- বাটন ১৩-১৬ -->
+            <a href="https://freeder.com.bd/pages/banglades-prbasee-mnc-faundesn" class="grid-card"><i class="fas fa-shopping-cart"></i><span>Freeder</span><small>অনলাইন শপিং</small></a>
+            <a href="https://hopenity.com/page/voice.probashi.001" class="grid-card"><i class="fas fa-heart"></i><span>Hopenity</span><small>মানবতা</small></a>
+            <a href="#" class="grid-card"><i class="fas fa-university"></i><span>BAKS</span><small>ব্যাকস সেবা</small></a>
+            <a href="#" class="grid-card"><i class="fas fa-people-group"></i><span>Community</span><small>কমিউনিটি</small></a>
+        </div>
+
+        <!-- ৩. ভিডিও গ্যালারি -->
+        <div class="golden-title">VIDEO GALLERY</div>
+        <div class="video-scroller">
+            <div class="video-box"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe><p>ভিডিও ১</p></div>
+            <div class="video-box"><iframe src="https://www.youtube.com/embed/ScMzIvxBSi4"></iframe><p>ভিডিও ২</p></div>
+        </div>
+
+        <!-- ৪. হোয়াটসঅ্যাপ কন্টাক্ট -->
+        <div class="golden-title">WHATSAPP CONTACT</div>
+        <div class="wa-grid">
+            <a href="https://wa.me/8801928807515" class="wa-link"><i class="fab fa-whatsapp"></i><b>WA 1</b></a>
+            <a href="https://wa.me/601167672535" class="wa-link"><i class="fab fa-whatsapp"></i><b>WA 2</b></a>
+            <a href="https://wa.me/8801961704927" class="wa-link"><i class="fab fa-whatsapp"></i><b>WA 3</b></a>
+        </div>
+
+        <!-- ফুটার -->
+        <div class="footer-info">
+            <h2>“ঐক্য • সেবা • উন্নয়ন”</h2>
+            <small>Together We Build a Stronger Expat Community</small>
+        </div>
+    </div>
+
+    <!-- ৫. এডমিন প্যানেল বাটন -->
+    <div class="admin-lock" onclick="toggleAdmin()"><i class="fas fa-user-shield"></i></div>
+
+    <div id="admin-overlay">
+        <div class="login-card" id="login-form">
+            <h2 style="color:var(--gold); margin-bottom:15px;">অ্যাডমিন প্রবেশ</h2>
+            <input type="text" id="user" placeholder="ইউজারনেম">
+            <input type="password" id="pass" placeholder="পাসওয়ার্ড">
+            <button class="btn-gold" onclick="checkAuth()">প্রবেশ করুন</button>
+            <p onclick="toggleAdmin()" style="margin-top:10px; font-size:12px; cursor:pointer;">বন্ধ করুন</p>
+        </div>
+        <div class="login-card" id="edit-form" style="display:none;">
+            <h2 style="color:var(--gold);">এডিট মোড</h2>
+            <p style="font-size:10px; margin-bottom:15px;">Firebase যুক্ত করলে এখান থেকে লিংক পাল্টানো যাবে</p>
+            <button class="btn-gold" onclick="location.reload()">লগআউট</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleAdmin() {
+            const overlay = document.getElementById('admin-overlay');
+            overlay.style.display = (overlay.style.display === 'block') ? 'none' : 'block';
+        }
+        function checkAuth() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            if(u === "MDRAFIK1987" && p === "MDRAFIK@1987") {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('edit-form').style.display = 'block';
+            } else { alert("ভুল পাসওয়ার্ড!"); }
+        }
+    </script>
+</body>
+</html>

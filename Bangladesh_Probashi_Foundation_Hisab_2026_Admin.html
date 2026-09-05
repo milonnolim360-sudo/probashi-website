@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন — হিসাব</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f3f7f4;color:#173b2b}
+.wrap{max-width:900px;margin:auto;padding:14px}
+.header{background:linear-gradient(135deg,#0b6b45,#15945f);color:white;border-radius:18px;padding:20px;text-align:center;box-shadow:0 6px 20px #0002}
+.logo{width:115px;height:115px;object-fit:cover;border-radius:50%;background:white;padding:5px;border:3px solid white}
+h1{font-size:25px;margin:12px 0 6px} .sub{margin:4px 0;font-size:14px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.box{background:white;border-radius:14px;padding:12px;text-align:center;box-shadow:0 2px 10px #0001}
+.box b{display:block;font-size:13px;color:#68756e;margin-bottom:5px} .box span{font-weight:700}
+.actions{display:flex;gap:8px;justify-content:flex-end;margin:10px 0}
+button{border:0;border-radius:10px;padding:10px 15px;font-weight:700;cursor:pointer}
+.adminBtn{background:#173b2b;color:white} .save{background:#0b6b45;color:white} .cancel{background:#ddd}
+.panel{display:none;background:white;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 3px 14px #0001}
+.form{display:grid;grid-template-columns:1fr 1.5fr 1fr auto;gap:8px}
+input,select{width:100%;padding:11px;border:1px solid #ccd8d1;border-radius:9px;font-size:15px}
+table{width:100%;border-collapse:collapse;background:white;border-radius:15px;overflow:hidden;box-shadow:0 3px 14px #0001}
+th{background:#0b6b45;color:white;padding:11px}td{padding:10px;border-bottom:1px solid #e5ebe7;text-align:center}
+.total{margin-top:12px;background:#e4f4eb;border-radius:14px;padding:14px;text-align:center;font-size:18px;font-weight:700}
+.note{font-size:12px;color:#68756e;text-align:center;margin-top:14px}
+.del{background:#ffe3e3;color:#9b2222;padding:6px 9px} .edit{background:#fff1c7;color:#745700;padding:6px 9px;margin-right:4px}
+@media(max-width:650px){.info{grid-template-columns:1fr}.form{grid-template-columns:1fr}th,td{font-size:13px;padding:8px}h1{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+<img class="logo" src="data:image/png;base64," alt="সংগঠনের লোগো">
+<h1>বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন</h1>
+<p class="sub">কলারাম পুর, মালয়েশিয়া</p>
+<p class="sub">স্থাপিত: ০১-০১-২০২৪</p>
+</header>
+
+<div class="info">
+<div class="box"><b>হিসাবের বছর</b><span>২০২৬</span></div>
+<div class="box"><b>শুরু</b><span>০১-০১-২০২৬</span></div>
+<div class="box"><b>মাসিক চাঁদা</b><span>RM 10</span></div>
+</div>
+
+<div class="actions"><button class="adminBtn" onclick="login()">🔐 Admin</button></div>
+<section id="panel" class="panel">
+<h3>Admin Panel — হিসাব যোগ/সম্পাদনা</h3>
+<div class="form">
+<select id="month"></select>
+<input id="member" placeholder="সদস্যের নাম">
+<input id="amount" type="number" min="0" step="0.01" placeholder="টাকার পরিমাণ (RM)">
+<button class="save" onclick="saveEntry()">যোগ করুন</button>
+</div>
+<p class="note">এই সহজ সংস্করণে তথ্য এই ব্রাউজারের ডিভাইসেই সংরক্ষিত হবে।</p>
+</section>
+
+<table>
+<thead><tr><th>ক্রম</th><th>মাসের নাম</th><th>সদস্যের নাম</th><th>টাকার পরিমাণ</th><th id="manageHead" style="display:none">অ্যাকশন</th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+<div class="total">মোট জমা: <span id="total">RM 0</span></div>
+<p class="note">বাংলাদেশ প্রবাসী মঞ্চ ফাউন্ডেশন • হিসাব ২০২৬</p>
+</div>
+
+<script>
+const months=["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"];
+let data=JSON.parse(localStorage.getItem("bp_hisab_2026")||"[]");
+let admin=false, editIndex=-1;
+const m=document.getElementById("month");
+months.forEach((x,i)=>m.add(new Option(x,i)));
+function render(){
+ let body=document.getElementById("rows"), total=0;
+ body.innerHTML="";
+ data.forEach((r,i)=>{total+=Number(r.amount)||0;
+ body.innerHTML+=`<tr><td>${i+1}</td><td>${r.month}</td><td>${esc(r.member)}</td><td>RM ${Number(r.amount||0).toFixed(2)}</td>${admin?`<td><button class="edit" onclick="editEntry(${i})">এডিট</button><button class="del" onclick="delEntry(${i})">মুছুন</button></td>`:""}</tr>`;
+ });
+ document.getElementById("total").textContent="RM "+total.toFixed(2);
+ document.getElementById("manageHead").style.display=admin?"table-cell":"none";
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function login(){
+ if(admin){admin=false;document.getElementById("panel").style.display="none";render();return}
+ const p=prompt("Admin PIN দিন:");
+ if(p==="246810"){admin=true;document.getElementById("panel").style.display="block";render()}
+ else if(p!==null) alert("ভুল PIN");
+}
+function saveEntry(){
+ const member=document.getElementById("member").value.trim(), amount=Number(document.getElementById("amount").value);
+ if(!member||!(amount>=0)){alert("সদস্যের নাম ও টাকার পরিমাণ দিন");return}
+ const item={month:months[Number(m.value)],member,amount};
+ if(editIndex>=0){data[editIndex]=item;editIndex=-1;document.querySelector(".save").textContent="যোগ করুন"}
+ else data.push(item);
+ localStorage.setItem("bp_hisab_2026",JSON.stringify(data));
+ document.getElementById("member").value="";document.getElementById("amount").value="";
+ render();
+}
+function editEntry(i){editIndex=i;m.value=months.indexOf(data[i].month);document.getElementById("member").value=data[i].member;document.getElementById("amount").value=data[i].amount;document.querySelector(".save").textContent="আপডেট করুন"}
+function delEntry(i){if(confirm("এই হিসাবটি মুছে ফেলবেন?")){data.splice(i,1);localStorage.setItem("bp_hisab_2026",JSON.stringify(data));render()}}
+render();
+</script>
+</body></html>
